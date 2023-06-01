@@ -56,6 +56,7 @@ export default function UserForm(user: FormData) {
             justifyContent="flex-end"
             alignItems="center"
             marginTop={7}
+            marginBottom={9}
           >
             <Grid container direction="row" alignItems="center" spacing={2}>
               <Grid item xs={10}>

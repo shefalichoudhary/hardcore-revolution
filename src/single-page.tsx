@@ -36,11 +36,11 @@ const SinglePage = () => {
   }
   return (
     <>
-      <Container maxWidth="sm">
+      <Container maxWidth="sm" style={{ marginBottom: "50px" }}>
         <h1
           style={{
             textTransform: "uppercase",
-            paddingBottom: "30px",
+            paddingBottom: "20px",
             fontSize: "27px",
             letterSpacing: "5px",
             textAlign: "center",

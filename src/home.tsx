@@ -1,4 +1,4 @@
-import { Button, Container } from "@mui/material";
+import { Button, Container, Grid } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
 function Home() {
@@ -8,60 +8,81 @@ function Home() {
     <>
       <div
         style={{
-          backgroundImage: "url(/boiler-img.jpg)",
-          height: "600px",
-          width: "1537px",
+          backgroundImage: "url(/home-img.jpg)",
+          height: "50%",
+          width: "100%",
           backgroundSize: "cover",
+          backgroundRepeat: " no-repeat",
         }}
       >
         <div
           style={{
-            color: "white",
             fontSize: "bolder",
             paddingTop: "1px",
             textAlign: "center",
-            maxWidth: "890px",
           }}
         >
-          <Container style={{ paddingTop: "158px" }}>
-            <h3 style={{ marginBottom: "-45px" }}>FUEL YOUR</h3>
-            <h1
-              style={{
-                fontSize: "68px",
-                marginBottom: "-15px",
-                letterSpacing: "8px",
-              }}
+          <Grid
+            container
+            direction="column"
+            justifyContent="flex-end"
+            alignItems="center"
+            marginTop={7}
+            color="white"
+          >
+            <Container
+              maxWidth={"md"}
+              style={{ padding: "110px 0px 100px 0px", marginLeft: "0px" }}
             >
-              BODY FITNESS
-            </h1>
-            <p
-              style={{
-                fontSize: "15px",
-                letterSpacing: "1.5px",
-                lineHeight: "25px",
-              }}
-            >
-              When we create Gym Base, we knew we want to be more than just a
-              <div>
-                simple gym Having worked in traditional gyms in the past
-              </div>
-            </p>
-
-            <Button
-              style={{
-                padding: "12px 34px 12px 34px ",
-                background: "white",
-                color: "black",
-                fontWeight: "bold",
-                marginTop: "16px",
-              }}
-              onClick={() => {
-                navigate("/UserForm");
-              }}
-            >
-              JOIN NOW
-            </Button>
-          </Container>
+              <Grid container direction="row" alignItems="center" spacing={4}>
+                <Grid item xs={12}>
+                  <h3 style={{ marginBottom: "-45px" }}>FUEL YOUR</h3>
+                </Grid>
+                <Grid item xs={12}>
+                  <h1
+                    style={{
+                      fontSize: "68px",
+                      marginBottom: "-20px",
+                      letterSpacing: "8px",
+                    }}
+                  >
+                    BODY FITNESS
+                  </h1>
+                </Grid>
+                <Grid item xs={12}>
+                  <p
+                    style={{
+                      fontSize: "15px",
+                      letterSpacing: "1.2px",
+                      lineHeight: "25px",
+                      textAlign: "center",
+                    }}
+                  >
+                    When we create Gym Base, we knew we want to be more than
+                    just a
+                    <br />
+                    simple gym Having worked in traditional gyms in the past
+                  </p>
+                </Grid>
+                <Grid item xs={12}>
+                  <Button
+                    style={{
+                      padding: "16px 38px 16px 38px ",
+                      background: "white",
+                      color: "black",
+                      fontWeight: "bold",
+                      marginTop: "12px",
+                    }}
+                    onClick={() => {
+                      navigate("/UserForm");
+                    }}
+                  >
+                    JOIN NOW
+                  </Button>
+                </Grid>
+              </Grid>
+            </Container>
+          </Grid>
         </div>
       </div>
     </>
