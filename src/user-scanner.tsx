@@ -30,6 +30,7 @@ const UserScanner = () => {
       <Box
         sx={{ width: "700px", justifyContent: "center", alignItems: "center" }}
       >
+        <h1>lkjfdsjfsdopfpsfkfjdslkfjpdjwerkkljpfpdsfrepj</h1>
         <div id="reader"></div>
         <Button type="button" onClick={onHandleClick}>
           Scan Now

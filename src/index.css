@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
 }
 
 code {
@@ -13,4 +14,20 @@ code {
 }
 .btn{
   color: rgba(0, 0, 0, 0.6)
+}
+.img{
+  background-image: url("../public/home-img.jpg");
+  height: 100%;
+width: 100%;
+background-size: cover;
+}
+@media screen and (max-width: 600px) {
+  .navbar {
+    font-size: 13px;
+    text-decoration-style: none;
+ 
+  }
+ 
+ 
+ 
 }

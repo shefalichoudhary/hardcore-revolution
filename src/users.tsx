@@ -5,7 +5,7 @@ import ListItemAvatar from "@mui/material/ListItemAvatar";
 import Divider from "@mui/material/Divider";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import List from "@mui/material/List";
-import { Link, ListItemText, ListItem, Container, Grid } from "@mui/material";
+import { Link, ListItemText, ListItem, Container } from "@mui/material";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 export default function Users() {
   const [allDocs, setAllDocs] = useState<any[]>([]);
@@ -25,7 +25,6 @@ export default function Users() {
     };
     fetchUsers();
   }, []);
-  console.log(allDocs, "w0rld");
 
   return (
     <>

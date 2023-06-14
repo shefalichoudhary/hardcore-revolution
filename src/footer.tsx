@@ -1,15 +1,11 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
-import BottomNavigation from "@mui/material/BottomNavigation";
 
 import { Container, Grid } from "@mui/material";
 
 export default function SimpleBottomNavigation() {
   return (
-    <BottomNavigation
-      showLabels
-      style={{ background: "black", color: "white", padding: "30px" }}
-    >
+    <Box style={{ background: "black", color: "white" }}>
       <Grid
         container
         direction="column"
@@ -19,14 +15,14 @@ export default function SimpleBottomNavigation() {
         paddingTop={2}
         paddingBottom={5}
       >
-        <Container maxWidth={"lg"}>
+        <Container maxWidth={"xl"}>
           <Grid container direction="row" alignItems="center" spacing={3}>
             <Grid item xs={6}>
-              <span> Hardcore Revolution</span>
+              <span style={{ fontSize: "17px" }}> Hardcore Revolution</span>
             </Grid>
 
             <Grid item xs={6} style={{ textAlign: "center" }}>
-              <div style={{ fontSize: "20px" }}>Contact Us :</div>
+              <div style={{ fontSize: "19px" }}>Contact Us :</div>
               <div
                 style={{
                   fontSize: "14px",
@@ -36,13 +32,22 @@ export default function SimpleBottomNavigation() {
               >
                 Email: choudharyshefali@gmail.com
               </div>
-              <div style={{ paddingBottom: "20px" }}>
-                contact no: 9329751342
+              <div>
+                <span
+                  style={{
+                    paddingBottom: "20px",
+                    fontSize: "14px",
+                    marginTop: "12px",
+                  }}
+                >
+                  contact no:
+                </span>{" "}
+                9329751342
               </div>
             </Grid>
           </Grid>
         </Container>
       </Grid>
-    </BottomNavigation>
+    </Box>
   );
 }

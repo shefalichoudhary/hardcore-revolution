@@ -5,20 +5,11 @@ function Home() {
   const navigate = useNavigate();
 
   return (
-    <>
-      <div
-        style={{
-          backgroundImage: "url(/home-img.jpg)",
-          height: "50%",
-          width: "100%",
-          backgroundSize: "cover",
-          backgroundRepeat: " no-repeat",
-        }}
-      >
+    <Container maxWidth="xl" style={{ padding: "0px", margin: "0px" }}>
+      <div className="img">
         <div
           style={{
             fontSize: "bolder",
-            paddingTop: "1px",
             textAlign: "center",
           }}
         >
@@ -52,11 +43,11 @@ function Home() {
                 <Grid item xs={12}>
                   <p
                     style={{
-                      fontSize: "15px",
                       letterSpacing: "1.2px",
                       lineHeight: "25px",
                       textAlign: "center",
                     }}
+                    className="home"
                   >
                     When we create Gym Base, we knew we want to be more than
                     just a
@@ -85,7 +76,7 @@ function Home() {
           </Grid>
         </div>
       </div>
-    </>
+    </Container>
   );
 }
 export default Home;
