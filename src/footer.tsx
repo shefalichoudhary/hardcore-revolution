@@ -11,7 +11,6 @@ export default function SimpleBottomNavigation() {
         direction="column"
         justifyContent="flex-end"
         alignItems="center"
-        marginTop={9}
         paddingTop={2}
         paddingBottom={5}
       >

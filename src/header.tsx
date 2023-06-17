@@ -179,8 +179,11 @@ export default function DrawerAppBar(props: Props) {
                     </Link>
                   </ListItem>
                   <ListItem>
-                    <Button style={{ color: "black" }} onClick={handleSignOut}>
-                      Logout
+                    <Button
+                      style={{ color: "black", marginLeft: "-4px" }}
+                      onClick={handleSignOut}
+                    >
+                      LOGOUT
                     </Button>
                   </ListItem>
                 </List>

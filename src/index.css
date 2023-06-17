@@ -16,18 +16,29 @@ code {
   color: rgba(0, 0, 0, 0.6)
 }
 .img{
-  background-image: url("../public/home-img.jpg");
-  height: 100%;
-width: 100%;
+  background-image: url("../public/img-2.avif");
+  height: auto;
+width: auto;
 background-size: cover;
+
+
 }
+.home-heading{
+  font-size: 68px;
+      margin-bottom: -20px;
+      letter-spacing: 6px;
+}
+
 @media screen and (max-width: 600px) {
   .navbar {
     font-size: 13px;
     text-decoration-style: none;
  
   }
- 
- 
+
+ .home-heading{
+  font-size: 48px;
+      letter-spacing: 2px;
+ }
  
 }

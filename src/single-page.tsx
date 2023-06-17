@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getDoc, doc } from "firebase/firestore";
 import { colRef } from "./firebase";
+
 import QRCode from "react-qr-code";
 import { Container, Grid } from "@mui/material";
 
@@ -32,8 +33,9 @@ const SinglePage = () => {
     fontWeight: 25,
   };
   if (user === null) {
-    return <></>;
+    return <>fetching</>;
   }
+
   return (
     <>
       <Container maxWidth="sm" style={{ marginBottom: "50px" }}>

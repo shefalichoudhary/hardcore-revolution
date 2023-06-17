@@ -55,7 +55,7 @@ export default function UserForm(user: FormData) {
             direction="column"
             justifyContent="flex-end"
             alignItems="center"
-            marginTop={7}
+            marginTop={10}
             marginBottom={9}
           >
             <Grid container direction="row" alignItems="center" spacing={2}>
@@ -65,7 +65,7 @@ export default function UserForm(user: FormData) {
                     textTransform: "uppercase",
                     paddingBottom: "16px",
                     fontWeight: "lighter",
-                    letterSpacing: "3px",
+                    letterSpacing: "2px",
                     textAlign: "center",
                   }}
                 >

@@ -23,22 +23,18 @@ function Home() {
           >
             <Container
               maxWidth={"md"}
-              style={{ padding: "110px 0px 100px 0px", marginLeft: "0px" }}
+              style={{
+                padding: "110px 0px 100px 0px",
+                marginLeft: "0px",
+                justifyItems: "center",
+              }}
             >
               <Grid container direction="row" alignItems="center" spacing={4}>
                 <Grid item xs={12}>
                   <h3 style={{ marginBottom: "-45px" }}>FUEL YOUR</h3>
                 </Grid>
                 <Grid item xs={12}>
-                  <h1
-                    style={{
-                      fontSize: "68px",
-                      marginBottom: "-20px",
-                      letterSpacing: "8px",
-                    }}
-                  >
-                    BODY FITNESS
-                  </h1>
+                  <h1 className="home-heading">BODY FITNESS</h1>
                 </Grid>
                 <Grid item xs={12}>
                   <p
