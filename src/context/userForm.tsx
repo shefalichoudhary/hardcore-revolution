@@ -1,26 +1,14 @@
 import * as React from "react";
 import { addDoc } from "firebase/firestore";
 
-import {
-  Grid,
-  TextField,
-  Button,
-  MenuItem,
-  InputLabel,
-  Select,
-  FormControl,
-  Container,
-} from "@mui/material";
 import { useForm } from "react-hook-form";
 import { colRef } from "../firebase";
 
 type FormData = {
-  name?: string | undefined;
-  lastName?: string | undefined;
+  fullname?: string | undefined;
   age?: number | undefined;
-  gender?: string;
+  gender?: string | undefined;
   number?: number | undefined;
-
   date?: number | undefined;
   district?: string | undefined;
   address?: string | undefined;
@@ -32,138 +20,158 @@ export default function UserForm(user: FormData) {
   });
 
   const onSubmit = (data: FormData) => {
-    addDoc(colRef, { data }).then(() => {
-      alert("Submitted");
-    });
+    addDoc(colRef, { data });
     reset();
-  };
-
-  const [gender, setGender] = React.useState(user.gender);
-
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setGender(event.target.value);
   };
 
   let currentDate = new Date().toLocaleDateString();
 
   return (
-    <React.Fragment>
-      <Container maxWidth="md">
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <Grid
-            container
-            direction="column"
-            justifyContent="flex-end"
-            alignItems="center"
-            marginTop={10}
-            marginBottom={9}
-          >
-            <Grid container direction="row" alignItems="center" spacing={2}>
-              <Grid item xs={10}>
-                <h1
-                  style={{
-                    textTransform: "uppercase",
-                    paddingBottom: "16px",
-                    fontWeight: "lighter",
-                    letterSpacing: "2px",
-                    textAlign: "center",
-                  }}
-                >
-                  Fill Your Details
-                </h1>
-              </Grid>
-              <Grid item xs={4}>
-                <TextField
-                  {...register("name")}
-                  label="Name"
-                  id="outlined-basic"
-                  variant="outlined"
-                  fullWidth
-                />
-              </Grid>
-              <Grid item xs={4}>
-                <TextField
-                  {...register("lastName")}
-                  label="LastName"
-                  id="outlined-basic"
-                  variant="outlined"
-                  fullWidth
-                />
-              </Grid>
-              <Grid item xs={3}>
-                <FormControl>
-                  <InputLabel id="demo-simple-select-label">Gender</InputLabel>
-                  <Select
-                    sx={{ minWidth: 100 }}
-                    {...register("gender", { onChange: handleChange })}
-                    value={gender}
-                  >
-                    <MenuItem value="male">Male</MenuItem>
+    <div className="container max-w-sm  md:max-w-2xl m-auto py-20  ">
+      <form onSubmit={handleSubmit(onSubmit)} autoComplete="off">
+        <div className="font-light text-2xl my-3  text-center tracking-widest">
+          Fill Your Details
+        </div>
+        <div className="grid  md:grid-cols-2 pt-7 gap-4 ">
+          <label>
+            <span className="text-gray-700">Fullname</span>
+            <input
+              type="text"
+              className="
+            form-input
+             w-full
+            border
+            capitalize ...
+            border-slate-300
+                    rounded
+                    mt-1
+                     px-3
+                    py-3"
+              required
+              {...register("fullname")}
+            ></input>
+          </label>
+          <label>
+            <span className="text-gray-700">Age</span>
+            <input
+              type="text"
+              className="
+            form-input
+             w-full
+            border
+            capitalize ...
+            border-slate-300
+                    rounded
+                    mt-1
+                     px-3
+                    py-3"
+              {...register("age")}
+            ></input>
+          </label>
 
-                    <MenuItem value="female">Female</MenuItem>
-                  </Select>
-                </FormControl>
-              </Grid>
-              <Grid item width={150}>
-                <TextField
-                  variant="outlined"
-                  id="outlined-basic"
-                  label="Age"
-                  {...register("age")}
-                ></TextField>
-              </Grid>
-              <Grid item>
-                <TextField
-                  variant="outlined"
-                  id="outlined-basic"
-                  label="Number"
-                  {...register("number")}
-                ></TextField>
-              </Grid>
-              <Grid item width={150}>
-                <TextField
-                  variant="outlined"
-                  id="outlined-basic"
-                  label="Date"
-                  {...register("date")}
-                  value={currentDate}
-                ></TextField>
-              </Grid>
-              <Grid item maxWidth={180}>
-                <TextField
-                  variant="outlined"
-                  id="outlined-basic"
-                  label="District"
-                  {...register("district")}
-                ></TextField>
-              </Grid>
-              <Grid item xs={9}>
-                <TextField
-                  {...register("address")}
-                  label="Address"
-                  id="outlined-basic"
-                  variant="outlined"
-                  fullWidth
-                />
-              </Grid>
-              <Grid item xs={9}>
-                <Button
-                  style={{
-                    color: "white",
-                    background: "rgba(0, 0, 0, 0.8)",
-                    fontSize: "17px",
-                    marginTop: "13px",
-                    padding: "12px 26px 12px 26px",
-                  }}
-                  type="submit"
-                >
-                  REGISTERED
-                </Button>
-              </Grid>
-            </Grid>
-          </Grid>
-        </form>
-      </Container>
-    </React.Fragment>
+          <label>
+            <span className="text-gray-700">Gender</span>
+            <select
+              className="
+              
+            form-input
+            border
+            w-full
+            border-slate-300
+            bg-white
+                    rounded
+                    mt-1
+                     px-3
+                    py-3"
+              {...register("gender")}
+            >
+              <option value="">Select your gender</option>
+
+              <option value="Female">Female</option>
+              <option value="Male">Male</option>
+            </select>
+          </label>
+
+          <label>
+            <span className="text-gray-700">Number</span>
+            <input
+              type="text"
+              className="
+            form-input
+             w-full
+            border
+            capitalize ...
+            border-slate-300
+                    rounded
+                    mt-1
+                     px-3
+                    py-3"
+              required
+              {...register("number")}
+            ></input>
+          </label>
+          <label>
+            <span className="text-gray-700">Date</span>
+            <input
+              type="text"
+              className="
+            form-input
+            border
+             w-full
+            capitalize ...
+            border-slate-300
+                    rounded
+                    mt-1
+                     px-3
+                    py-3"
+              {...register("date")}
+              value={currentDate}
+            ></input>
+          </label>
+          <label>
+            <span className="text-gray-700">District</span>
+            <input
+              type="text"
+              className="
+            form-input
+             w-full
+            border
+            capitalize ...
+            border-slate-300
+                    rounded
+                    mt-1
+                     px-3
+                    py-3"
+              {...register("district")}
+            ></input>
+          </label>
+          <label className="md:col-span-2">
+            <span className="text-gray-700">Address</span>
+            <input
+              type="text"
+              className="
+            form-input
+            border
+             w-full
+            capitalize ...
+            border-slate-300
+                    rounded
+                    mt-1
+                     px-3
+                    py-3"
+              {...register("address")}
+            />
+          </label>
+        </div>
+        <div>
+          <button
+            className="px-6 py-3  text-sm mb-8 font-normal mt-4  rounded tracking-widest md:px-9 md:py-4 md:my-5 bg-stone-900 text-white "
+            type="submit"
+          >
+            REGISTER
+          </button>
+        </div>
+      </form>
+    </div>
   );
 }

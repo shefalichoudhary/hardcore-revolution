@@ -1,35 +1,10 @@
 import * as React from "react";
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import CssBaseline from "@mui/material/CssBaseline";
-import Drawer from "@mui/material/Drawer";
-import IconButton from "@mui/material/IconButton";
-import MenuIcon from "@material-ui/icons/Menu";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
-import { Link } from "@mui/material/";
+import MenuIcon from "@mui/icons-material/Menu";
+import CloseIcon from "@mui/icons-material/Close";
 import { UserAuth } from "./context/AuthContext";
-import {
-  Button,
-  useMediaQuery,
-  List,
-  ListItem,
-  Divider,
-} from "@material-ui/core";
-import { useNavigate } from "react-router-dom";
-import LogoutIcon from "@mui/icons-material/Logout";
 
-interface Props {
-  /**
-   * Injected by the documentation to work in an iframe.
-   * You won't need it on your project.
-   */
-  window?: () => Window;
-}
-
-const drawerWidth = 240;
-
-export default function DrawerAppBar(props: Props) {
+export default function DrawerAppBar(props: any) {
+  const [open, setOpen] = React.useState(true);
   const { user, logOut }: any = UserAuth();
   const handleSignOut = async () => {
     try {
@@ -38,160 +13,85 @@ export default function DrawerAppBar(props: Props) {
       console.log(error, "logout");
     }
   };
-  const navigate = useNavigate();
-
-  const { window } = props;
-  const [mobileOpen, setMobileOpen] = React.useState(false);
-
-  const handleDrawerToggle = () => {
-    setMobileOpen((prevState) => !prevState);
-  };
-  const isMobile = useMediaQuery("(max-width:900px)");
-  const container =
-    window !== undefined ? () => window().document.body : undefined;
+  console.log(open);
 
   return (
-    <Box sx={{ display: "flex" }}>
-      <CssBaseline />
-      <AppBar component="nav" sx={{ background: "black" }}>
-        <Toolbar>
-          <IconButton
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            onClick={handleDrawerToggle}
-            sx={{ marginRight: "20px", display: { md: "none" } }}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography
-            variant="h6"
-            component="div"
-            sx={{ flexGrow: 1, display: { sm: "block" } }}
-            onClick={() => {
-              navigate("/");
-            }}
-          >
-            <span>Hardcore Revolution </span>
-          </Typography>
-          {isMobile ? null : (
-            <>
-              <Link style={{ color: "#fff", marginRight: "16px" }} href="/">
-                HOME
-              </Link>
-
-              {user?.displayName ? (
-                <>
-                  <Link
-                    style={{ color: "#fff", marginRight: "16px" }}
-                    href="/signIn"
-                  >
-                    LOGIN
-                  </Link>
-                </>
-              ) : (
-                <>
-                  <Link
-                    style={{ color: "#fff", marginRight: "16px" }}
-                    href="/users"
-                    className="Link"
-                  >
-                    ARCHIVE
-                  </Link>
-                  <Link
-                    style={{ color: "#fff", marginRight: "16px" }}
-                    href="/userForm"
-                  >
-                    FORM
-                  </Link>
-
-                  <Link style={{ color: "#fff" }} href="/user-scanner">
-                    SCAN
-                  </Link>
-
-                  <Button style={{ color: "#fff" }} onClick={handleSignOut}>
-                    <LogoutIcon />
-                  </Button>
-                </>
-              )}
-            </>
-          )}
-        </Toolbar>
-      </AppBar>
-      {isMobile && (
+    <>
+      {user?.displayName ? (
         <>
-          <Box component="nav">
-            <Drawer
-              container={container}
-              variant="temporary"
-              open={mobileOpen}
-              onClose={handleDrawerToggle}
-              ModalProps={{
-                keepMounted: true, // Better open performance on mobile.
-              }}
-              sx={{
-                display: { xs: "block", md: "none" },
-                "& .MuiDrawer-paper": {
-                  boxSizing: "border-box",
-                  width: drawerWidth,
-                },
-              }}
-              anchor="right"
+          <nav className="md:flex md:items-center md:justify-between py-4 px-8 shadow-xl ">
+            <a href="/" className="font-serif tracking-widest ">
+              Hardcore Revolution
+            </a>
+            <div
+              onClick={() => setOpen(!open)}
+              className="absolute right-8 top-5 cursor-pointer md:hidden"
             >
-              <Box onClick={handleDrawerToggle} sx={{ marginLeft: "18px" }}>
-                <List>
-                  <ListItem>
-                    <MenuIcon style={{ marginRight: "16px" }} />
-                    <span style={{ fontSize: "15px" }}>
-                      Hardcore Revolution
-                    </span>
-                  </ListItem>
-                  <Divider
-                    style={{ marginBottom: "20px", marginTop: "12px" }}
-                  />
-                  <ListItem>
-                    <Link
-                      style={{ color: "black", marginRight: "16px" }}
-                      href="/"
-                    >
-                      HOME
-                    </Link>
-                  </ListItem>
-                  <ListItem>
-                    <Link
-                      style={{ color: "black", marginRight: "16px" }}
-                      href="/users"
-                    >
-                      ARCHIVE
-                    </Link>
-                  </ListItem>
-                  <ListItem>
-                    <Link
-                      style={{ color: "black", marginRight: "16px" }}
-                      href="/userForm"
-                    >
-                      FORM
-                    </Link>
-                  </ListItem>
-                  <ListItem>
-                    <Link style={{ color: "black" }} href="/user-scanner">
-                      SCAN
-                    </Link>
-                  </ListItem>
-                  <ListItem>
-                    <Button
-                      style={{ color: "black", marginLeft: "-4px" }}
-                      onClick={handleSignOut}
-                    >
-                      LOGOUT
-                    </Button>
-                  </ListItem>
-                </List>
-              </Box>
-            </Drawer>
-          </Box>
+              {open ? <MenuIcon /> : <CloseIcon />}
+            </div>
+            <ul
+              className={`md:flex md :items-center tracking-wide  md:pb-0 pb-2  md:pt-0 pt-2 font-serif  ${
+                open ? "hidden" : "static"
+              } `}
+            >
+              {[
+                ["Home", "/"],
+                ["Form", "/userForm"],
+                ["Archive", "/users"],
+                ["Scan", "/user-scanner"],
+              ].map(([title, url]) => (
+                <li key={title} className=" md:mx-3 md:my-0 my-3">
+                  <a
+                    href={url}
+                    className="   text-black font-medium  hover:underline decoration-1 duration-500 "
+                  >
+                    {title}
+                  </a>
+                </li>
+              ))}
+              <button
+                className="  text-black tracking-wide mx-0 md:mx-2 "
+                onClick={handleSignOut}
+              >
+                Logout
+              </button>
+            </ul>
+          </nav>
+        </>
+      ) : (
+        <>
+          <nav className="md:flex md:items-center md:justify-between py-4 px-8  shadow-xl ">
+            <a href="/" className="font-serif tracking-widest ">
+              Hardcore Revolution
+            </a>
+            <div
+              onClick={() => setOpen(!open)}
+              className="absolute right-8 top-5 cursor-pointer md:hidden"
+            >
+              {open ? <CloseIcon /> : <MenuIcon />}
+            </div>
+            <ul
+              className={`md:flex md :items-center tracking-wide    md:pt-0 pt-2 font-serif ${
+                open ? "top-70" : "top-[-490px]"
+              } `}
+            >
+              {[
+                ["Home", "/"],
+                ["Login", "/signIn"],
+              ].map(([title, url]) => (
+                <li key={title} className="md:mx-4 md:my-0 my-2">
+                  <a
+                    href={url}
+                    className="   text-black font-medium  hover:underline decoration-1 duration-500 "
+                  >
+                    {title}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
         </>
       )}
-    </Box>
+    </>
   );
 }

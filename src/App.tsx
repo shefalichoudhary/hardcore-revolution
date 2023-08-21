@@ -20,6 +20,7 @@ function App() {
           <Route path="/userForm" element={<UserForm />}></Route>
           <Route path="/user/:id" element={<SinglePage />}></Route>
           <Route path="/users" element={<Users />}></Route>
+
           <Route path="/user-scanner" element={<UserScanner />}></Route>
         </Routes>
         <Footer />

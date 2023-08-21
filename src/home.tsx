@@ -5,74 +5,31 @@ function Home() {
   const navigate = useNavigate();
 
   return (
-    <Container maxWidth="xl" style={{ padding: "0px", margin: "0px" }}>
-      <div className="img">
-        <div
-          style={{
-            fontSize: "bolder",
-            textAlign: "center",
-          }}
-        >
-          <Grid
-            container
-            direction="column"
-            justifyContent="flex-end"
-            alignItems="center"
-            marginTop={7}
-            color="white"
+    <div>
+      <div className="  bg-h-auto bg-cover bg-black opacity-120   bg-[url('../public/Img.jpg')] ">
+        <div className=" font-serif sm:container  text-white text-center md:py-14 ">
+          <h3 className=" text-sm pt-3 mb-1 md:mt-14 md:mb-2 md:text-xl">
+            FUEL YOUR
+          </h3>
+          <h1 className=" text-2xl mb-1 md:mt-8 md:mb-4 tracking-widest md:text-7xl  ">
+            BODY FITNESS
+          </h1>
+          <p className="text-xs   tracking-wide  md:text-base ">
+            When we create Gym Base, we knew we want to be more than just a
+            <br></br>
+            simple gym Having worked in traditional gyms in the past
+          </p>
+          <button
+            className="px-6 py-3  tracking-widest text-xs mb-8 font-medium mt-4   rounded  md:px-9 md:py-4 md:my-14  bg-white text-black "
+            onClick={() => {
+              navigate("/UserForm");
+            }}
           >
-            <Container
-              maxWidth={"md"}
-              style={{
-                padding: "110px 0px 100px 0px",
-                marginLeft: "0px",
-                justifyItems: "center",
-              }}
-            >
-              <Grid container direction="row" alignItems="center" spacing={4}>
-                <Grid item xs={12}>
-                  <h3 style={{ marginBottom: "-45px" }}>FUEL YOUR</h3>
-                </Grid>
-                <Grid item xs={12}>
-                  <h1 className="home-heading">BODY FITNESS</h1>
-                </Grid>
-                <Grid item xs={12}>
-                  <p
-                    style={{
-                      letterSpacing: "1.2px",
-                      lineHeight: "25px",
-                      textAlign: "center",
-                    }}
-                    className="home"
-                  >
-                    When we create Gym Base, we knew we want to be more than
-                    just a
-                    <br />
-                    simple gym Having worked in traditional gyms in the past
-                  </p>
-                </Grid>
-                <Grid item xs={12}>
-                  <Button
-                    style={{
-                      padding: "16px 38px 16px 38px ",
-                      background: "white",
-                      color: "black",
-                      fontWeight: "bold",
-                      marginTop: "12px",
-                    }}
-                    onClick={() => {
-                      navigate("/UserForm");
-                    }}
-                  >
-                    JOIN NOW
-                  </Button>
-                </Grid>
-              </Grid>
-            </Container>
-          </Grid>
+            JOIN NOW
+          </button>
         </div>
       </div>
-    </Container>
+    </div>
   );
 }
 export default Home;

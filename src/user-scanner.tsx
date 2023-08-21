@@ -1,9 +1,6 @@
 import { Html5QrcodeScanner } from "html5-qrcode";
 import { useNavigate } from "react-router-dom";
 
-import { Button, Box } from "@mui/material/";
-import { Container } from "@material-ui/core";
-
 const UserScanner = () => {
   const navigate = useNavigate();
   function onHandleClick() {
@@ -19,7 +16,7 @@ const UserScanner = () => {
 
     let html5QrcodeScanner = new Html5QrcodeScanner(
       "reader",
-      { fps: 10, qrbox: { width: 250, height: 250 } },
+      { fps: 10, qrbox: { width: 180, height: 200 } },
 
       /* verbose= */ false
     );
@@ -27,17 +24,20 @@ const UserScanner = () => {
   }
 
   return (
-    <Container style={{ margin: "130px", alignItems: "center" }}>
-      <Box
-        sx={{ width: "500px", justifyContent: "center", alignItems: "center" }}
-      >
-        <div id="reader">
-          <Button type="button" onClick={onHandleClick}>
-            Scan Now
-          </Button>
-        </div>
-      </Box>
-    </Container>
+    <div className=" text-center my-20 container m-auto max-w-xl">
+      <div className="font-light text-xl my-4 tracking-widest">
+        FOR USER DETAILS
+      </div>
+      <div className=" " id="reader">
+        <button
+          className="px-6 py-3 text-sm mb-8 font-normal  mt-4  rounded tracking-widest md:px-9 md:py-4 md:my-5 bg-stone-900 text-white "
+          type="button"
+          onClick={onHandleClick}
+        >
+          SCAN NOW
+        </button>
+      </div>
+    </div>
   );
 };
 export default UserScanner;
