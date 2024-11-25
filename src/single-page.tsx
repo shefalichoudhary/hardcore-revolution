@@ -21,7 +21,7 @@ const SinglePage = (cleintForm: FormData) => {
   const [mode, setMode] = useState(true);
 
   const { id } = useParams();
-  const { register, handleSubmit, reset } = useForm<FormData>();
+  const { register, handleSubmit } = useForm<FormData>();
   useEffect(() => {
     const fetchDocById = async () => {
       const docRef = doc(colRef, id);

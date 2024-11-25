@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
-
 import { colRef } from "./firebase";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
-
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import { deleteDoc, doc, getDocs } from "firebase/firestore";
 import DeleteIcon from "@mui/icons-material/Delete";
@@ -19,7 +17,6 @@ export default function Users() {
         ...doc.data(),
         key: doc.id,
       });
-
       setAllDocs(data);
     });
   };
@@ -33,7 +30,7 @@ export default function Users() {
   };
 
   return (
-    <div className="sm:container  py-12  md:max-w-5xl max-w-xl max-auto ">
+    <div className="sm:container  py-12  md:max-w-5xl max-w-sm max-auto ">
       <div className=" text-xl mb-14 md:text-2xl  text-center font-serif tracking-widest ">
         All Users
       </div>
@@ -42,16 +39,16 @@ export default function Users() {
           <>
             <div
               key={item.key}
-              className="  container grid grid-cols-3 font-serif mb-5 max-w-4xl m-auto"
+              className="  sm:container grid grid-cols-3 font-serif mb-5 max-w-4xl m-auto"
             >
-              <div className=" text-right ">
-                <AccountCircleIcon sx={{ fontSize: 32, marginRight: "20px" }} />
+              <div className=" text-right  mr-4">
+                <AccountCircleIcon sx={{ fontSize: 32 }} />
               </div>
 
               <div className="text-left   md:mr-0 text-md">
                 {item.data.fullname}
               </div>
-              <div className=" md:text-left  m-auto ">
+              <div className=" md:text-left  text-right  ">
                 <button
                   className=" mr-3 md:mr-6"
                   onClick={() => deleteUserData(item.key)}

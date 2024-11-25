@@ -4,29 +4,52 @@ import {
   signInWithPopup,
   signOut,
   onAuthStateChanged,
+  User,
 } from "firebase/auth";
 import { auth } from "../firebase";
 
-const AuthContext = createContext();
+// Define the context with the correct types
+interface AuthContextType {
+  googleSignIn: () => Promise<void>;
+  logOut: () => void;
+  user: any; // Ideally, you would type this as the User type from Firebase
+}
 
-export const AuthContextProvider = ({ children }: any) => {
-  const [user, setUser] = useState({});
-  const googleSignIn = () => {
+const AuthContext = createContext<AuthContextType | undefined>();
+
+interface AuthContextProviderProps {
+  children: React.ReactNode;
+}
+
+export const AuthContextProvider = ({ children }: AuthContextProviderProps) => {
+  const [user, setUser] = useState<User | null>(null);
+
+  const googleSignIn = async () => {
     const provider = new GoogleAuthProvider();
-    signInWithPopup(auth, provider);
+    try {
+      await signInWithPopup(auth, provider);
+    } catch (error) {
+      console.error("Error during Google Sign In:", error);
+    }
   };
 
-  const logOut = () => {
-    signOut(auth);
+  const logOut = async () => {
+    try {
+      await signOut(auth);
+    } catch (error) {
+      console.error("Error during Sign Out:", error);
+    }
   };
+
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (currentUser: any) => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
     });
     return () => {
       unsubscribe();
     };
   }, []);
+
   return (
     <AuthContext.Provider value={{ googleSignIn, logOut, user }}>
       {children}

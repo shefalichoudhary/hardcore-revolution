@@ -13,7 +13,6 @@ export default function DrawerAppBar(props: any) {
       console.log(error, "logout");
     }
   };
-  console.log(open);
 
   return (
     <>
@@ -72,7 +71,7 @@ export default function DrawerAppBar(props: any) {
             </div>
             <ul
               className={`md:flex md :items-center tracking-wide    md:pt-0 pt-2 font-serif ${
-                open ? "top-70" : "top-[-490px]"
+                open ? "hidden" : "static"
               } `}
             >
               {[
