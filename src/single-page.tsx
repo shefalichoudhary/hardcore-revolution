@@ -4,267 +4,192 @@ import { getDoc, doc, updateDoc } from "firebase/firestore";
 import { colRef } from "./firebase";
 import QRCode from "react-qr-code";
 import { useForm } from "react-hook-form";
+import { useRequireAuth } from "./context/AuthContext";
+
 type FormData = {
-  fullname?: string | undefined;
-  age?: number | undefined;
-  number?: number | undefined;
-  date?: number | undefined;
-  gender?: string | undefined;
-
-  district?: string | undefined;
-  address?: string | undefined;
+  fullname?: string;
+  age?: number;
+  number?: number;
+  date?: string;
+  gender?: string;
+  district?: string;
+  address?: string;
 };
-const SinglePage = (cleintForm: FormData) => {
-  const [user, setUser] = useState<null | any>(null);
 
-  const [docId, setDocId] = useState<null | any>(null);
-  const [mode, setMode] = useState(true);
+const SinglePage = () => {
+  useRequireAuth();
+  const [user, setUser] = useState<any>(null);
+  const [docId, setDocId] = useState<string | null>(null);
+  const [editMode, setEditMode] = useState(false);
 
   const { id } = useParams();
   const { register, handleSubmit } = useForm<FormData>();
+
   useEffect(() => {
     const fetchDocById = async () => {
-      const docRef = doc(colRef, id);
-      setDocId(docRef.id);
+      const docRef = doc(colRef, id as string);
       const docSnap = await getDoc(docRef);
       if (docSnap.exists()) {
         setUser(docSnap.data().data);
+        setDocId(docSnap.id);
       }
     };
     fetchDocById();
-  }, []);
-  const onEditHandler = () => {
-    setMode(false);
-  };
+  }, [id]);
 
-  const onCancleHandler = () => {
-    setMode(true);
-  };
   const onUpdateHandler = async (data: FormData) => {
+    if (!id) return;
     const docRef = doc(colRef, id);
-    await updateDoc(docRef, {
-      data,
-    });
-    window.location.reload();
+    await updateDoc(docRef, { data });
+    setEditMode(false);
+    const updatedSnap = await getDoc(docRef);
+    if (updatedSnap.exists()) setUser(updatedSnap.data().data);
   };
 
-  if (user === null) {
+  if (!user) {
     return (
-      <>
-        <div className="bg-white py-36">
-          <h2 className="text-center my-12 font-serif text-2xl">
-            Fetching User Details...
-          </h2>
-        </div>
-      </>
-    );
-  }
-  if (mode === true) {
-    return (
-      <>
-        <div className="container py-20 md:m-auto md:max-w-2xl md:py-26 tracking-wide ">
-          <div className="mx-28 md:mx-12 font-serif  ">
-            <div className=" m-auto grid grid-cols-1  text-lg gap-4">
-              <div>
-                <span className="mr-3">Name :</span>
-
-                <span> {user.fullname}</span>
-              </div>
-              <div>
-                <span className="mr-3"> Age :</span>
-                {user.age}
-              </div>
-              <div>
-                <span className="mr-3">Number :</span>
-                {user.number}
-              </div>
-              <div>
-                <span className="mr-3"> Joining date : </span>
-                {user.date}
-              </div>
-            </div>
-          </div>
-          <div className="grid grid-cols-2 max-w-xs mx-16 md:mx-0 md:mt-5 mt-7">
-            <div className="my-auto mx-auto">
-              {" "}
-              <QRCode size={70} value={docId} viewBox={`0 0 256 256`} />
-              <div id="reader"></div>
-            </div>
-            <div>
-              <button
-                className="  text-sm font-normal mt-2  rounded tracking-widest px-9 py-4 md:my-5 bg-stone-900 text-white "
-                onClick={() => onEditHandler()}
-              >
-                EDIT
-              </button>
-            </div>
-          </div>
-        </div>
-      </>
+      <div className="py-36 text-center font-serif text-2xl">
+        Fetching User Details...
+      </div>
     );
   }
 
   return (
-    <div className="container max-w-sm  md:max-w-2xl m-auto py-12 ">
-      <form onSubmit={handleSubmit(onUpdateHandler)} autoComplete="off">
-        <div className="font-light text-2xl my-3  text-center tracking-widest">
-          EDIT YOUR DETAILS
-        </div>
-        <div className="grid  md:grid-cols-2 pt-7 gap-4 ">
-          <label>
-            <span className="text-gray-700">Fullname</span>
-            <input
-              defaultValue={user.fullname}
-              type="text"
-              className="
-            form-input
-             w-full
-            border
-            capitalize ...
-            border-slate-300
-                    rounded
-                    mt-1
-                     px-3
-                    py-3"
-              required
-              {...register("fullname")}
-            ></input>
-          </label>
-          <label>
-            <span className="text-gray-700">Age</span>
-            <input
-              defaultValue={user.age}
-              type="text"
-              className="
-            form-input
-             w-full
-            border
-            capitalize ...
-            border-slate-300
-                    rounded
-                    mt-1
-                     px-3
-                    py-3"
-              required
-              {...register("age")}
-            ></input>
-          </label>
-          <label>
-            <span className="text-gray-700">Gender</span>
-            <select
-              defaultValue={user.gender}
-              className="
-              
-            form-input
-            border
-            w-full
-            capitalize ...
-            border-slate-300
-            bg-white
-                    rounded
-                    mt-1
-                     px-3
-                    py-3"
-              {...register("gender")}
-            >
-              <option value="Female">Female</option>
-              <option value="Male">Male</option>
-            </select>
-          </label>
-          <label>
-            <span className="text-gray-700">Number</span>
-            <input
-              defaultValue={user.number}
-              type="text"
-              className="
-            form-input
-             w-full
-            border
-            capitalize ...
-            border-slate-300
-                    rounded
-                    mt-1
-                     px-3
-                    py-3"
-              required
-              {...register("number")}
-            ></input>
-          </label>
-          <label>
-            <span className="text-gray-700">Date</span>
-            <input
-              defaultValue={user.date}
-              className="
-            border
-             w-full
-            border-slate-300
-                    rounded
-                    mt-1
-                     px-3
-                    py-3"
-              {...register("date")}
-            ></input>
-          </label>
+    <div className="max-w-3xl mx-auto px-4 py-12">
+      {!editMode ? (
+       <>
+  <h2 className="text-2xl font-semibold font-serif mb-6 text-center">
+    User Details
+  </h2>
 
-          <label>
-            <span className="text-gray-700">District</span>
-            <input
-              defaultValue={user.district}
-              type="text"
-              className="
-            form-input
-             w-full
-            border
-            capitalize ...
-            border-slate-300
-                    rounded
-                    mt-1
-                     px-3
-                    py-3"
-              {...register("district")}
-            ></input>
-          </label>
-          <label className="md:col-span-2">
-            <span className="text-gray-700">Address</span>
-            <input
-              defaultValue={user.address}
-              type="text"
-              className="
-            form-input
-            border
-             w-full
-            capitalize ...
-            border-slate-300
-                    rounded
-                    mt-1
-                     px-3
-                    py-3"
-              {...register("address")}
-            />
-          </label>
-        </div>
-        <div>
-          <div className="grid grid-cols-2 max-w-xs ">
-            <div>
+  <div className="bg-white shadow-md rounded-xl p-6 md:flex md:justify-between md:items-start space-y-6 md:space-y-0">
+    {/* Left: User details */}
+    <div className="space-y-3 text-lg font-medium tracking-wide">
+      <p><span className="font-semibold">Name:</span> {user.fullname}</p>
+      <p><span className="font-semibold">Age:</span> {user.age}</p>
+      <p><span className="font-semibold">Number:</span> {user.number}</p>
+      <p><span className="font-semibold">Joining Date:</span> {user.date}</p>
+      <p><span className="font-semibold">Gender:</span> {user.gender}</p>
+      <p><span className="font-semibold">District:</span> {user.district}</p>
+      <p><span className="font-semibold">Address:</span> {user.address}</p>
+    </div>
+
+    {/* Right: QR code */}
+    <div className="flex flex-col items-left  md:items-end md:w-1/3 pt-6 space-y-4">
+
+  <QRCode size={180} value={docId || ""} />
+    <button
+    className="text-sm font-normal rounded tracking-widest px-6 py-2  bg-stone-900 text-white hover:bg-stone-800"
+    onClick={() => setEditMode(true)}
+  >
+    EDIT
+  </button>
+</div>
+
+  </div>
+
+ 
+</>
+
+      ) : (
+        <>
+          <h2 className="text-2xl font-semibold font-serif text-center mb-6">
+            Edit Your Details
+          </h2>
+          <form
+            onSubmit={handleSubmit(onUpdateHandler)}
+            className="bg-white shadow-md rounded-xl p-6 space-y-6"
+          >
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <label className="flex flex-col">
+                <span className="text-gray-700">Fullname</span>
+                <input
+                  defaultValue={user.fullname}
+                  {...register("fullname")}
+                  required
+                  className="border border-slate-300 rounded px-3 py-2"
+                />
+              </label>
+              <label className="flex flex-col">
+                <span className="text-gray-700">Age</span>
+                <input
+                  defaultValue={user.age}
+                  {...register("age")}
+                  type="number"
+                  required
+                  className="border border-slate-300 rounded px-3 py-2"
+                />
+              </label>
+              <label className="flex flex-col">
+                <span className="text-gray-700">Gender</span>
+                <select
+                  defaultValue={user.gender}
+                  {...register("gender")}
+                  className="border border-slate-300 rounded px-3 py-2 bg-white"
+                >
+                  <option value="Female">Female</option>
+                  <option value="Male">Male</option>
+                </select>
+              </label>
+              <label className="flex flex-col">
+                <span className="text-gray-700">Number</span>
+                <input
+                  defaultValue={user.number}
+                  {...register("number")}
+                  type="tel"
+                  required
+                  className="border border-slate-300 rounded px-3 py-2"
+                />
+              </label>
+              <label className="flex flex-col">
+                <span className="text-gray-700">Joining Date</span>
+                <input
+                  defaultValue={user.date}
+                  {...register("date")}
+                  type="text"
+                  className="border border-slate-300 rounded px-3 py-2"
+                />
+              </label>
+              <label className="flex flex-col">
+                <span className="text-gray-700">District</span>
+                <input
+                  defaultValue={user.district}
+                  {...register("district")}
+                  type="text"
+                  className="border border-slate-300 rounded px-3 py-2"
+                />
+              </label>
+              <label className="md:col-span-2 flex flex-col">
+                <span className="text-gray-700">Address</span>
+                <input
+                  defaultValue={user.address}
+                  {...register("address")}
+                  type="text"
+                  className="border border-slate-300 rounded px-3 py-2"
+                />
+              </label>
+            </div>
+
+            <div className="flex justify-center gap-6 pt-4">
               <button
                 type="submit"
-                className="text-sm mb-8 font-normal mt-4  rounded tracking-widest px-9 py-4 md:my-5 bg-stone-900 text-white "
+                className="bg-stone-900 text-white px-6 py-3 rounded tracking-widest hover:bg-stone-800"
               >
                 UPDATE
               </button>
-            </div>
-            <div>
               <button
-                className=" text-sm mb-8 font-normal mt-4  rounded tracking-widest px-9 py-4 md:my-5 bg-stone-900 text-white "
-                onClick={() => onCancleHandler()}
+                type="button"
+                onClick={() => setEditMode(false)}
+                className="bg-gray-300 text-gray-800 px-6 py-3 rounded tracking-widest hover:bg-gray-400"
               >
                 CANCEL
               </button>
             </div>
-          </div>
-        </div>
-      </form>
+          </form>
+        </>
+      )}
     </div>
   );
 };
+
 export default SinglePage;

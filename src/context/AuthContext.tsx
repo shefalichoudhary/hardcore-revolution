@@ -7,6 +7,7 @@ import {
   User,
 } from "firebase/auth";
 import { auth } from "../firebase";
+import { useNavigate } from "react-router-dom";
 
 // Define the context with the correct types
 interface AuthContextType {
@@ -15,7 +16,7 @@ interface AuthContextType {
   user: any; // Ideally, you would type this as the User type from Firebase
 }
 
-const AuthContext = createContext<AuthContextType | undefined>();
+const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 interface AuthContextProviderProps {
   children: React.ReactNode;
@@ -59,4 +60,17 @@ export const AuthContextProvider = ({ children }: AuthContextProviderProps) => {
 
 export const UserAuth = () => {
   return useContext(AuthContext);
+};
+
+export const useRequireAuth = () => {
+  const { user } = UserAuth() || {};
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!user) {
+      navigate("/signin");
+    }
+  }, [user, navigate]);
+
+  return user;
 };

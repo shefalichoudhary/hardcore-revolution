@@ -1,35 +1,38 @@
-import { Button, Container, Grid } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
 function Home() {
   const navigate = useNavigate();
 
   return (
-    <div>
-      <div className="  bg-h-auto bg-cover bg-black opacity-120   bg-[url('../public/Img.jpg')] ">
-        <div className=" font-serif sm:container  text-white text-center md:py-14 ">
-          <h3 className=" text-sm pt-3 mb-1 md:mt-14 md:mb-2 md:text-xl">
-            FUEL YOUR
-          </h3>
-          <h1 className=" text-2xl mb-1 md:mt-8 md:mb-4 tracking-widest md:text-7xl  ">
-            BODY FITNESS
-          </h1>
-          <p className="text-xs   tracking-wide  md:text-base ">
-            When we create Gym Base, we knew we want to be more than just a
-            <br></br>
-            simple gym Having worked in traditional gyms in the past
-          </p>
-          <button
-            className="px-6 py-3  tracking-widest text-xs mb-8 font-medium mt-4   rounded  md:px-9 md:py-4 md:my-14  bg-white text-black "
-            onClick={() => {
-              navigate("/UserForm");
-            }}
-          >
-            JOIN NOW
-          </button>
-        </div>
+    <div className="relative bg-cover bg-center bg-no-repeat bg-[url('../public/Img.jpg')] ">
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-black bg-opacity-60 z-0 "></div>
+
+      {/* Content */}
+     <div className="relative z-10 text-white text-center font-serif px-4 py-32 sm:py-32 md:py-36">
+        <h3 className="text-xs sm:text-sm md:text-xl mb-1 sm:mb-2">
+          FUEL YOUR
+        </h3>
+
+        <h1 className="text-2xl sm:text-4xl md:text-6xl font-bold tracking-widest mb-3 sm:mb-6">
+          BODY FITNESS
+        </h1>
+
+        <p className="text-xs sm:text-sm md:text-base max-w-md sm:max-w-xl mx-auto mb-4 sm:mb-6 leading-relaxed">
+          When we created Gym Base, we aimed to be more than just a typical gym.
+          <br className="hidden sm:block" />
+          With experience in traditional fitness spaces, we built something better.
+        </p>
+
+        <button
+          className="bg-white text-black px-6 py-2 sm:px-8 sm:py-3 text-xs sm:text-sm font-semibold rounded shadow hover:bg-gray-200 transition"
+          onClick={() => navigate("/UserForm")}
+        >
+          JOIN NOW
+        </button>
       </div>
     </div>
   );
 }
+
 export default Home;

@@ -1,68 +1,75 @@
 import { useEffect, useState } from "react";
 import { colRef } from "./firebase";
+import { deleteDoc, doc, getDocs } from "firebase/firestore";
+import { Link } from "react-router-dom";
+import { useRequireAuth } from "./context/AuthContext";
+
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-import { deleteDoc, doc, getDocs } from "firebase/firestore";
 import DeleteIcon from "@mui/icons-material/Delete";
 
 export default function Users() {
+  useRequireAuth();
   const [allDocs, setAllDocs] = useState<any[]>([]);
 
   const fetchUsers = async () => {
     const data: any[] = [];
     const querySnapshot = await getDocs(colRef);
-
     querySnapshot.forEach((doc) => {
-      data.push({
-        ...doc.data(),
-        key: doc.id,
-      });
-      setAllDocs(data);
+      data.push({ ...doc.data(), key: doc.id });
     });
+    setAllDocs(data);
   };
+
   useEffect(() => {
     fetchUsers();
   }, []);
 
   const deleteUserData = async (key: string) => {
     await deleteDoc(doc(colRef, key));
-    window.location.reload();
+    fetchUsers(); // Better than reloading the page
   };
 
   return (
-    <div className="sm:container  py-12  md:max-w-5xl max-w-sm max-auto ">
-      <div className=" text-xl mb-14 md:text-2xl  text-center font-serif tracking-widest ">
+    <div className="  min-h-screen flex-1 py-12 px-4 md:px-8 max-w-4xl mx-auto">
+      <h2 className="text-2xl font-bold text-center mb-10 font-serif tracking-wide">
         All Users
-      </div>
-      {allDocs.map((item) => {
-        return (
-          <>
-            <div
-              key={item.key}
-              className="  sm:container grid grid-cols-3 font-serif mb-5 max-w-4xl m-auto"
-            >
-              <div className=" text-right  mr-4">
-                <AccountCircleIcon sx={{ fontSize: 32 }} />
-              </div>
+      </h2>
 
-              <div className="text-left   md:mr-0 text-md">
+      <div className="grid gap-2">
+        {allDocs.map((item) => (
+          <div
+            key={item.key}
+            className="bg-white shadow-md rounded-xl p-2 md:p-2 flex items-center justify-between transition-transform hover:scale-[1.02]"
+          >
+            <div className="flex items-center gap-4">
+              <div className="text-gray-600">
+                <AccountCircleIcon sx={{ fontSize: 50 }} />
+              </div>
+              <div className="text-lg md:text-md font-medium text-gray-800">
                 {item.data.fullname}
               </div>
-              <div className=" md:text-left  text-right  ">
-                <button
-                  className=" mr-3 md:mr-6"
-                  onClick={() => deleteUserData(item.key)}
-                >
-                  <DeleteIcon />
-                </button>
-                <a href={`/user/${item.key}`}>
-                  <ArrowForwardIosIcon />
-                </a>
-              </div>
             </div>
-          </>
-        );
-      })}
+
+            <div className="flex items-center gap-4">
+              <button
+                className="text-black hover:text-red-700 transition-colors"
+                onClick={() => deleteUserData(item.key)}
+                title="Delete User"
+              >
+                <DeleteIcon />
+              </button>
+              <Link
+                to={`/user/${item.key}`}
+                className="text-blue-500 hover:text-blue-700 transition-colors"
+                title="View Details"
+              >
+                <ArrowForwardIosIcon />
+              </Link>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

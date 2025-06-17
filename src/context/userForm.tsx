@@ -3,6 +3,7 @@ import { addDoc } from "firebase/firestore";
 
 import { useForm } from "react-hook-form";
 import { colRef } from "../firebase";
+import { useRequireAuth } from "./AuthContext";
 
 type FormData = {
   fullname?: string | undefined;
@@ -15,6 +16,8 @@ type FormData = {
 };
 
 export default function UserForm(user: FormData) {
+    useRequireAuth();
+  
   const { register, handleSubmit, reset } = useForm<FormData>({
     defaultValues: user,
   });

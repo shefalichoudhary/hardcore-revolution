@@ -2,13 +2,17 @@ import * as React from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import { UserAuth } from "./context/AuthContext";
+import { useNavigate, Link } from 'react-router-dom';
 
 export default function DrawerAppBar(props: any) {
   const [open, setOpen] = React.useState(true);
   const { user, logOut }: any = UserAuth();
+  const navigate = useNavigate();
   const handleSignOut = async () => {
     try {
       await logOut();
+      localStorage.removeItem('token');
+      navigate('/signIn');
     } catch (error) {
       console.log(error, "logout");
     }
@@ -19,9 +23,9 @@ export default function DrawerAppBar(props: any) {
       {user?.displayName ? (
         <>
           <nav className="md:flex md:items-center md:justify-between py-4 px-8 shadow-xl ">
-            <a href="/" className="font-serif tracking-widest ">
+            <Link to="/" className="font-serif tracking-widest ">
               Hardcore Revolution
-            </a>
+            </Link>
             <div
               onClick={() => setOpen(!open)}
               className="absolute right-8 top-5 cursor-pointer md:hidden"
@@ -40,16 +44,16 @@ export default function DrawerAppBar(props: any) {
                 ["Scan", "/user-scanner"],
               ].map(([title, url]) => (
                 <li key={title} className=" md:mx-3 md:my-0 my-3">
-                  <a
-                    href={url}
-                    className="   text-black font-medium  hover:underline decoration-1 duration-500 "
+                  <Link
+                    to={url}
+                    className="text-black font-medium hover:underline decoration-1 duration-500"
                   >
                     {title}
-                  </a>
+                  </Link>
                 </li>
               ))}
               <button
-                className="  text-black tracking-wide mx-0 md:mx-2 "
+                className="text-black tracking-wide mx-0 md:mx-2"
                 onClick={handleSignOut}
               >
                 Logout
@@ -60,9 +64,9 @@ export default function DrawerAppBar(props: any) {
       ) : (
         <>
           <nav className="md:flex md:items-center md:justify-between py-4 px-8  shadow-xl ">
-            <a href="/" className="font-serif tracking-widest ">
+            <Link to="/" className="font-serif tracking-widest ">
               Hardcore Revolution
-            </a>
+            </Link>
             <div
               onClick={() => setOpen(!open)}
               className="absolute right-8 top-5 cursor-pointer md:hidden"
@@ -79,12 +83,12 @@ export default function DrawerAppBar(props: any) {
                 ["Login", "/signIn"],
               ].map(([title, url]) => (
                 <li key={title} className="md:mx-4 md:my-0 my-2">
-                  <a
-                    href={url}
-                    className="   text-black font-medium  hover:underline decoration-1 duration-500 "
+                  <Link
+                    to={url}
+                    className="text-black font-medium hover:underline decoration-1 duration-500"
                   >
                     {title}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

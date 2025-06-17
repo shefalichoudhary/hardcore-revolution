@@ -1,13 +1,23 @@
+import React from "react";
 import GoogleButton from "react-google-button";
 import { UserAuth } from "./context/AuthContext";
 import InsertEmoticonSharpIcon from "@mui/icons-material/InsertEmoticonSharp";
-function SignIn() {
-  const { googleSignIn }: any = UserAuth();
-  const handleGoogleSignIn = async () => {
+import { useNavigate } from "react-router-dom";
+
+const SignIn = () => {
+  const { googleSignIn } = UserAuth() || {};
+  const navigate = useNavigate();
+
+  const handleSignIn = async () => {
     try {
-      await googleSignIn();
+      if (googleSignIn) {
+        await googleSignIn();
+        navigate("/"); // Redirect to home after sign in
+      } else {
+        console.error("googleSignIn is not defined");
+      }
     } catch (error) {
-      console.log(error);
+      console.error("Sign in failed:", error);
     }
   };
 
@@ -26,12 +36,13 @@ function SignIn() {
       <div>
         <button
           className="px-6 py-3  text-sm mb-8 font-normal mt-4  rounded tracking-widest md:px-9 md:py-4 md:my-5 bg-stone-900 text-white "
-          onClick={handleGoogleSignIn}
+          onClick={handleSignIn}
         >
           LOGIN WITH GOOGLE
         </button>
       </div>
     </div>
   );
-}
+};
+
 export default SignIn;
