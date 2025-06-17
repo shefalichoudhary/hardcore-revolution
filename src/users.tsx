@@ -36,7 +36,7 @@ export default function Users() {
 
   return (
     <div className="min-h-screen flex-1 py-12 px-4 md:px-8 max-w-4xl mx-auto">
-      <h2 className="text-3xl font-bold text-center mb-10 font-serif tracking-wider text-stone-800">
+      <h2 className="text-2xl font-medium text-center mb-10 font-serif tracking-wider text-stone-800">
         Registered Users
       </h2>
 

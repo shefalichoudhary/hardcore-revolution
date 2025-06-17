@@ -6,7 +6,7 @@ import { useNavigate, Link } from "react-router-dom";
 
 export default function DrawerAppBar() {
   const [open, setOpen] = React.useState(false);
-  const { user, logOut }: any = UserAuth();
+  const { user,loading, logOut }: any = UserAuth();
   const navigate = useNavigate();
 
   const handleSignOut = async () => {
@@ -45,6 +45,7 @@ export default function DrawerAppBar() {
        
 
         {/* Toggle */}
+        
         <div
           onClick={() => setOpen(!open)}
           className="md:hidden text-black cursor-pointer"

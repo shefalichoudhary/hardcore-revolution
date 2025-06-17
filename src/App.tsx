@@ -1,5 +1,6 @@
 import { AuthContextProvider } from "./context/AuthContext";
 import MenuBar from "./header";
+import { GoogleOAuthProvider } from "@react-oauth/google";
 import SignIn from "./signIn";
 
 import { Routes, Route } from "react-router-dom";

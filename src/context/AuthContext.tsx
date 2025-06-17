@@ -13,7 +13,8 @@ import { useNavigate } from "react-router-dom";
 interface AuthContextType {
   googleSignIn: () => Promise<void>;
   logOut: () => void;
-  user: any; // Ideally, you would type this as the User type from Firebase
+   user: User | null;
+  loading: boolean; // Ideally, you would type this as the User type from Firebase
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -25,6 +26,8 @@ interface AuthContextProviderProps {
 export const AuthContextProvider = ({ children }: AuthContextProviderProps) => {
   const [user, setUser] = useState<User | null>(null);
 
+  const [loading, setLoading] = useState(true); // <-- ADD THIS
+  const navigate = useNavigate();
   const googleSignIn = async () => {
     const provider = new GoogleAuthProvider();
     try {
@@ -45,14 +48,12 @@ export const AuthContextProvider = ({ children }: AuthContextProviderProps) => {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
+      setLoading(false); // <-- SET LOADING TO FALSE AFTER CHECK
     });
-    return () => {
-      unsubscribe();
-    };
+    return () => unsubscribe();
   }, []);
-
   return (
-    <AuthContext.Provider value={{ googleSignIn, logOut, user }}>
+    <AuthContext.Provider value={{ googleSignIn, logOut, user,loading }}>
       {children}
     </AuthContext.Provider>
   );
@@ -63,14 +64,14 @@ export const UserAuth = () => {
 };
 
 export const useRequireAuth = () => {
-  const { user } = UserAuth() || {};
+  const { user, loading } = UserAuth() || {};
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (!user) {
+    if (!loading && !user) {
       navigate("/signin");
     }
-  }, [user, navigate]);
+  }, [user, loading, navigate]);
 
   return user;
 };

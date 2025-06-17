@@ -22,7 +22,7 @@ const SignIn = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-stone-800 via-black to-stone-900">
-      <div className="bg-white/10 backdrop-blur-md rounded-xl shadow-2xl p-10 w-full max-w-lg text-center border border-white/20 animate-fade-in">
+      <div className="bg-white/10 backdrop-blur-md rounded-xl shadow-2xl p-10 w-full max-w-md text-center border border-white/20 animate-fade-in">
         <h1 className="text-4xl font-bold text-white mb-4">Welcome Back!</h1>
         <InsertEmoticonSharpIcon
           sx={{ fontSize: "60px", color: "white" }}

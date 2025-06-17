@@ -24,7 +24,7 @@ const UserScanner = () => {
 
     const html5QrcodeScanner = new Html5QrcodeScanner(
       "reader",
-      { fps: 1, qrbox: { width: 180, height: 200 } },
+      { fps: 10, qrbox: { width: 180, height: 200 } },
       false
     );
 
@@ -32,7 +32,7 @@ const UserScanner = () => {
   }
 
   return (
-    <div className="text-center my-20 container m-auto max-w-xl">
+    <div className=" min-h-min text-center my-20 container m-auto max-w-xl">
       <div className="font-light text-xl my-4 tracking-widest">
         SCAN USER QR CODE
       </div>
