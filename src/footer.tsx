@@ -7,7 +7,7 @@ import EmailIcon from "@mui/icons-material/Email";
 export default function SimpleBottomNavigation() {
   return (
     <div className="bg-white text-black py-6 px-5 font-serif border-t">
-      <div className="lg:container m-auto grid md:grid-cols-3 gap-6 px-5 md:px-0 items-center">
+      <div className="lg:container m-auto grid md:grid-cols-3 gap-3  px-5 md:px-0 items-center">
         {/* Left: Brand */}
         <div className="text-left text-sm font-serif  tracking-wider">
           <a href="/">Hardcore Revolution</a>
@@ -20,7 +20,6 @@ export default function SimpleBottomNavigation() {
 
         {/* Right: Contact and Social */}
         <div className="flex justify-left md:justify-end items-center space-x-4 text-gray-800 text-sm">
-          {/* Phone */}
         
 
           {/* Email */}

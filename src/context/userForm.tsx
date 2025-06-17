@@ -1,175 +1,143 @@
 import * as React from "react";
 import { addDoc } from "firebase/firestore";
-
 import { useForm } from "react-hook-form";
 import { colRef } from "../firebase";
 import { useRequireAuth } from "./AuthContext";
 
 type FormData = {
-  fullname?: string | undefined;
-  age?: number | undefined;
-  gender?: string | undefined;
-  number?: number | undefined;
-  date?: number | undefined;
-  district?: string | undefined;
-  address?: string | undefined;
+  fullname?: string;
+  age?: number;
+  gender?: string;
+  number?: number;
+  date?: string;
+  district?: string;
+  address?: string;
 };
 
 export default function UserForm(user: FormData) {
-    useRequireAuth();
-  
+  useRequireAuth();
+
   const { register, handleSubmit, reset } = useForm<FormData>({
     defaultValues: user,
   });
 
-  const onSubmit = (data: FormData) => {
-    addDoc(colRef, { data });
+  const onSubmit = async (data: FormData) => {
+    await addDoc(colRef, { data });
     reset();
   };
 
-  let currentDate = new Date().toLocaleDateString();
+  const currentDate = new Date().toLocaleDateString();
 
   return (
-    <div className="container max-w-sm  md:max-w-2xl m-auto py-20  ">
-      <form onSubmit={handleSubmit(onSubmit)} autoComplete="off">
-        <div className="font-light text-2xl my-3  text-center tracking-widest">
+    <div className="container max-w-4xl mx-auto py-16 px-4">
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        autoComplete="off"
+        className="bg-white shadow-lg rounded-xl p-8 space-y-6"
+      >
+        <h2 className="text-3xl font-semibold text-center text-gray-800 tracking-wide">
           Fill Your Details
-        </div>
-        <div className="grid  md:grid-cols-2 pt-7 gap-4 ">
-          <label>
-            <span className="text-gray-700">Fullname</span>
+        </h2>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {/* Fullname */}
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              Fullname
+            </label>
             <input
               type="text"
-              className="
-            form-input
-             w-full
-            border
-            capitalize ...
-            border-slate-300
-                    rounded
-                    mt-1
-                     px-3
-                    py-3"
               required
               {...register("fullname")}
-            ></input>
-          </label>
-          <label>
-            <span className="text-gray-700">Age</span>
-            <input
-              type="text"
-              className="
-            form-input
-             w-full
-            border
-            capitalize ...
-            border-slate-300
-                    rounded
-                    mt-1
-                     px-3
-                    py-3"
-              {...register("age")}
-            ></input>
-          </label>
+              className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-stone-700"
+            />
+          </div>
 
-          <label>
-            <span className="text-gray-700">Gender</span>
+          {/* Age */}
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              Age
+            </label>
+            <input
+              type="number"
+              {...register("age")}
+              className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-stone-700"
+            />
+          </div>
+
+          {/* Gender */}
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              Gender
+            </label>
             <select
-              className="
-              
-            form-input
-            border
-            w-full
-            border-slate-300
-            bg-white
-                    rounded
-                    mt-1
-                     px-3
-                    py-3"
               {...register("gender")}
+              className="w-full px-4 py-2 border border-gray-300 rounded bg-white focus:outline-none focus:ring-2 focus:ring-stone-700"
             >
               <option value="">Select your gender</option>
-
               <option value="Female">Female</option>
               <option value="Male">Male</option>
+              <option value="Other">Other</option>
             </select>
-          </label>
+          </div>
 
-          <label>
-            <span className="text-gray-700">Number</span>
+          {/* Number */}
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              Phone Number
+            </label>
             <input
-              type="text"
-              className="
-            form-input
-             w-full
-            border
-            capitalize ...
-            border-slate-300
-                    rounded
-                    mt-1
-                     px-3
-                    py-3"
+              type="tel"
               required
               {...register("number")}
-            ></input>
-          </label>
-          <label>
-            <span className="text-gray-700">Date</span>
-            <input
-              type="text"
-              className="
-            form-input
-            border
-             w-full
-            capitalize ...
-            border-slate-300
-                    rounded
-                    mt-1
-                     px-3
-                    py-3"
-              {...register("date")}
-              value={currentDate}
-            ></input>
-          </label>
-          <label>
-            <span className="text-gray-700">District</span>
-            <input
-              type="text"
-              className="
-            form-input
-             w-full
-            border
-            capitalize ...
-            border-slate-300
-                    rounded
-                    mt-1
-                     px-3
-                    py-3"
-              {...register("district")}
-            ></input>
-          </label>
-          <label className="md:col-span-2">
-            <span className="text-gray-700">Address</span>
-            <input
-              type="text"
-              className="
-            form-input
-            border
-             w-full
-            capitalize ...
-            border-slate-300
-                    rounded
-                    mt-1
-                     px-3
-                    py-3"
-              {...register("address")}
+              className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-stone-700"
             />
-          </label>
+          </div>
+
+          {/* Date */}
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              Date
+            </label>
+            <input
+              type="text"
+              value={currentDate}
+              readOnly
+              {...register("date")}
+              className="w-full px-4 py-2 border border-gray-300 rounded bg-gray-100 cursor-not-allowed"
+            />
+          </div>
+
+          {/* District */}
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              District
+            </label>
+            <input
+              type="text"
+              {...register("district")}
+              className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-stone-700"
+            />
+          </div>
+
+          {/* Address */}
+          <div className="md:col-span-2">
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              Address
+            </label>
+            <textarea
+              {...register("address")}
+              rows={3}
+              className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-stone-700 resize-none"
+            />
+          </div>
         </div>
-        <div>
+
+        {/* Submit Button */}
+        <div className="text-center pt-4">
           <button
-            className="px-6 py-3  text-sm mb-8 font-normal mt-4  rounded tracking-widest md:px-9 md:py-4 md:my-5 bg-stone-900 text-white "
             type="submit"
+            className="px-8 py-3 bg-stone-900 text-white font-medium rounded shadow-md hover:bg-stone-800 transition duration-300 tracking-widest"
           >
             REGISTER
           </button>

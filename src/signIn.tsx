@@ -1,5 +1,4 @@
 import React from "react";
-import GoogleButton from "react-google-button";
 import { UserAuth } from "./context/AuthContext";
 import InsertEmoticonSharpIcon from "@mui/icons-material/InsertEmoticonSharp";
 import { useNavigate } from "react-router-dom";
@@ -12,7 +11,7 @@ const SignIn = () => {
     try {
       if (googleSignIn) {
         await googleSignIn();
-        navigate("/"); // Redirect to home after sign in
+        navigate("/");
       } else {
         console.error("googleSignIn is not defined");
       }
@@ -22,24 +21,25 @@ const SignIn = () => {
   };
 
   return (
-    <div className="container my-28 font-serif text-center">
-      <div className="text-4xl">Welcome Back !</div>
-      <div>
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-stone-800 via-black to-stone-900">
+      <div className="bg-white/10 backdrop-blur-md rounded-xl shadow-2xl p-10 w-full max-w-lg text-center border border-white/20 animate-fade-in">
+        <h1 className="text-4xl font-bold text-white mb-4">Welcome Back!</h1>
         <InsertEmoticonSharpIcon
-          sx={{
-            fontSize: "52px",
-            marginTop: "20px",
-            marginBottom: "10px",
-          }}
+          sx={{ fontSize: "60px", color: "white" }}
+          className="animate-bounce mb-4"
         />
-      </div>
-      <div>
+        <p className="text-gray-300 mb-6 tracking-wide">
+          Please sign in to continue to your dashboard.
+        </p>
         <button
-          className="px-6 py-3  text-sm mb-8 font-normal mt-4  rounded tracking-widest md:px-9 md:py-4 md:my-5 bg-stone-900 text-white "
+          className="w-full bg-white text-black py-3 rounded-md text-sm font-medium tracking-wide shadow-md hover:shadow-lg transition-transform hover:scale-105"
           onClick={handleSignIn}
         >
-          LOGIN WITH GOOGLE
+          Login with Google
         </button>
+        <p className="text-xs text-gray-400 mt-6">
+          Secure sign-in using your Google Account
+        </p>
       </div>
     </div>
   );
