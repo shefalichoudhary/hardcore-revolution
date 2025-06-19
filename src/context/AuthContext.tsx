@@ -27,7 +27,6 @@ export const AuthContextProvider = ({ children }: AuthContextProviderProps) => {
   const [user, setUser] = useState<User | null>(null);
 
   const [loading, setLoading] = useState(true); // <-- ADD THIS
-  const navigate = useNavigate();
   const googleSignIn = async () => {
     const provider = new GoogleAuthProvider();
     try {
