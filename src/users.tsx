@@ -8,6 +8,7 @@ import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import DeleteIcon from "@mui/icons-material/Delete";
 import CircularProgress from "@mui/material/CircularProgress";
 import SearchIcon from "@mui/icons-material/Search";
+import ClearIcon from "@mui/icons-material/Clear";
 
 export default function Users() {
   useRequireAuth();
@@ -49,8 +50,8 @@ export default function Users() {
   });
 
   return (
-    <div className="min-h-screen flex-1 py-12 px-4 md:px-8 max-w-4xl mx-auto">
-      <h2 className="text-3xl font-bold text-center mb-10 font-serif tracking-wider text-stone-900">
+    <div className="min-h-screen flex-1 py-12 px-2 md:px-8 max-w-7xl mx-auto bg-gradient-to-br from-indigo-100 via-blue-50 to-slate-200">
+      <h2 className="text-3xl font-bold text-center mb-10 font-serif tracking-wider text-indigo-900 drop-shadow">
         Registered Users
       </h2>
 
@@ -59,14 +60,23 @@ export default function Users() {
         <div className="relative w-full max-w-md">
           <input
             type="text"
-            className="w-full pl-12 pr-4 py-3 rounded-full border border-stone-300 focus:border-yellow-400 focus:ring-2 focus:ring-yellow-200 bg-white shadow transition placeholder-stone-400 text-stone-800 text-base"
+            className="w-full pl-12 pr-12 py-3 rounded-full border border-indigo-200 focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100 bg-white shadow transition placeholder-slate-400 text-slate-800 text-base"
             placeholder="Search by name, age, address, or gender..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
           />
-          <span className="absolute left-4 top-1/2 -translate-y-1/2 text-yellow-500">
+          <span className="absolute left-4 top-1/2 -translate-y-1/2 text-indigo-500">
             <SearchIcon />
           </span>
+          {search && (
+            <button
+              className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-indigo-500 transition"
+              onClick={() => setSearch("")}
+              aria-label="Clear search"
+            >
+              <ClearIcon />
+            </button>
+          )}
         </div>
       </div>
 
@@ -75,41 +85,46 @@ export default function Users() {
           <CircularProgress color="inherit" />
         </div>
       ) : filteredDocs.length === 0 ? (
-        <div className="text-center text-gray-600 text-lg space-y-3">
+        <div className="text-center text-slate-600 text-lg space-y-3">
           <p>No users found.</p>
           <Link
             to="/userForm"
-            className="inline-block bg-yellow-500 text-black px-5 py-2 rounded-full shadow-md hover:bg-yellow-400 transition-all font-semibold"
+            className="inline-block bg-indigo-500 text-white px-5 py-2 rounded-full shadow-md hover:bg-indigo-400 transition-all font-semibold"
           >
             + Add User
           </Link>
         </div>
       ) : (
-        <div className="grid gap-4">
+        <div
+          className="grid gap-4
+            grid-cols-1
+            sm:grid-cols-2
+            md:grid-cols-3
+            lg:grid-cols-5
+            "
+        >
           {filteredDocs.map((item) => (
             <div
               key={item.key}
-              className="bg-white shadow-lg rounded-2xl px-6 py-5 flex justify-between items-center hover:shadow-yellow-200 transition-all duration-200 border border-yellow-100"
+              className="bg-white shadow-xl rounded-2xl px-4 py-5 flex flex-col items-center hover:shadow-indigo-200 transition-all duration-200 border border-indigo-100 group"
             >
-              <div className="flex gap-4 items-center">
-                <AccountCircleIcon sx={{ fontSize: 50 }} className="text-yellow-600" />
-                <div>
-                  <div className="text-lg font-semibold capitalize text-stone-900">
-                    {item.fullname}
-                  </div>
-                  <div className="text-sm text-gray-500">
-                    {item.district || "No district"}, Age: {item.age || "N/A"}
-                  </div>
-                  <div className="text-sm text-gray-500">
-                    Gender: {item.gender || "N/A"}
-                  </div>
-                  <div className="text-sm text-gray-500">
-                    📞 {item.number || "Not provided"}
-                  </div>
-                </div>
+              <AccountCircleIcon sx={{ fontSize: 50 }} className="text-indigo-500 mb-2 group-hover:scale-110 transition" />
+              <div className="text-lg font-semibold capitalize text-indigo-900 text-center">
+                {item.fullname}
               </div>
-
-              <div className="flex items-center gap-2">
+              <div className="text-sm text-slate-500 text-center">
+                {item.district || "No district"}
+              </div>
+              <div className="text-sm text-slate-500 text-center">
+                Age: {item.age || "N/A"}
+              </div>
+              <div className="text-sm text-slate-500 text-center">
+                Gender: {item.gender || "N/A"}
+              </div>
+              <div className="text-sm text-slate-500 text-center mb-2">
+                📞 {item.number || "Not provided"}
+              </div>
+              <div className="flex items-center gap-2 mt-auto">
                 {isAdmin(user ?? null) && (
                   <button
                     onClick={() => deleteUserData(item.key)}
@@ -121,7 +136,7 @@ export default function Users() {
                 )}
                 <Link
                   to={`/user/${item.key}`}
-                  className="text-yellow-600 hover:text-yellow-800 transition-colors"
+                  className="text-indigo-600 hover:text-indigo-800 transition-colors"
                   title="View"
                 >
                   <ArrowForwardIosIcon />
