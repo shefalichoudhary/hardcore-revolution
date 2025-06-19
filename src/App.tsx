@@ -1,4 +1,4 @@
-import { AuthContextProvider } from "./context/AuthContext";
+import { AuthContextProvider, UserAuth } from "./context/AuthContext";
 import MenuBar from "./header";
 import SignIn from "./signIn";
 
@@ -13,6 +13,16 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 function App() {
+  const { loading } = UserAuth() || {};
+
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-white">
+        <div className="text-gray-500 text-lg">Loading...</div>
+      </div>
+    );
+  }
+
   return (
     <div>
       <AuthContextProvider>

@@ -32,44 +32,44 @@ export default function UserForm(user: FormData) {
         autoComplete="off"
         className="bg-white shadow-lg rounded-xl p-8 space-y-6"
       >
-        <h2 className="text-3xl font-bold text-center text-gray-800 tracking-tight font-serif">
+        <h2 className="text-3xl font-bold text-center text-gray-900 tracking-tight font-serif">
           Join Our Community
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Fullname */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
+            <label className="block text-sm font-medium text-gray-800 mb-1">
               Fullname
             </label>
             <input
               type="text"
               required
               {...register("fullname")}
-              className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-stone-700"
+              className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-600"
             />
           </div>
 
           {/* Age */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
+            <label className="block text-sm font-medium text-gray-800 mb-1">
               Age
             </label>
             <input
               type="number"
               {...register("age")}
-              className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-stone-700"
+              className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-600"
             />
           </div>
 
           {/* Gender */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
+            <label className="block text-sm font-medium text-gray-800 mb-1">
               Gender
             </label>
             <select
               {...register("gender")}
-              className="w-full px-4 py-2 border border-gray-300 rounded bg-white focus:outline-none focus:ring-2 focus:ring-stone-700"
+              className="w-full px-4 py-2 border border-gray-300 rounded bg-white focus:outline-none focus:ring-2 focus:ring-blue-600"
             >
               <option value="">Select your gender</option>
               <option value="Female">Female</option>
@@ -80,20 +80,20 @@ export default function UserForm(user: FormData) {
 
           {/* Number */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
+            <label className="block text-sm font-medium text-gray-800 mb-1">
               Phone Number
             </label>
             <input
               type="tel"
               required
               {...register("number")}
-              className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-stone-700"
+              className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-600"
             />
           </div>
 
           {/* Date */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
+            <label className="block text-sm font-medium text-gray-800 mb-1">
               Date
             </label>
             <input
@@ -101,31 +101,31 @@ export default function UserForm(user: FormData) {
               value={currentDate}
               readOnly
               {...register("date")}
-              className="w-full px-4 py-2 border border-gray-300 rounded bg-gray-100 cursor-not-allowed"
+              className="w-full px-4 py-2 border border-gray-200 rounded bg-gray-100 cursor-not-allowed text-gray-500"
             />
           </div>
 
           {/* District */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
+            <label className="block text-sm font-medium text-gray-800 mb-1">
               District
             </label>
             <input
               type="text"
               {...register("district")}
-              className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-stone-700"
+              className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-600"
             />
           </div>
 
           {/* Address */}
           <div className="md:col-span-2">
-            <label className="block text-sm font-medium text-gray-700 mb-1">
+            <label className="block text-sm font-medium text-gray-800 mb-1">
               Address
             </label>
             <textarea
               {...register("address")}
               rows={2}
-              className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-stone-700 resize-none"
+              className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-600 resize-none"
             />
           </div>
         </div>
@@ -134,7 +134,7 @@ export default function UserForm(user: FormData) {
         <div className="text-center pt-4">
           <button
             type="submit"
-            className="px-8 py-3 bg-stone-900 text-white font-medium rounded shadow-md hover:bg-stone-800 transition duration-300 tracking-widest"
+            className="px-8 py-3 bg-blue-600 text-white font-medium rounded shadow-md hover:bg-blue-700 transition duration-300 tracking-widest"
           >
             REGISTER
           </button>

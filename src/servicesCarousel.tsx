@@ -100,18 +100,18 @@ function ServicesCarousel() {
 					>
 						{services.map((service, index) => (
 							<SwiperSlide key={index}>
-								<div className="bg-white rounded-3xl shadow-xl border shadow-yellow-500
+								<div className="bg-white rounded-3xl shadow-xl border border-gray-200
                   p-3 sm:p-4 md:p-6 mx-1 sm:mx-2 my-3 flex flex-col items-center
-                  transition-transform hover:scale-105 hover:shadow-yellow-500 duration-300
+                  transition-transform hover:scale-105 hover:shadow-black/20 duration-300
                   min-h-[200px] sm:min-h-[240px] md:min-h-[260px]">
-									<div className="mb-3 bg-yellow-500 rounded-full p-4 shadow flex items-center justify-center">
+									<div className="mb-3 bg-black rounded-full p-4 shadow flex items-center justify-center">
 										{/* Make icon larger and more visible */}
 										{service.icon}
 									</div>
 									<h3 className="text-base sm:text-lg md:text-xl font-bold mb-1 text-black font-serif tracking-wide text-center">
 										{service.title}
 									</h3>
-									<p className="text-gray-600 text-xs sm:text-sm md:text-base mb-2 text-center font-normal leading-relaxed">
+									<p className="text-gray-700 text-xs sm:text-sm md:text-base mb-2 text-center font-normal leading-relaxed">
 										{service.desc}
 									</p>
 								</div>

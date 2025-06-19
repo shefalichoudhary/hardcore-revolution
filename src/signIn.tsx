@@ -21,18 +21,20 @@ const SignIn = () => {
   };
 
   return (
-    <div className=" md:py-20 flex items-center justify-center bg-gradient-to-br from-stone-800 via-black to-stone-900">
-      <div className="bg-white/10 backdrop-blur-md rounded-xl shadow-2xl p-10 w-full max-w-md text-center border border-white/20 animate-fade-in">
-        <h1 className="text-4xl font-bold text-white mb-4">Welcome Back!</h1>
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-100 via-white to-gray-300 py-6 md:py-20 px-2">
+      <div className="bg-white rounded-xl shadow-2xl p-8 md:p-10 w-full max-w-md text-center border border-gray-200">
+        <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-serif">
+          Welcome Back!
+        </h1>
         <InsertEmoticonSharpIcon
-          sx={{ fontSize: "60px", color: "white" }}
-          className="animate-bounce mb-4"
+          sx={{ fontSize: "54px", color: "#2563eb" }}
+          className="mb-4"
         />
-        <p className="text-gray-300 mb-6 tracking-wide">
+        <p className="text-gray-600 mb-6 tracking-wide">
           Please sign in to continue to your dashboard.
         </p>
         <button
-          className="w-full bg-white text-black py-3 rounded-md text-sm font-medium tracking-wide shadow-md hover:shadow-lg transition-transform hover:scale-105"
+          className="w-full bg-blue-600 text-white py-3 rounded-md text-base font-medium tracking-wide shadow-md hover:bg-blue-700 transition-transform hover:scale-105"
           onClick={handleSignIn}
         >
           Login with Google
