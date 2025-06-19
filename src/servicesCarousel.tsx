@@ -64,10 +64,10 @@ function ServicesCarousel() {
 	return (
 		<section className="relative bg-black py-14 px-4 font-sans">
 			<div className="max-w-7xl mx-auto">
-				<h2 className="text-4xl md:text-5xl font-extrabold text-center text-red-400 mb-4 tracking-tight drop-shadow-lg font-serif">
+				<h2 className="text-4xl md:text-5xl font-extrabold text-center text-black mb-4 tracking-tight drop-shadow-lg font-serif">
 					Our Trending Services
 				</h2>
-				<p className="text-center text-lg md:text-xl text-gray-100 mb-12 max-w-2xl mx-auto font-light">
+				<p className="text-center text-lg md:text-xl text-gray-700 mb-12 max-w-2xl mx-auto font-light">
 					Discover the latest in fitness, wellness, and community. Our services
 					are designed to help you achieve your goals in a supportive, innovative
 					environments.
@@ -100,18 +100,18 @@ function ServicesCarousel() {
 					>
 						{services.map((service, index) => (
 							<SwiperSlide key={index}>
-								<div className="bg-zinc-900/90 backdrop-blur-lg rounded-3xl shadow-xl border border-red-500 
+								<div className="bg-white rounded-3xl shadow-xl border border-red-400 
                   p-4 sm:p-6 md:p-8 mx-1 sm:mx-2 my-4 flex flex-col items-center 
                   transition-transform hover:scale-105 hover:shadow-red-200 duration-300 
                   min-h-[260px] sm:min-h-[300px] md:min-h-[340px]">
-									<div className="mb-4 bg-red-400 rounded-full p-6 shadow-xl ring-4 ring-red-300 flex items-center justify-center">
+									<div className="mb-4 bg-red-100 rounded-full p-5 shadow flex items-center justify-center">
 										{/* Make icon larger and more visible */}
 										{service.icon}
 									</div>
-									<h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-2 text-red-300 font-serif tracking-wide text-center">
+									<h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-2 text-black font-serif tracking-wide text-center">
 										{service.title}
 									</h3>
-									<p className="text-gray-100 text-sm sm:text-base md:text-lg mb-4 text-center font-normal leading-relaxed">
+									<p className="text-gray-600 text-sm sm:text-base md:text-lg mb-4 text-center font-normal leading-relaxed">
 										{service.desc}
 									</p>
 								</div>
@@ -140,8 +140,8 @@ function ServicesCarousel() {
 				</div>
 			</div>
 			{/* Decorative red blur */}
-			<div className="absolute -top-16 -left-16 w-72 h-72 bg-red-400 rounded-full opacity-20 blur-3xl pointer-events-none"></div>
-			<div className="absolute -bottom-16 -right-16 w-72 h-72 bg-red-400 rounded-full opacity-20 blur-3xl pointer-events-none"></div>
+			<div className="absolute -top-16 -left-16 w-72 h-72 bg-red-500 rounded-full opacity-20 blur-3xl pointer-events-none"></div>
+			<div className="absolute -bottom-16 -right-16 w-72 h-72 bg-red-500 rounded-full opacity-20 blur-3xl pointer-events-none"></div>
 		</section>
 	);
 }

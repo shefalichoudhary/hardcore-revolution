@@ -36,67 +36,108 @@ function Home() {
 
       {/* Fitness Journey Section */}
       <section className="max-w-7xl mx-auto px-4 py-16 flex flex-col md:flex-row items-center gap-10">
-        {/* Left: Overlapping Images grid with different shapes */}
+        {/* Left: Advanced Overlapping Images with Shapes */}
         <div className="relative w-full md:w-1/2 min-h-[340px] flex items-center justify-center">
-          {/* Fitness - Circle */}
-          <div className="absolute left-2 top-6 w-32 h-32 rounded-full overflow-hidden shadow-xl border-4 border-white z-30 group">
+          {/* Main Circle (Fitness) */}
+          <div className="absolute left-8 top-10 w-36 h-36 rounded-full overflow-hidden shadow-2xl border-4 border-white z-30 rotate-3 group">
             <img
               src="/fitness.jpg"
               alt="Fitness"
-              className="w-full h-full object-cover group-hover:scale-105 transition"
+              className="w-full h-full object-cover group-hover:scale-110 transition"
             />
             <div className="absolute bottom-0 left-0 w-full bg-black/70 py-1 text-center">
               <span className="text-white text-base font-bold tracking-wide">Fitness</span>
             </div>
           </div>
-          {/* Wellness - Rounded Rectangle */}
-          <div className="absolute right-2 top-0 w-40 h-28 rounded-2xl overflow-hidden shadow-lg border-4 border-white z-20 group">
+          {/* Rotated Rectangle (Wellness) */}
+          <div className="absolute right-0 top-0 w-40 h-28 rounded-2xl overflow-hidden shadow-xl border-4 border-white z-20 -rotate-6 group">
             <img
               src="/wellness.jpg"
               alt="Wellness"
-              className="w-full h-full object-cover group-hover:scale-105 transition"
+              className="w-full h-full object-cover group-hover:scale-110 transition"
             />
             <div className="absolute bottom-0 left-0 w-full bg-black/70 py-1 text-center">
               <span className="text-white text-base font-bold tracking-wide">Wellness</span>
             </div>
           </div>
-          {/* Yoga - Square */}
-          <div className="absolute left-16 bottom-2 w-28 h-28 rounded-lg overflow-hidden shadow-lg border-4 border-white z-10 group">
+          {/* Square (Yoga) */}
+          <div className="absolute left-24 bottom-4 w-28 h-28 rounded-xl overflow-hidden shadow-lg border-4 border-white z-10 group">
             <img
               src="/yoga.jpg"
               alt="Yoga"
-              className="w-full h-full object-cover group-hover:scale-105 transition"
+              className="w-full h-full object-cover group-hover:scale-110 transition"
             />
             <div className="absolute bottom-0 left-0 w-full bg-black/70 py-1 text-center">
               <span className="text-white text-base font-bold tracking-wide">Yoga</span>
             </div>
           </div>
-          {/* Swimming - Tall Rectangle */}
-          <div className="absolute right-10 bottom-4 w-24 h-36 rounded-3xl overflow-hidden shadow-lg border-4 border-white z-0 group">
+          {/* Tall Rectangle (Swimming) */}
+          <div className="absolute right-10 bottom-2 w-24 h-36 rounded-3xl overflow-hidden shadow-xl border-4 border-white z-0 rotate-2 group">
             <img
               src="/swimming.jpg"
               alt="Swimming"
-              className="w-full h-full object-cover group-hover:scale-105 transition"
+              className="w-full h-full object-cover group-hover:scale-110 transition"
             />
             <div className="absolute bottom-0 left-0 w-full bg-black/70 py-1 text-center">
               <span className="text-white text-base font-bold tracking-wide">Swimming</span>
             </div>
           </div>
+          {/* Decorative ring for extra style */}
+          <div className="absolute left-20 top-24 w-44 h-44 rounded-full border-2 border-gray-200 z-0"></div>
         </div>
         {/* Right: Heading and content */}
-        <div className="w-full md:w-1/2 flex flex-col justify-center items-start">
-          <h2 className="text-3xl md:text-4xl font-extrabold font-serif text-black mb-4 tracking-tight">
+        <div className="w-full md:w-1/2 flex flex-col justify-center items-start px-2 md:px-8">
+          <span className="uppercase text-sm font-bold tracking-widest text-yellow-500 mb-2">
+            Your Pathway to Wellness
+          </span>
+          <h2 className="text-4xl md:text-5xl font-extrabold font-serif text-black mb-4 tracking-tight leading-tight">
             Fitness Journey
           </h2>
-          <p className="text-gray-700 text-lg mb-4">
-            Embark on your fitness journey with us! Whether you’re into strength training, yoga, swimming, or holistic wellness, our community and facilities are designed to support every step of your transformation. Discover new passions, set goals, and achieve more than you ever thought possible.
+          <p className="text-lg text-gray-700 mb-6 font-sans">
+            Unlock your potential with a holistic approach to health and fitness. Our journey blends <span className="text-yellow-600 font-semibold">strength</span>, <span className="text-yellow-600 font-semibold">mindfulness</span>, and <span className="text-yellow-600 font-semibold">community</span>—empowering you to become your best self.
           </p>
-          <ul className="list-disc pl-5 text-gray-600 space-y-1">
-            <li>Personalized programs for all levels</li>
-            <li>Expert trainers and supportive community</li>
-            <li>Modern facilities for every activity</li>
-            <li>Track your progress and celebrate success</li>
-          </ul>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
+            {/* Feature 1 */}
+            <div className="flex items-center gap-3 bg-gray-100 rounded-xl px-4 py-3 shadow hover:shadow-yellow-200 transition">
+              <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-yellow-100 text-yellow-600 text-2xl font-bold shadow">
+                🏋️
+              </span>
+              <div>
+                <div className="font-semibold text-gray-900">Personalized Programs</div>
+                <div className="text-sm text-gray-500">For every level and goal</div>
+              </div>
+            </div>
+            {/* Feature 2 */}
+            <div className="flex items-center gap-3 bg-gray-100 rounded-xl px-4 py-3 shadow hover:shadow-yellow-200 transition">
+              <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-yellow-100 text-yellow-600 text-2xl font-bold shadow">
+                🤝
+              </span>
+              <div>
+                <div className="font-semibold text-gray-900">Supportive Community</div>
+                <div className="text-sm text-gray-500">Expert trainers & friends</div>
+              </div>
+            </div>
+            {/* Feature 3 */}
+            <div className="flex items-center gap-3 bg-gray-100 rounded-xl px-4 py-3 shadow hover:shadow-yellow-200 transition">
+              <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-yellow-100 text-yellow-600 text-2xl font-bold shadow">
+                🏊
+              </span>
+              <div>
+                <div className="font-semibold text-gray-900">Modern Facilities</div>
+                <div className="text-sm text-gray-500">Yoga, swimming, and more</div>
+              </div>
+            </div>
+            {/* Feature 4 */}
+            <div className="flex items-center gap-3 bg-gray-100 rounded-xl px-4 py-3 shadow hover:shadow-yellow-200 transition">
+              <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-yellow-100 text-yellow-600 text-2xl font-bold shadow">
+                📈
+              </span>
+              <div>
+                <div className="font-semibold text-gray-900">Track Progress</div>
+                <div className="text-sm text-gray-500">Celebrate every milestone</div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 

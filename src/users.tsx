@@ -121,7 +121,11 @@ export default function Users() {
               <div className="flex-1" />
               <div className="w-full border-t border-indigo-100 mt-4 pt-3 flex items-center justify-between">
                 <button
-                  onClick={() => deleteUserData(item.key)}
+                  onClick={() => {
+                    if (window.confirm("Are you sure you want to delete this user?")) {
+                      deleteUserData(item.key);
+                    }
+                  }}
                   className="text-red-600 hover:text-red-800 transition-colors"
                   title="Delete User"
                 >
