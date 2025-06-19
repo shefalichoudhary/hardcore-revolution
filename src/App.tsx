@@ -9,6 +9,9 @@ import Users from "./users";
 import SinglePage from "./single-page";
 import UserScanner from "./user-scanner";
 import Footer from "./footer";
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 function App() {
   return (
     <div>
