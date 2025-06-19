@@ -4,7 +4,7 @@ function Home() {
   const navigate = useNavigate();
 
   return (
-    <div className=" min-h-screen relative bg-cover bg-center bg-no-repeat bg-[url('../public/Img.jpg')] ">
+    <div className=" md:min-h-screen relative bg-cover bg-center bg-no-repeat bg-[url('../public/Img.jpg')] ">
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-black bg-opacity-60 z-0 "></div>
 
