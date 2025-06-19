@@ -48,139 +48,174 @@ const SinglePage = () => {
 
   if (!user) {
     return (
-      <div className="py-36 text-center font-serif text-2xl">
-        Fetching User Details...
+      <div className="py-36 text-center font-serif text-2xl text-indigo-700 tracking-wide">
+        Fetching Member Details...
       </div>
     );
   }
 
   return (
-    <div className="max-w-3xl mx-auto px-4 py-12">
+    <div className="max-w-3xl mx-auto px-2 md:px-6 py-10 md:py-16 font-sans">
       {!editMode ? (
-       <>
-  <h2 className="text-2xl font-semibold font-serif mb-6 text-center">
-    User Details
-  </h2>
-
-  <div className="bg-white shadow-md rounded-xl p-6 md:flex md:justify-between md:items-start space-y-6 md:space-y-0">
-    {/* Left: User details */}
-    <div className="space-y-3 text-lg font-medium tracking-wide">
-      <p><span className="font-semibold">Name:</span> {user.fullname}</p>
-      <p><span className="font-semibold">Age:</span> {user.age}</p>
-      <p><span className="font-semibold">Number:</span> {user.number}</p>
-      <p><span className="font-semibold">Joining Date:</span> {user.date}</p>
-      <p><span className="font-semibold">Gender:</span> {user.gender}</p>
-      <p><span className="font-semibold">District:</span> {user.district}</p>
-      <p><span className="font-semibold">Address:</span> {user.address}</p>
-    </div>
-
-    {/* Right: QR code */}
-    <div className="flex flex-col items-left  md:items-end md:w-1/3 pt-6 space-y-4">
-
-  <QRCode size={180} value={docId || ""} />
-    <button
-    className="text-sm font-normal rounded tracking-widest px-6 py-2  bg-stone-900 text-white hover:bg-stone-800"
-    onClick={() => setEditMode(true)}
-  >
-    EDIT
-  </button>
-</div>
-
-  </div>
-
- 
-</>
-
+        <>
+          <h2 className="text-3xl md:text-4xl font-extrabold font-serif text-center mb-8 text-indigo-900 tracking-tight drop-shadow">
+            Member Profile & QR Access
+          </h2>
+          <div className="bg-gradient-to-br from-white via-indigo-50 to-blue-100 shadow-2xl rounded-2xl p-6 md:p-10 flex flex-col md:flex-row md:justify-between md:items-start gap-8">
+            {/* Left: User details */}
+            <div className="flex-1 space-y-4 text-base md:text-lg font-medium tracking-wide text-slate-800">
+              <div>
+                <span className="block text-xs uppercase text-indigo-400 font-bold tracking-widest mb-2">
+                  Name
+                </span>
+                <span className="font-serif text-xl text-indigo-900">
+                  {user.fullname}
+                </span>
+              </div>
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <span className="block text-xs uppercase text-indigo-400 font-bold tracking-widest mb-1">
+                    Age
+                  </span>
+                  <span>{user.age}</span>
+                </div>
+               
+                <div>
+                  <span className="block text-xs uppercase text-indigo-400 font-bold tracking-widest mb-1">
+                    Phone
+                  </span>
+                  <span>{user.number}</span>
+                </div>
+                <div>
+                  <span className="block text-xs uppercase text-indigo-400 font-bold tracking-widest mb-1">
+                    Joined
+                  </span>
+                  <span>{user.date}</span>
+                </div>
+                <div>
+                  <span className="block text-xs uppercase text-indigo-400 font-bold tracking-widest mb-1">
+                    District
+                  </span>
+                  <span>{user.district}</span>
+                </div>
+                <div className="col-span-2">
+                  <span className="block text-xs uppercase text-indigo-400 font-bold tracking-widest mb-1">
+                    Address
+                  </span>
+                  <span>{user.address}</span>
+                </div>
+              </div>
+            </div>
+            {/* Right: QR code */}
+            <div className="flex flex-col items-center md:items-end md:w-1/3 gap-4">
+              <div className="bg-white rounded-xl shadow-lg p-4 border border-indigo-100">
+                <QRCode size={160} value={docId || ""} />
+              </div>
+              <div className="text-xs text-slate-500 text-center md:text-right">
+                Scan this QR code at the gym for quick check-in and profile access.
+              </div>
+              <button
+                className="text-sm font-semibold rounded tracking-widest px-6 py-2 bg-indigo-700 text-white hover:bg-indigo-800 transition"
+                onClick={() => setEditMode(true)}
+              >
+                EDIT PROFILE
+              </button>
+            </div>
+          </div>
+        </>
       ) : (
         <>
-          <h2 className="text-2xl font-semibold font-serif text-center mb-6">
-            Edit Your Details
+          <h2 className="text-2xl md:text-3xl font-bold font-serif text-center mb-8 text-indigo-900 tracking-tight">
+            Edit Member Details
           </h2>
           <form
             onSubmit={handleSubmit(onUpdateHandler)}
-            className="bg-white shadow-md rounded-xl p-6 space-y-6"
+            className="bg-white shadow-xl rounded-2xl p-6 md:p-10 space-y-6"
           >
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <label className="flex flex-col">
-                <span className="text-gray-700">Fullname</span>
+                <span className="text-indigo-700 font-semibold mb-1">
+                  Fullname
+                </span>
                 <input
                   defaultValue={user.fullname}
                   {...register("fullname")}
                   required
-                  className="border border-slate-300 rounded px-3 py-2"
+                  className="border border-indigo-200 rounded px-3 py-2 focus:ring-2 focus:ring-indigo-200"
                 />
               </label>
               <label className="flex flex-col">
-                <span className="text-gray-700">Age</span>
+                <span className="text-indigo-700 font-semibold mb-1">Age</span>
                 <input
                   defaultValue={user.age}
                   {...register("age")}
                   type="number"
                   required
-                  className="border border-slate-300 rounded px-3 py-2"
+                  className="border border-indigo-200 rounded px-3 py-2 focus:ring-2 focus:ring-indigo-200"
                 />
               </label>
               <label className="flex flex-col">
-                <span className="text-gray-700">Gender</span>
+                <span className="text-indigo-700 font-semibold mb-1">Gender</span>
                 <select
                   defaultValue={user.gender}
                   {...register("gender")}
-                  className="border border-slate-300 rounded px-3 py-2 bg-white"
+                  className="border border-indigo-200 rounded px-3 py-2 bg-white focus:ring-2 focus:ring-indigo-200"
                 >
                   <option value="Female">Female</option>
                   <option value="Male">Male</option>
                 </select>
               </label>
               <label className="flex flex-col">
-                <span className="text-gray-700">Number</span>
+                <span className="text-indigo-700 font-semibold mb-1">Phone</span>
                 <input
                   defaultValue={user.number}
                   {...register("number")}
                   type="tel"
                   required
-                  className="border border-slate-300 rounded px-3 py-2"
+                  className="border border-indigo-200 rounded px-3 py-2 focus:ring-2 focus:ring-indigo-200"
                 />
               </label>
               <label className="flex flex-col">
-                <span className="text-gray-700">Joining Date</span>
+                <span className="text-indigo-700 font-semibold mb-1">
+                  Joining Date
+                </span>
                 <input
                   defaultValue={user.date}
                   {...register("date")}
                   type="text"
-                  className="border border-slate-300 rounded px-3 py-2"
+                  className="border border-indigo-200 rounded px-3 py-2 focus:ring-2 focus:ring-indigo-200"
                 />
               </label>
               <label className="flex flex-col">
-                <span className="text-gray-700">District</span>
+                <span className="text-indigo-700 font-semibold mb-1">District</span>
                 <input
                   defaultValue={user.district}
                   {...register("district")}
                   type="text"
-                  className="border border-slate-300 rounded px-3 py-2"
+                  className="border border-indigo-200 rounded px-3 py-2 focus:ring-2 focus:ring-indigo-200"
                 />
               </label>
               <label className="md:col-span-2 flex flex-col">
-                <span className="text-gray-700">Address</span>
+                <span className="text-indigo-700 font-semibold mb-1">Address</span>
                 <input
                   defaultValue={user.address}
                   {...register("address")}
                   type="text"
-                  className="border border-slate-300 rounded px-3 py-2"
+                  className="border border-indigo-200 rounded px-3 py-2 focus:ring-2 focus:ring-indigo-200"
                 />
               </label>
             </div>
-
             <div className="flex justify-center gap-6 pt-4">
               <button
                 type="submit"
-                className="bg-stone-900 text-white px-6 py-3 rounded tracking-widest hover:bg-stone-800"
+                className="bg-indigo-700 text-white px-6 py-3 rounded tracking-widest font-semibold hover:bg-indigo-800 transition"
               >
                 UPDATE
               </button>
               <button
                 type="button"
                 onClick={() => setEditMode(false)}
-                className="bg-gray-300 text-gray-800 px-6 py-3 rounded tracking-widest hover:bg-gray-400"
+                className="bg-gray-200 text-indigo-800 px-6 py-3 rounded tracking-widest font-semibold hover:bg-gray-300 transition"
               >
                 CANCEL
               </button>

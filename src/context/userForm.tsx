@@ -26,14 +26,14 @@ export default function UserForm(user: FormData) {
   const currentDate = new Date().toLocaleDateString();
 
   return (
-    <div className="container max-w-4xl mx-auto py-16 px-4">
+    <div className="container max-w-4xl mx-auto py-6 px-4">
       <form
         onSubmit={handleSubmit(onSubmit)}
         autoComplete="off"
         className="bg-white shadow-lg rounded-xl p-8 space-y-6"
       >
-        <h2 className="text-3xl font-semibold text-center text-gray-800 tracking-wide">
-          Fill Your Details
+        <h2 className="text-3xl font-bold text-center text-gray-800 tracking-tight font-serif">
+          Join Our Community
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -124,7 +124,7 @@ export default function UserForm(user: FormData) {
             </label>
             <textarea
               {...register("address")}
-              rows={3}
+              rows={2}
               className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-stone-700 resize-none"
             />
           </div>

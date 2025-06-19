@@ -9,6 +9,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import CircularProgress from "@mui/material/CircularProgress";
 import SearchIcon from "@mui/icons-material/Search";
 import ClearIcon from "@mui/icons-material/Clear";
+import PhoneIphoneIcon from "@mui/icons-material/PhoneIphone";
 
 export default function Users() {
   useRequireAuth();
@@ -50,9 +51,9 @@ export default function Users() {
   });
 
   return (
-    <div className="min-h-screen flex-1 py-12 px-2 md:px-8 max-w-7xl mx-auto bg-gradient-to-br from-indigo-100 via-blue-50 to-slate-200">
-      <h2 className="text-3xl font-bold text-center mb-10 font-serif tracking-wider text-indigo-900 drop-shadow">
-        Registered Users
+    <div className="min-h-screen flex-1 py-12 px-2 md:px-8 max-w-7xl mx-auto bg-gradient-to-br from-indigo-100 via-blue-50 to-slate-200 font-sans">
+      <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-10 font-serif tracking-tight text-indigo-800 drop-shadow">
+        Meet Our Community
       </h2>
 
       {/* Modern Search Bar */}
@@ -60,7 +61,7 @@ export default function Users() {
         <div className="relative w-full max-w-md">
           <input
             type="text"
-            className="w-full pl-12 pr-12 py-3 rounded-full border border-indigo-200 focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100 bg-white shadow transition placeholder-slate-400 text-slate-800 text-base"
+            className="w-full pl-12 pr-12 py-3 rounded-full border border-indigo-200 focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100 bg-white shadow transition placeholder-slate-400 text-slate-800 text-base font-sans"
             placeholder="Search by name, age, address, or gender..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
@@ -85,7 +86,7 @@ export default function Users() {
           <CircularProgress color="inherit" />
         </div>
       ) : filteredDocs.length === 0 ? (
-        <div className="text-center text-slate-600 text-lg space-y-3">
+        <div className="text-center text-slate-600 text-lg space-y-3 font-sans">
           <p>No users found.</p>
           <Link
             to="/userForm"
@@ -96,36 +97,35 @@ export default function Users() {
         </div>
       ) : (
         <div
-          className="grid gap-4
+          className="
+            grid gap-5
             grid-cols-1
-            sm:grid-cols-2
-            md:grid-cols-3
-            lg:grid-cols-5
-            "
+            sm:grid-cols-4
+            md:grid-cols-5
+            lg:grid-cols-6
+          "
         >
           {filteredDocs.map((item) => (
             <div
               key={item.key}
-              className="bg-white shadow-xl rounded-2xl px-4 py-5 flex flex-col items-center hover:shadow-indigo-200 transition-all duration-200 border border-indigo-100 group"
+              className="bg-gradient-to-br from-white via-indigo-50 to-blue-100 shadow-xl rounded-2xl px-4 py-6 flex flex-col items-center hover:shadow-indigo-300 transition-all duration-200 border border-indigo-100 group font-sans"
             >
               <AccountCircleIcon sx={{ fontSize: 50 }} className="text-indigo-500 mb-2 group-hover:scale-110 transition" />
-              <div className="text-lg font-semibold capitalize text-indigo-900 text-center">
+              <div className="text-lg font-semibold capitalize text-indigo-900 text-center mb-1">
                 {item.fullname}
               </div>
-              <div className="text-sm text-slate-500 text-center">
+              <div className="text-sm text-slate-500 text-center mb-1">
                 {item.district || "No district"}
               </div>
-              <div className="text-sm text-slate-500 text-center">
+              <div className="text-sm text-slate-500 text-center mb-1">
                 Age: {item.age || "N/A"}
               </div>
-              <div className="text-sm text-slate-500 text-center">
-                Gender: {item.gender || "N/A"}
-              </div>
-              <div className="text-sm text-slate-500 text-center mb-2">
-                📞 {item.number || "Not provided"}
+              <div className="text-sm text-slate-500 text-center mb-2 flex items-center justify-center gap-1">
+                <PhoneIphoneIcon fontSize="small" className="text-indigo-400" />
+                {item.number || "Not provided"}
               </div>
               <div className="flex items-center gap-2 mt-auto">
-                {isAdmin(user ?? null) && (
+                
                   <button
                     onClick={() => deleteUserData(item.key)}
                     className="text-red-600 hover:text-red-800 transition-colors"
@@ -133,7 +133,15 @@ export default function Users() {
                   >
                     <DeleteIcon />
                   </button>
-                )}
+                 {/* {isAdmin(user ?? null) && (
+                  <button
+                    onClick={() => deleteUserData(item.key)}
+                    className="text-red-600 hover:text-red-800 transition-colors"
+                    title="Delete User"
+                  >
+                    <DeleteIcon />
+                  </button>
+                )} */}
                 <Link
                   to={`/user/${item.key}`}
                   className="text-indigo-600 hover:text-indigo-800 transition-colors"
