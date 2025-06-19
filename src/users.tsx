@@ -100,7 +100,7 @@ export default function Users() {
           className="
             grid gap-5
             grid-cols-1
-            sm:grid-cols-4
+            sm:grid-cols-3
             md:grid-cols-5
             lg:grid-cols-6
           "
@@ -117,31 +117,16 @@ export default function Users() {
               <div className="text-sm text-slate-500 text-center mb-1">
                 {item.district || "No district"}
               </div>
-              <div className="text-sm text-slate-500 text-center mb-1">
-                Age: {item.age || "N/A"}
-              </div>
-              <div className="text-sm text-slate-500 text-center mb-2 flex items-center justify-center gap-1">
-                <PhoneIphoneIcon fontSize="small" className="text-indigo-400" />
-                {item.number || "Not provided"}
-              </div>
-              <div className="flex items-center gap-2 mt-auto">
-                
-                  <button
-                    onClick={() => deleteUserData(item.key)}
-                    className="text-red-600 hover:text-red-800 transition-colors"
-                    title="Delete User"
-                  >
-                    <DeleteIcon />
-                  </button>
-                 {/* {isAdmin(user ?? null) && (
-                  <button
-                    onClick={() => deleteUserData(item.key)}
-                    className="text-red-600 hover:text-red-800 transition-colors"
-                    title="Delete User"
-                  >
-                    <DeleteIcon />
-                  </button>
-                )} */}
+              {/* Add more user info here if needed */}
+              <div className="flex-1" />
+              <div className="w-full border-t border-indigo-100 mt-4 pt-3 flex items-center justify-between">
+                <button
+                  onClick={() => deleteUserData(item.key)}
+                  className="text-red-600 hover:text-red-800 transition-colors"
+                  title="Delete User"
+                >
+                  <DeleteIcon />
+                </button>
                 <Link
                   to={`/user/${item.key}`}
                   className="text-indigo-600 hover:text-indigo-800 transition-colors"
