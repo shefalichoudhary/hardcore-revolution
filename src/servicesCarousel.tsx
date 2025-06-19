@@ -13,7 +13,6 @@ import GroupIcon from "@mui/icons-material/Group";
 import LocalDrinkIcon from "@mui/icons-material/LocalDrink";
 import { useRef } from "react";
 import type { Swiper as SwiperType } from "swiper";
-import { NavigationOptions } from "swiper/types";
 
 const services = [
 	{
@@ -91,9 +90,8 @@ function ServicesCarousel() {
 						}}
 						onInit={(swiper: SwiperType) => {
 							if (swiper.params.navigation) {
-								const navigation = swiper.params.navigation as NavigationOptions;
-								navigation.prevEl = prevRef.current;
-								navigation.nextEl = nextRef.current;
+								(swiper.params.navigation as any).prevEl = prevRef.current;
+								(swiper.params.navigation as any).nextEl = nextRef.current;
 							}
 							swiper.navigation.init();
 							swiper.navigation.update();
