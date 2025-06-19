@@ -37,22 +37,22 @@ const services = [
 	},
 	{
 		title: "Workout Programs",
-		icon: <AssignmentIcon fontSize="large" className="text-red-400" />,
+		icon: <AssignmentIcon fontSize="large" className="text-yellow-500" />,
 		desc: "Structured programs for muscle gain, fat loss, or endurance. Track your progress with our app and follow video tutorials from beginner to advanced.",
 	},
 	{
 		title: "Yoga & Meditation",
-		icon: <SelfImprovementIcon fontSize="large" className="text-red-400" />,
+		icon: <SelfImprovementIcon fontSize="large" className="text-yellow-500" />,
 		desc: "Balance mind and body with guided yoga, meditation, and mindfulness sessions. Enjoy peaceful studios and certified yoga trainers.",
 	},
 	{
 		title: "Hydration Bar",
-		icon: <LocalDrinkIcon fontSize="large" className="text-red-400" />,
+		icon: <LocalDrinkIcon fontSize="large" className="text-yellow-500" />,
 		desc: "Stay refreshed with our hydration bar: protein shakes, smoothies, and electrolyte drinks. Perfect for post-workout recovery.",
 	},
 	{
 		title: "Running Club",
-		icon: <DirectionsRunIcon fontSize="large" className="text-red-400" />,
+		icon: <DirectionsRunIcon fontSize="large" className="text-yellow-500" />,
 		desc: "Join our weekly running club for all levels, with coaching, pace groups, and monthly challenges. Enjoy both outdoor and treadmill runs.",
 	},
 ];
@@ -64,7 +64,7 @@ function ServicesCarousel() {
 	return (
 		<section className="relative bg-black py-14 px-4 font-sans">
 			<div className="max-w-7xl mx-auto">
-				<h2 className="text-4xl md:text-5xl font-extrabold text-center text-black mb-4 tracking-tight drop-shadow-lg font-serif">
+				<h2 className=" text-white text-4xl md:text-5xl font-extrabold text-center mb-4 tracking-tight drop-shadow-lg font-serif">
 					Our Trending Services
 				</h2>
 				<p className="text-center text-lg md:text-xl text-gray-700 mb-12 max-w-2xl mx-auto font-light">
@@ -100,18 +100,18 @@ function ServicesCarousel() {
 					>
 						{services.map((service, index) => (
 							<SwiperSlide key={index}>
-								<div className="bg-white rounded-3xl shadow-xl border border-red-400 
-                  p-4 sm:p-6 md:p-8 mx-1 sm:mx-2 my-4 flex flex-col items-center 
-                  transition-transform hover:scale-105 hover:shadow-red-200 duration-300 
-                  min-h-[260px] sm:min-h-[300px] md:min-h-[340px]">
-									<div className="mb-4 bg-red-100 rounded-full p-5 shadow flex items-center justify-center">
+								<div className="bg-white rounded-3xl shadow-xl border shadow-yellow-500
+                  p-3 sm:p-4 md:p-6 mx-1 sm:mx-2 my-3 flex flex-col items-center
+                  transition-transform hover:scale-105 hover:shadow-yellow-500 duration-300
+                  min-h-[200px] sm:min-h-[240px] md:min-h-[260px]">
+									<div className="mb-3 bg-yellow-500 rounded-full p-4 shadow flex items-center justify-center">
 										{/* Make icon larger and more visible */}
 										{service.icon}
 									</div>
-									<h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-2 text-black font-serif tracking-wide text-center">
+									<h3 className="text-base sm:text-lg md:text-xl font-bold mb-1 text-black font-serif tracking-wide text-center">
 										{service.title}
 									</h3>
-									<p className="text-gray-600 text-sm sm:text-base md:text-lg mb-4 text-center font-normal leading-relaxed">
+									<p className="text-gray-600 text-xs sm:text-sm md:text-base mb-2 text-center font-normal leading-relaxed">
 										{service.desc}
 									</p>
 								</div>
@@ -120,7 +120,7 @@ function ServicesCarousel() {
 						{/* Custom navigation arrows */}
 						<button
 							ref={prevRef}
-							className="absolute left-2 top-1/2 -translate-y-1/2 z-20 bg-red-400 border border-red-600 rounded-full p-2 sm:p-3 shadow hover:bg-red-300 transition hidden sm:flex items-center justify-center"
+							className="absolute left-2 top-1/2 -translate-y-1/2 z-20  border-yellow-600 rounded-full p-2 sm:p-3 shadow hover:bg-yellow-300 transition hidden sm:flex items-center justify-center"
 							aria-label="Previous"
 						>
 							<svg className="w-7 h-7 sm:w-8 sm:h-8 text-black" fill="none" stroke="currentColor" strokeWidth={3} viewBox="0 0 24 24">
@@ -129,7 +129,7 @@ function ServicesCarousel() {
 						</button>
 						<button
 							ref={nextRef}
-							className="absolute right-2 top-1/2 -translate-y-1/2 z-20 bg-red-400 border border-red-600 rounded-full p-2 sm:p-3 shadow hover:bg-red-300 transition hidden sm:flex items-center justify-center"
+							className="absolute right-2 top-1/2 -translate-y-1/2 z-20  border border-yellow-600 rounded-full p-2 sm:p-3 shadow hover:bg-yellow-300 transition hidden sm:flex items-center justify-center"
 							aria-label="Next"
 						>
 							<svg className="w-7 h-7 sm:w-8 sm:h-8 text-black" fill="none" stroke="currentColor" strokeWidth={3} viewBox="0 0 24 24">
@@ -139,9 +139,7 @@ function ServicesCarousel() {
 					</Swiper>
 				</div>
 			</div>
-			{/* Decorative red blur */}
-			<div className="absolute -top-16 -left-16 w-72 h-72 bg-red-500 rounded-full opacity-20 blur-3xl pointer-events-none"></div>
-			<div className="absolute -bottom-16 -right-16 w-72 h-72 bg-red-500 rounded-full opacity-20 blur-3xl pointer-events-none"></div>
+			
 		</section>
 	);
 }

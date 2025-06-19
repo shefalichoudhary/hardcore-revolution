@@ -37,56 +37,56 @@ function Home() {
       {/* Fitness Journey Section */}
       <section className="max-w-7xl mx-auto px-4 py-16 flex flex-col md:flex-row items-center gap-10">
         {/* Left: Advanced Overlapping Images with Shapes */}
-        <div className="relative w-full md:w-1/2 min-h-[340px] flex items-center justify-center">
+        <div className="relative w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg flex-shrink-0 min-h-[260px] sm:min-h-[320px] md:min-h-[400px] lg:min-h-[500px] flex items-center justify-center overflow-visible">
           {/* Main Circle (Fitness) */}
-          <div className="absolute left-8 top-10 w-36 h-36 rounded-full overflow-hidden shadow-2xl border-4 border-white z-30 rotate-3 group">
+          <div className="absolute left-2 top-6 w-24 h-24 sm:w-28 sm:h-28 md:w-36 md:h-36 lg:w-48 lg:h-48 rounded-full overflow-hidden shadow-2xl border-4 border-white z-30 rotate-3 group">
             <img
               src="/fitness.jpg"
               alt="Fitness"
               className="w-full h-full object-cover group-hover:scale-110 transition"
             />
             <div className="absolute bottom-0 left-0 w-full bg-black/70 py-1 text-center">
-              <span className="text-white text-base font-bold tracking-wide">Fitness</span>
+              <span className="text-white text-xs sm:text-base font-bold tracking-wide">Fitness</span>
             </div>
           </div>
           {/* Rotated Rectangle (Wellness) */}
-          <div className="absolute right-0 top-0 w-40 h-28 rounded-2xl overflow-hidden shadow-xl border-4 border-white z-20 -rotate-6 group">
+          <div className="absolute right-0 top-0 w-20 h-16 sm:w-28 sm:h-20 md:w-40 md:h-28 lg:w-56 lg:h-36 rounded-2xl overflow-hidden shadow-xl border-4 border-white z-20 -rotate-6 group">
             <img
               src="/wellness.jpg"
               alt="Wellness"
               className="w-full h-full object-cover group-hover:scale-110 transition"
             />
             <div className="absolute bottom-0 left-0 w-full bg-black/70 py-1 text-center">
-              <span className="text-white text-base font-bold tracking-wide">Wellness</span>
+              <span className="text-white text-xs sm:text-base font-bold tracking-wide">Wellness</span>
             </div>
           </div>
           {/* Square (Yoga) */}
-          <div className="absolute left-24 bottom-4 w-28 h-28 rounded-xl overflow-hidden shadow-lg border-4 border-white z-10 group">
+          <div className="absolute left-12 bottom-2 w-16 h-16 sm:left-20 sm:bottom-4 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-36 lg:h-36 rounded-xl overflow-hidden shadow-lg border-4 border-white z-10 group">
             <img
               src="/yoga.jpg"
               alt="Yoga"
               className="w-full h-full object-cover group-hover:scale-110 transition"
             />
             <div className="absolute bottom-0 left-0 w-full bg-black/70 py-1 text-center">
-              <span className="text-white text-base font-bold tracking-wide">Yoga</span>
+              <span className="text-white text-xs sm:text-base font-bold tracking-wide">Yoga</span>
             </div>
           </div>
           {/* Tall Rectangle (Swimming) */}
-          <div className="absolute right-10 bottom-2 w-24 h-36 rounded-3xl overflow-hidden shadow-xl border-4 border-white z-0 rotate-2 group">
+          <div className="absolute right-2 bottom-1 w-12 h-20 sm:right-8 sm:bottom-2 sm:w-20 sm:h-28 md:w-24 md:h-36 lg:w-32 lg:h-48 rounded-3xl overflow-hidden shadow-xl border-4 border-white z-0 rotate-2 group">
             <img
               src="/swimming.jpg"
               alt="Swimming"
               className="w-full h-full object-cover group-hover:scale-110 transition"
             />
             <div className="absolute bottom-0 left-0 w-full bg-black/70 py-1 text-center">
-              <span className="text-white text-base font-bold tracking-wide">Swimming</span>
+              <span className="text-white text-xs sm:text-base font-bold tracking-wide">Swimming</span>
             </div>
           </div>
           {/* Decorative ring for extra style */}
-          <div className="absolute left-20 top-24 w-44 h-44 rounded-full border-2 border-gray-200 z-0"></div>
+          <div className="absolute left-8 top-16 w-24 h-24 sm:left-16 sm:top-24 sm:w-36 sm:h-36 md:w-44 md:h-44 lg:w-56 lg:h-56 rounded-full border-2 border-gray-200 z-0 pointer-events-none"></div>
         </div>
         {/* Right: Heading and content */}
-        <div className="w-full md:w-1/2 flex flex-col justify-center items-start px-2 md:px-8">
+        <div className="w-full flex-1 flex flex-col justify-center items-start px-2 md:px-8">
           <span className="uppercase text-sm font-bold tracking-widest text-yellow-500 mb-2">
             Your Pathway to Wellness
           </span>
