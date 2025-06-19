@@ -4,13 +4,13 @@ function Home() {
   const navigate = useNavigate();
 
   return (
-    <div className=" min-h-full relative bg-cover bg-center bg-no-repeat bg-[url('../public/Img.jpg')] ">
+    <div className=" min-h-screen relative bg-cover bg-center bg-no-repeat bg-[url('../public/Img.jpg')] ">
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-black bg-opacity-60 z-0 "></div>
 
       {/* Content */}
-     <div className="relative z-10 text-blue-500 text-center font-serif px-4 py-32 sm:py-32 md:py-36">
-        <h3 className="text-xl sm:text-sm md:text-xl mb-1 sm:mb-2">
+     <div className="relative z-10 text-white text-center font-serif px-4 py-32 sm:py-32 md:py-36">
+        <h3 className="text-xs sm:text-sm md:text-xl mb-1 sm:mb-2">
           FUEL YOUR
         </h3>
 
