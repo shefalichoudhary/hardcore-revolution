@@ -6,7 +6,7 @@ import { useNavigate, Link } from "react-router-dom";
 
 export default function DrawerAppBar() {
   const [open, setOpen] = React.useState(false);
-  const { user,loading, logOut }: any = UserAuth();
+  const { user, logOut }: any = UserAuth();
   const navigate = useNavigate();
 
   const handleSignOut = async () => {

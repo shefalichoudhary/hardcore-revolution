@@ -9,7 +9,7 @@ function Home() {
       <div className="absolute inset-0 bg-black bg-opacity-60 z-0 "></div>
 
       {/* Content */}
-     <div className="relative z-10 text-blue text-center font-serif px-4 py-32 sm:py-32 md:py-36">
+     <div className="relative z-10 text-blue-500 text-center font-serif px-4 py-32 sm:py-32 md:py-36">
         <h3 className="text-xs sm:text-sm md:text-xl mb-1 sm:mb-2">
           FUEL YOUR
         </h3>
