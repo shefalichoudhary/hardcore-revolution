@@ -23,6 +23,12 @@ interface AuthContextProviderProps {
   children: React.ReactNode;
 }
 
+export const isAdmin = (user: User | null) => {
+  // Replace with your admin email(s)
+  const adminEmails = ["sunainachaudhary2003@gmail.com"];
+  return user && adminEmails.includes(user.email ?? "");
+};
+
 export const AuthContextProvider = ({ children }: AuthContextProviderProps) => {
   const [user, setUser] = useState<User | null>(null);
 

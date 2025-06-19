@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { colRef } from "./firebase";
 import { deleteDoc, doc, getDocs } from "firebase/firestore";
 import { Link } from "react-router-dom";
-import { useRequireAuth } from "./context/AuthContext";
+import { isAdmin, useRequireAuth ,UserAuth} from "./context/AuthContext";
 
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
@@ -11,6 +11,10 @@ import CircularProgress from "@mui/material/CircularProgress";
 
 export default function Users() {
   useRequireAuth();
+
+// ...inside your Users component...
+const { user } = UserAuth() || {};
+
   const [allDocs, setAllDocs] = useState<any[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
 
@@ -77,13 +81,15 @@ export default function Users() {
               </div>
 
               <div className="flex items-center gap-2">
-                <button
-                  onClick={() => deleteUserData(item.key)}
-                  className="txt-black hover:text-red-800 transition-colors"
-                  title="Delete"
-                >
-                  <DeleteIcon />
-                </button>
+                {isAdmin(user ?? null) && (
+                  <button
+                    onClick={() => deleteUserData(item.key)}
+                    className="text-red-600 hover:text-red-800 transition-colors"
+                    title="Delete User"
+                  >
+                    <DeleteIcon />
+                  </button>
+                )}
                 <Link
                   to={`/user/${item.key}`}
                   className="text-blue-600 hover:text-blue-800 transition-colors"
