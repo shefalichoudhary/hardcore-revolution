@@ -10,7 +10,7 @@ function Home() {
 
       {/* Content */}
      <div className="relative z-10 text-blue-500 text-center font-serif px-4 py-32 sm:py-32 md:py-36">
-        <h3 className="text-md sm:text-sm md:text-xl mb-1 sm:mb-2">
+        <h3 className="text-xl sm:text-sm md:text-xl mb-1 sm:mb-2">
           FUEL YOUR
         </h3>
 
