@@ -199,14 +199,14 @@ function Home() {
 
 
       {/* --- Pricing Section --- */}
-      <section className="py-12 sm:py-14 px-2">
+      <section className="py-12 sm:py-14 px-2 mb-12">
   <div className="max-w-4xl mx-auto text-center">
     <h2 className="text-3xl md:text-4xl font-extrabold font-serif text-gray-950 mb-5">Membership Plans</h2>
     <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
       Choose the plan that fits your lifestyle. All memberships include unlimited access to our facilities and community events.
     </p>
     <div className="relative flex justify-center">
-      <div className="relative z-10 flex flex-col md:flex-row gap-6 justify-center items-stretch w-full">
+      <div className="relative z-10 flex flex-col md:flex-row gap-8 md:gap-9 justify-center items-stretch w-full">
         {/* Basic */}
         <div className="flex-1 max-w-sm bg-white rounded-2xl shadow-xl border-2 border-yellow-500 p-6 flex flex-col items-center hover:scale-105 transition-transform duration-300 mx-auto">
           <div className="mb-2">
@@ -221,14 +221,14 @@ function Home() {
             <li className="flex items-center gap-2"><CheckIcon className="text-yellow-500" fontSize="small" /> Group Classes</li>
             <li className="flex items-center gap-2"><CheckIcon className="text-yellow-500" fontSize="small" /> Locker Room</li>
           </ul>
-          <button className="w-full py-2 bg-yellow-500 text-black rounded-xl font-semibold hover:bg-black hover:text-yellow-500 transition text-base">Join Basic</button>
+          <button className="w-full py-2 bg-yellow-500 text-white rounded-xl font-semibold hover:bg-black hover:text-yellow-500 transition text-base">Join Basic</button>
         </div>
         {/* Premium - Highlighted */}
-        <div className="flex-1 max-w-sm bg-gray-900 border-4 border-yellow-500 rounded-2xl shadow-2xl p-7 flex flex-col items-center scale-105 z-10 relative hover:scale-110 transition-transform duration-300 mx-auto
+        <div className="flex-1 max-w-sm bg-gray-900 border-2 border-yellow-500 rounded-2xl shadow-2xl p-7 flex flex-col items-center scale-105 z-10 relative hover:scale-110 transition-transform duration-300 mx-auto
           md:max-w-md md:p-10 md:scale-110
         ">
           <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-            <span className="inline-block bg-yellow-500 text-black px-4 py-1 rounded-full font-bold text-xs shadow-lg">Most Popular</span>
+            <span className="inline-block bg-yellow-500 text-white px-4 py-1 rounded-full font-bold text-xs shadow-lg">Most Popular</span>
           </div>
           <div className="mb-3 mt-3">
             <span className="inline-block text-yellow-500 text-lg font-bold mb-1">Premium</span>
@@ -243,7 +243,7 @@ function Home() {
             <li className="flex items-center gap-2"><CheckIcon className="text-yellow-500" fontSize="small" /> Spa & Recovery</li>
             <li className="flex items-center gap-2"><CheckIcon className="text-yellow-500" fontSize="small" /> Nutrition Plan</li>
           </ul>
-          <button className="w-full py-2 bg-yellow-500 text-black rounded-xl font-semibold hover:bg-white hover:text-yellow-500 transition text-base shadow-lg">Join Premium</button>
+          <button className="w-full py-2 bg-yellow-500 text-white rounded-xl font-semibold hover:bg-white hover:text-yellow-500 transition text-base shadow-lg">Join Premium</button>
         </div>
         {/* Family */}
         <div className="flex-1 max-w-sm bg-white rounded-2xl shadow-xl border-2 border-yellow-500 p-6 flex flex-col items-center hover:scale-105 transition-transform duration-300 mx-auto">
@@ -259,7 +259,7 @@ function Home() {
             <li className="flex items-center gap-2"><CheckIcon className="text-yellow-500" fontSize="small" /> 4 Family Members</li>
             <li className="flex items-center gap-2"><CheckIcon className="text-yellow-500" fontSize="small" /> Kids Zone</li>
           </ul>
-          <button className="w-full py-2 bg-yellow-500 text-black rounded-xl font-semibold hover:bg-black hover:text-yellow-500 transition text-base">Join Family</button>
+          <button className="w-full py-2 bg-yellow-500 text-white rounded-xl font-semibold hover:bg-black hover:text-yellow-500 transition text-base">Join Family</button>
         </div>
       </div>
     </div>

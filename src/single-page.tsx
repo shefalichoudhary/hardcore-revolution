@@ -55,7 +55,7 @@ const SinglePage = () => {
   }
 
   return (
-    <div className="pt-16 py-12 px-2 md:px-8">
+    <div className=" md:min-h-screen pt-16 py-12 px-2 md:px-8">
       {!editMode ? (
         <>
           <h2 className="text-3xl md:text-4xl font-extrabold font-serif text-center mb-8 text-black tracking-tight drop-shadow">
