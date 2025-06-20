@@ -33,12 +33,12 @@ function Home() {
   return (
     <>
       {/* Hero Section */}
-      <div className=" h-8/10  md:min-h-screen relative bg-cover bg-center bg-no-repeat bg-[url('../public/Img.jpg')] mt-10">
+      <div className=" h-9/10   relative bg-cover bg-center bg-no-repeat bg-[url('../public/Img.jpg')] mt-10">
         {/* Overlay */}
         <div className="absolute inset-0 bg-black bg-opacity-60 z-0" />
 
         {/* Hero Content */}
-        <div className="relative z-10 flex flex-col justify-center items-center text-white text-center font-serif px-4 py-8 sm:py-12 md:py-16 lg:py-0 lg:h-full lg:items-center lg:justify-center">
+        <div className="relative z-10 flex flex-col justify-center items-center text-white text-center font-serif px-4 py-8 sm:py-18 md:py-16 lg:py-0 lg:h-full lg:items-center lg:justify-center">
           <h3 className="text-xs sm:text-sm md:text-xl mb-1 sm:mb-2">FUEL YOUR</h3>
 
           <h1 className="text-2xl sm:text-4xl md:text-6xl font-bold tracking-widest mb-3 sm:mb-6">
