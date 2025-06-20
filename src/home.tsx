@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import ServicesCarousel from "./servicesCarousel";
+import MobileImages from "../fitness-img-section"; // Adjust the import path as needed
 function Home() {
 
   const navigate = useNavigate();
@@ -41,7 +42,7 @@ function Home() {
           </p>
 
           <button
-            className="bg-yellow-500 text-white  px-6 py-2 sm:px-8 sm:py-3 text-xs sm:text-sm font-semibold rounded shadow hover:bg-gray-200 transition"
+            className="bg-yellow-500 text-white  px-6 py-2 sm:px-8 sm:py-3 text-xs sm:text-sm font-semibold rounded shadow hover:bg-white hover:text-black transition"
             onClick={() => navigate("/UserForm")}
           >
             JOIN NOW
@@ -57,43 +58,7 @@ function Home() {
         */}
         <div className="order-2 md:order-1 relative w-full max-w-xs xs:max-w-sm sm:max-w-md md:max-w-md lg:max-w-xl flex-shrink-0 min-h-[340px] sm:min-h-[400px] md:min-h-[480px] lg:min-h-[600px] flex items-center justify-center overflow-visible">
           {/* Mobile: Overlapping, stylish shapes with more modern style and less overlap */}
-          <div className="flex flex-col gap-6 w-full md:hidden relative items-center">
-  {/* Fitness */}
-  <div className="relative w-40 h-40 rounded-full overflow-hidden shadow-2xl bg-gradient-to-br from-yellow-300 via-yellow-100 to-white group transition-all duration-300">
-    <img
-      src="/fitness.jpg"
-      alt="Fitness"
-      className="w-full h-full object-cover group-hover:scale-105 transition-all duration-300"
-    />
-    <div className="absolute bottom-0 left-0 w-full bg-black/70 py-2 text-center rounded-b-full">
-      <span className="text-yellow-200 text-base font-bold tracking-wide drop-shadow">Fitness</span>
-    </div>
-  </div>
-
-  {/* Wellness */}
-  <div className="relative w-40 h-36 rounded-[2rem] overflow-hidden shadow-xl bg-gradient-to-tr from-yellow-200 via-white to-yellow-100 group transition-all duration-300">
-    <img
-      src="/wellness.jpg"
-      alt="Wellness"
-      className="w-full h-full object-cover group-hover:scale-105 transition-all duration-300"
-    />
-    <div className="absolute bottom-0 left-0 w-full bg-black/70 py-2 text-center rounded-b-2xl">
-      <span className="text-yellow-200 text-base font-bold tracking-wide drop-shadow">Wellness</span>
-    </div>
-  </div>
-
-  {/* Yoga */}
-  <div className="relative w-40 h-40 rounded-[2.5rem] overflow-hidden shadow-2xl bg-gradient-to-tl from-yellow-100 via-white to-yellow-200 group transition-all duration-300">
-    <img
-      src="/yoga.jpg"
-      alt="Yoga"
-      className="w-full h-full object-cover group-hover:scale-105 transition-all duration-300"
-    />
-    <div className="absolute bottom-0 left-0 w-full bg-black/70 py-2 text-center rounded-b-[2.5rem]">
-      <span className="text-yellow-200 text-base font-bold tracking-wide drop-shadow">Yoga</span>
-    </div>
-  </div>
-</div>
+          <MobileImages />
 
           {/* Desktop: Overlapping advanced layout */}
           <div className="hidden md:block w-full h-full">

@@ -58,7 +58,7 @@ export default function DrawerAppBar() {
             <li>
               <button
                 onClick={handleSignOut}
-                className="px-4 py-1.5 bg-yellow-500 text-white rounded-md text-base font-semibold hover:bg-gray-300 hover:text-stone-900 transition"
+                className="px-4 py-1.5 bg-yellow-500 text-white rounded-md text-base font-semibold hover:bg-white hover:text-black transition"
               >
                 Logout
               </button>
