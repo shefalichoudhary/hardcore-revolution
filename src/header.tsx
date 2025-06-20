@@ -32,7 +32,7 @@ export default function DrawerAppBar() {
       ];
 
   return (
-    <header className="bg-stone-900 sticky top-0 z-50 shadow-md border-b border-stone-800">
+    <header className="bg-stone-900 fixed top-0 left-0 w-full z-50 shadow-md border-b border-stone-800">
       <nav className="max-w-7xl mx-auto flex items-center justify-between px-4 py-3">
         {/* Logo */}
         <Link

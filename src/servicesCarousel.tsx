@@ -56,7 +56,7 @@ function ServicesCarousel() {
 
 	return (
 		<section className=" min-h-screen relative  py-14 px-4 font-sans">
-			<div className="max-w-7xl mx-auto">
+			<div className=" mx-auto">
 				<h2 className=" text-black text-4xl md:text-5xl font-extrabold text-center mb-4 tracking-tight drop-shadow-lg font-serif">
 					Our Trending Services
 				</h2>
@@ -71,6 +71,7 @@ function ServicesCarousel() {
 						modules={[Pagination, Navigation]}
 						spaceBetween={24}
 						slidesPerView={1}
+						loop={true}
 						breakpoints={{
 							640: { slidesPerView: 1 },
 							900: { slidesPerView: 2 },
