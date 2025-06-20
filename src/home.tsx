@@ -57,49 +57,44 @@ function Home() {
         */}
         <div className="order-2 md:order-1 relative w-full max-w-xs xs:max-w-sm sm:max-w-md md:max-w-md lg:max-w-xl flex-shrink-0 min-h-[340px] sm:min-h-[400px] md:min-h-[480px] lg:min-h-[600px] flex items-center justify-center overflow-visible">
           {/* Mobile: Overlapping, stylish shapes with more modern style and less overlap */}
-          <div className="flex flex-col gap-0 w-full md:hidden relative">
-            {/* Top Row: Fitness (circle, left) and Wellness (rounded-rect, right, slightly overlapping, more modern) */}
-            <div className="flex justify-center items-end relative h-56">
-              {/* Fitness */}
-              <div className="absolute left-[8%] z-20 w-44 h-44 rounded-full overflow-hidden shadow-2xl bg-gradient-to-br from-yellow-300 via-yellow-100 to-white rotate-2 group transition-all duration-300">
-                <img
-                  src="/fitness.jpg"
-                  alt="Fitness"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-all duration-300"
-                />
-                <div className="absolute bottom-0 left-0 w-full bg-black/70 py-2 text-center rounded-b-full">
-                  <span className="text-yellow-200 text-lg font-bold tracking-wide drop-shadow">Fitness</span>
-                </div>
-              </div>
-              {/* Wellness */}
-              <div
-                className="absolute left-[54%] z-30 w-40 h-36 rounded-[2rem] overflow-hidden shadow-xl bg-gradient-to-tr from-yellow-200 via-white to-yellow-100 -rotate-3 group transition-all duration-300"
-                style={{ transform: "translateY(20px)" }}
-              >
-                <img
-                  src="/wellness.jpg"
-                  alt="Wellness"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-all duration-300"
-                />
-                <div className="absolute bottom-0 left-0 w-full bg-black/70 py-2 text-center rounded-b-2xl">
-                  <span className="text-yellow-200 text-lg font-bold tracking-wide drop-shadow">Wellness</span>
-                </div>
-              </div>
-            </div>
-            {/* Yoga below, slightly overlapping both, more modern shape */}
-            <div className="flex justify-center relative -mt-8 z-40">
-              <div className="w-44 h-44 rounded-[2.5rem] overflow-hidden shadow-2xl bg-gradient-to-tl from-yellow-100 via-white to-yellow-200 group transition-all duration-300">
-                <img
-                  src="/yoga.jpg"
-                  alt="Yoga"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-all duration-300"
-                />
-                <div className="absolute bottom-0 left-0 w-full bg-black/70 py-2 text-center rounded-b-[2.5rem]">
-                  <span className="text-yellow-200 text-lg font-bold tracking-wide drop-shadow">Yoga</span>
-                </div>
-              </div>
-            </div>
-          </div>
+          <div className="flex flex-col gap-6 w-full md:hidden relative items-center">
+  {/* Fitness */}
+  <div className="relative w-40 h-40 rounded-full overflow-hidden shadow-2xl bg-gradient-to-br from-yellow-300 via-yellow-100 to-white group transition-all duration-300">
+    <img
+      src="/fitness.jpg"
+      alt="Fitness"
+      className="w-full h-full object-cover group-hover:scale-105 transition-all duration-300"
+    />
+    <div className="absolute bottom-0 left-0 w-full bg-black/70 py-2 text-center rounded-b-full">
+      <span className="text-yellow-200 text-base font-bold tracking-wide drop-shadow">Fitness</span>
+    </div>
+  </div>
+
+  {/* Wellness */}
+  <div className="relative w-40 h-36 rounded-[2rem] overflow-hidden shadow-xl bg-gradient-to-tr from-yellow-200 via-white to-yellow-100 group transition-all duration-300">
+    <img
+      src="/wellness.jpg"
+      alt="Wellness"
+      className="w-full h-full object-cover group-hover:scale-105 transition-all duration-300"
+    />
+    <div className="absolute bottom-0 left-0 w-full bg-black/70 py-2 text-center rounded-b-2xl">
+      <span className="text-yellow-200 text-base font-bold tracking-wide drop-shadow">Wellness</span>
+    </div>
+  </div>
+
+  {/* Yoga */}
+  <div className="relative w-40 h-40 rounded-[2.5rem] overflow-hidden shadow-2xl bg-gradient-to-tl from-yellow-100 via-white to-yellow-200 group transition-all duration-300">
+    <img
+      src="/yoga.jpg"
+      alt="Yoga"
+      className="w-full h-full object-cover group-hover:scale-105 transition-all duration-300"
+    />
+    <div className="absolute bottom-0 left-0 w-full bg-black/70 py-2 text-center rounded-b-[2.5rem]">
+      <span className="text-yellow-200 text-base font-bold tracking-wide drop-shadow">Yoga</span>
+    </div>
+  </div>
+</div>
+
           {/* Desktop: Overlapping advanced layout */}
           <div className="hidden md:block w-full h-full">
             {/* Main Circle (Fitness) */}
