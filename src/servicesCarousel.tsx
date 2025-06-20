@@ -90,7 +90,7 @@ function ServicesCarousel() {
 							swiper.navigation.init();
 							swiper.navigation.update();
 						}}
-						className="pb-6"
+						className="pb-2"
 					>
 						{services.map((service, index) => (
 							<SwiperSlide key={index}>

@@ -73,9 +73,15 @@ function Home() {
       
 
       {/* Fitness Journey Section */}
-      <section className="lg:max-w-7xl md:max-w-xl max-w-md mx-auto px-4 pb-5 sm:px-4 sm:py-1 flex flex-col md:flex-row items-center gap-10">
+      <section className="lg:max-w-7xl md:max-w-4xl max-w-md mx-auto px-4 pb-5 sm:px-4 sm:py-1 flex flex-col md:flex-row items-center gap-10">
         {/* Text first on mobile, images after */}
-        <div className="order-1 w-full flex-1 flex flex-col justify-center items-start px-2 md:px-8">
+        <motion.div
+          initial={{ opacity: 0, x: -80 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          className="order-1 w-full flex-1 flex flex-col justify-center items-start px-2 md:px-8"
+        >
           <span className="uppercase text-sm font-bold tracking-widest text-yellow-500 mb-2">
             Your Pathway to Wellness
           </span>
@@ -105,7 +111,7 @@ function Home() {
               </p>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Images: Desktop - as before, Mobile - stacked with animation */}
         <div className="order-2 w-full flex-1 flex items-center justify-center relative">
@@ -277,7 +283,7 @@ function Home() {
         transition={{ duration: 0.7, ease: "easeOut" }}
         className="bg-white py-20 sm:py-12 px-4"
       >
-        <div className="max-w-5xl mx-auto text-center pb-3">
+        <div className="max-w-5xl mx-auto text-center pb-10">
           <h2 className="text-3xl md:text-4xl font-extrabold font-serif text-gray-900 mb-8">What Our Members Say</h2>
           <div className="flex flex-col md:flex-row gap-8 justify-center items-stretch">
             <div className="bg-white rounded-xl shadow-lg p-6 flex-1">
