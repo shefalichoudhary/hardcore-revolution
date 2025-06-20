@@ -50,6 +50,17 @@ function Home() {
         </div>
       </div>
 
+       {/* Services Carousel with animation */}
+      <div ref={ref}>
+        <motion.div
+          initial={{ opacity: 0, y: 80 }}
+          animate={show ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+        >
+          <ServicesCarousel />
+        </motion.div>
+      </div>
+
       {/* Fitness Journey Section */}
       <section className="max-w-7xl mx-auto px-2 py-10 sm:px-4 sm:py-16 flex flex-col md:flex-row items-center gap-10">
       
@@ -132,16 +143,70 @@ function Home() {
         </div>
       </section>
 
-      {/* Services Carousel with animation */}
-      <div ref={ref}>
-        <motion.div
-          initial={{ opacity: 0, y: 80 }}
-          animate={show ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.7, ease: "easeOut" }}
-        >
-          <ServicesCarousel />
-        </motion.div>
+ {/* --- Pricing Section --- */}
+      <section className="bg-gradient-to-b from-yellow-50 to-white py-20 px-4">
+  <div className="max-w-6xl mx-auto text-center">
+    <h2 className="text-3xl md:text-4xl font-extrabold font-serif text-yellow-700 mb-4">Membership Plans</h2>
+    <p className="text-gray-600 mb-12 max-w-2xl mx-auto">
+      Choose the plan that fits your lifestyle. All memberships include unlimited access to our facilities and community events.
+    </p>
+    <div className="flex flex-col md:flex-row gap-8 justify-center items-stretch">
+      {/* Basic */}
+      <div className="flex-1 bg-white rounded-3xl shadow-xl border border-yellow-200 p-8 flex flex-col items-center hover:scale-105 transition-transform duration-300">
+        <div className="mb-4">
+          <span className="inline-block bg-yellow-100 text-yellow-700 px-4 py-1 rounded-full font-semibold text-sm mb-2">Basic</span>
+        </div>
+        <div className="mb-6">
+          <span className="text-4xl font-extrabold text-gray-900">₹999</span>
+          <span className="text-base text-gray-500 font-medium">/mo</span>
+        </div>
+        <ul className="text-gray-700 mb-8 space-y-3 text-left w-full max-w-xs mx-auto">
+          <li className="flex items-center gap-2"><span>🏋️</span> Gym Access</li>
+          <li className="flex items-center gap-2"><span>👥</span> Group Classes</li>
+          <li className="flex items-center gap-2"><span>🔒</span> Locker Room</li>
+        </ul>
+        <button className="w-full py-3 bg-yellow-500 text-white rounded-xl font-semibold hover:bg-yellow-600 transition">Join Basic</button>
       </div>
+      {/* Premium - Highlighted */}
+      <div className="flex-1 bg-yellow-100 border-4 border-yellow-500 rounded-3xl shadow-2xl p-10 flex flex-col items-center scale-105 z-10 relative hover:scale-110 transition-transform duration-300">
+        <div className="absolute -top-5 left-1/2 -translate-x-1/2">
+          <span className="inline-block bg-yellow-500 text-white px-6 py-1 rounded-full font-bold text-sm shadow-lg">Most Popular</span>
+        </div>
+        <div className="mb-4 mt-4">
+          <span className="inline-block bg-yellow-200 text-yellow-800 px-4 py-1 rounded-full font-semibold text-sm mb-2">Premium</span>
+        </div>
+        <div className="mb-6">
+          <span className="text-4xl font-extrabold text-gray-900">₹1,999</span>
+          <span className="text-base text-gray-600 font-medium">/mo</span>
+        </div>
+        <ul className="text-gray-800 mb-8 space-y-3 text-left w-full max-w-xs mx-auto">
+          <li className="flex items-center gap-2"><span>🏋️‍♂️</span> All Basic Features</li>
+          <li className="flex items-center gap-2"><span>🤝</span> Personal Trainer</li>
+          <li className="flex items-center gap-2"><span>💆</span> Spa & Recovery</li>
+          <li className="flex items-center gap-2"><span>🥗</span> Nutrition Plan</li>
+        </ul>
+        <button className="w-full py-3 bg-yellow-600 text-white rounded-xl font-semibold hover:bg-yellow-700 transition shadow-lg">Join Premium</button>
+      </div>
+      {/* Family */}
+      <div className="flex-1 bg-white rounded-3xl shadow-xl border border-yellow-200 p-8 flex flex-col items-center hover:scale-105 transition-transform duration-300">
+        <div className="mb-4">
+          <span className="inline-block bg-yellow-100 text-yellow-700 px-4 py-1 rounded-full font-semibold text-sm mb-2">Family</span>
+        </div>
+        <div className="mb-6">
+          <span className="text-4xl font-extrabold text-gray-900">₹2,999</span>
+          <span className="text-base text-gray-500 font-medium">/mo</span>
+        </div>
+        <ul className="text-gray-700 mb-8 space-y-3 text-left w-full max-w-xs mx-auto">
+          <li className="flex items-center gap-2"><span>👨‍👩‍👧‍👦</span> All Premium Features</li>
+          <li className="flex items-center gap-2"><span>🧒</span> 4 Family Members</li>
+          <li className="flex items-center gap-2"><span>🎈</span> Kids Zone</li>
+        </ul>
+        <button className="w-full py-3 bg-yellow-500 text-white rounded-xl font-semibold hover:bg-yellow-600 transition">Join Family</button>
+      </div>
+    </div>
+  </div>
+</section>
+     
 
       {/* --- Testimonials Section --- */}
       <motion.section
@@ -157,21 +222,18 @@ function Home() {
             <div className="bg-white rounded-xl shadow-lg p-6 flex-1">
               <p className="text-lg text-gray-700 mb-4">“The trainers here are amazing and the community is so supportive. I’ve never felt more motivated!”</p>
               <div className="flex items-center justify-center gap-3">
-                <img src="/user1.jpg" alt="User 1" className="w-12 h-12 rounded-full object-cover border-2 border-yellow-300" />
                 <span className="font-bold text-yellow-700">Priya S.</span>
               </div>
             </div>
             <div className="bg-white rounded-xl shadow-lg p-6 flex-1">
               <p className="text-lg text-gray-700 mb-4">“The facilities are top-notch and I love the variety of classes. Highly recommend!”</p>
               <div className="flex items-center justify-center gap-3">
-                <img src="/user2.jpg" alt="User 2" className="w-12 h-12 rounded-full object-cover border-2 border-yellow-300" />
                 <span className="font-bold text-yellow-700">Rahul M.</span>
               </div>
             </div>
             <div className="bg-white rounded-xl shadow-lg p-6 flex-1">
               <p className="text-lg text-gray-700 mb-4">“Joining changed my life. I feel healthier, stronger, and happier every day!”</p>
               <div className="flex items-center justify-center gap-3">
-                <img src="/user3.jpg" alt="User 3" className="w-12 h-12 rounded-full object-cover border-2 border-yellow-300" />
                 <span className="font-bold text-yellow-700">Anjali K.</span>
               </div>
             </div>
@@ -179,85 +241,9 @@ function Home() {
         </div>
       </motion.section>
 
-      {/* --- Pricing Section --- */}
-      <section className="bg-white py-16 px-4">
-        <div className="max-w-5xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-extrabold font-serif text-yellow-700 mb-8">Membership Plans</h2>
-          <div className="flex flex-col md:flex-row gap-8 justify-center items-stretch">
-            <div className="border-2 border-yellow-300 rounded-xl p-8 flex-1 bg-yellow-50">
-              <h3 className="text-xl font-bold mb-2 text-yellow-700">Basic</h3>
-              <p className="text-3xl font-extrabold mb-4 text-gray-900">₹999<span className="text-base font-medium">/mo</span></p>
-              <ul className="text-gray-700 mb-6 space-y-2 text-left">
-                <li>✔️ Gym Access</li>
-                <li>✔️ Group Classes</li>
-                <li>✔️ Locker Room</li>
-              </ul>
-              <button className="w-full py-2 bg-yellow-500 text-white rounded font-semibold hover:bg-yellow-600 transition">Join Basic</button>
-            </div>
-            <div className="border-4 border-yellow-500 rounded-xl p-8 flex-1 bg-yellow-100 scale-105 shadow-lg">
-              <h3 className="text-xl font-bold mb-2 text-yellow-800">Premium</h3>
-              <p className="text-3xl font-extrabold mb-4 text-gray-900">₹1,999<span className="text-base font-medium">/mo</span></p>
-              <ul className="text-gray-700 mb-6 space-y-2 text-left">
-                <li>✔️ All Basic Features</li>
-                <li>✔️ Personal Trainer</li>
-                <li>✔️ Spa & Recovery</li>
-                <li>✔️ Nutrition Plan</li>
-              </ul>
-              <button className="w-full py-2 bg-yellow-600 text-white rounded font-semibold hover:bg-yellow-700 transition">Join Premium</button>
-            </div>
-            <div className="border-2 border-yellow-300 rounded-xl p-8 flex-1 bg-yellow-50">
-              <h3 className="text-xl font-bold mb-2 text-yellow-700">Family</h3>
-              <p className="text-3xl font-extrabold mb-4 text-gray-900">₹2,999<span className="text-base font-medium">/mo</span></p>
-              <ul className="text-gray-700 mb-6 space-y-2 text-left">
-                <li>✔️ All Premium Features</li>
-                <li>✔️ 4 Family Members</li>
-                <li>✔️ Kids Zone</li>
-              </ul>
-              <button className="w-full py-2 bg-yellow-500 text-white rounded font-semibold hover:bg-yellow-600 transition">Join Family</button>
-            </div>
-          </div>
-        </div>
-      </section>
+     
 
-      {/* --- Contact Section --- */}
-      <section className="bg-yellow-50 py-16 px-4">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-extrabold font-serif text-yellow-700 mb-8">Contact Us</h2>
-          <form className="space-y-6">
-            <div className="flex flex-col md:flex-row gap-4">
-              <input
-                type="text"
-                placeholder="Your Name"
-                className="flex-1 px-4 py-3 rounded border border-yellow-200 focus:outline-none focus:ring-2 focus:ring-yellow-400"
-                required
-              />
-              <input
-                type="email"
-                placeholder="Your Email"
-                className="flex-1 px-4 py-3 rounded border border-yellow-200 focus:outline-none focus:ring-2 focus:ring-yellow-400"
-                required
-              />
-            </div>
-            <textarea
-              placeholder="Your Message"
-              className="w-full px-4 py-3 rounded border border-yellow-200 focus:outline-none focus:ring-2 focus:ring-yellow-400"
-              rows={5}
-              required
-            />
-            <button
-              type="submit"
-              className="w-full py-3 bg-yellow-600 text-white rounded font-semibold hover:bg-yellow-700 transition"
-            >
-              Send Message
-            </button>
-          </form>
-          <div className="mt-8 text-gray-700">
-            <div>📞 <span className="font-semibold">+91 98765 43210</span></div>
-            <div>📧 <span className="font-semibold">info@hardcorerevolution.com</span></div>
-            <div>🏢 123 Fitness Street, Mumbai, India</div>
-          </div>
-        </div>
-      </section>
+     
     </>
   );
 }
