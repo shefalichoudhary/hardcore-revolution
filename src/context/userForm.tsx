@@ -25,7 +25,7 @@ export default function UserForm(user: FormData) {
   const currentDate = new Date().toLocaleDateString();
 
   return (
-    <div className="pt-16 py-12 px-2 md:px-8">
+    <div className=" max-w-sm md:max-w-lg  pt-4 md:pt-10 px-2 md:px-8">
       <form
         onSubmit={handleSubmit(onSubmit)}
         autoComplete="off"
@@ -133,7 +133,7 @@ export default function UserForm(user: FormData) {
         <div className="text-center pt-4">
           <button
             type="submit"
-            className="px-8 py-3 bg-black text-white font-medium rounded shadow-md hover:bg-blue-700 transition duration-300 tracking-widest"
+            className="px-8 py-3 bg-yellow-500 text-white font-medium rounded shadow-md hover:bg-white hover:text-black transition duration-300 tracking-widest"
           >
             REGISTER
           </button>

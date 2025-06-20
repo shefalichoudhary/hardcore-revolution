@@ -33,7 +33,7 @@ function Home() {
   return (
     <>
       {/* Hero Section */}
-      <div className="md:min-h-screen relative bg-cover bg-center bg-no-repeat bg-[url('../public/Img.jpg')] mt-8">
+      <div className="lg:min-h-screen relative bg-cover bg-center bg-no-repeat bg-[url('../public/Img.jpg')] mt-10">
         {/* Overlay */}
         <div className="absolute inset-0 bg-black bg-opacity-60 z-0" />
 
@@ -73,7 +73,7 @@ function Home() {
       
 
       {/* Fitness Journey Section */}
-      <section className="lg:max-w-7xl md:max-w-lg max-w-md mx-auto px-4 py-2 sm:px-4 sm:py-1 flex flex-col md:flex-row items-center gap-10">
+      <section className="lg:max-w-7xl md:max-w-xl max-w-md mx-auto px-4 py-2 sm:px-4 sm:py-1 flex flex-col md:flex-row items-center gap-10">
         {/* Text first on mobile, images after */}
         <div className="order-1 w-full flex-1 flex flex-col justify-center items-start px-2 md:px-8">
           <span className="uppercase text-sm font-bold tracking-widest text-yellow-500 mb-2">
@@ -205,6 +205,8 @@ function Home() {
     <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
       Choose the plan that fits your lifestyle. All memberships include unlimited access to our facilities and community events.
     </p>
+    {/* Add space before cards */}
+    <div className="h-4 sm:h-6"></div>
     <div className="relative flex justify-center">
       <div className="relative z-10 flex flex-col md:flex-row gap-8 md:gap-9 justify-center items-stretch w-full">
         {/* Basic */}
