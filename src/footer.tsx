@@ -19,36 +19,7 @@ export default function SimpleBottomNavigation() {
           <div className="text-xs text-gray-950 mt-1">
             Your Fitness, Our Passion
           </div>
-        </div>
 
-        {/* Center: Navigation & Copyright */}
-        <div className="flex flex-col items-left md:items-center">
-          <nav className="mb-2 flex gap-4 text-sm font-medium">
-            <a
-              href="/"
-              className="hover:text-yellow-600 transition"
-            >
-              Home
-            </a>
-            <a
-              href="/userForm"
-              className="hover:text-yellow-600 transition"
-            >
-              Join
-            </a>
-            <a
-              href="/users"
-              className="hover:text-yellow-600 transition"
-            >
-              Members
-            </a>
-            <a
-              href="/user-scanner"
-              className="hover:text-yellow-600 transition"
-            >
-              Scan
-            </a>
-          </nav>
           <div className="text-xs text-gray-700 md:text-center text-left">
             © {new Date().getFullYear()} Hardcore Revolution Gym.in
             <br />
@@ -62,10 +33,10 @@ export default function SimpleBottomNavigation() {
             {/* Email */}
             <a
               href="mailto:choudharyshefali@gmail.com"
-              className="hover:text-yellow-600 transition"
+              className="bg-white rounded-full w-10 h-10 flex items-center justify-center border border-gray-300 hover:bg-black hover:text-white transition"
               title="Email"
             >
-              <EmailIcon />
+              <EmailIcon className="text-black group-hover:text-white transition" />
             </a>
 
             {/* Instagram */}
@@ -73,20 +44,20 @@ export default function SimpleBottomNavigation() {
               href="https://www.instagram.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:opacity-80"
+              className="bg-white rounded-full w-10 h-10 flex items-center justify-center border border-gray-300 hover:bg-black hover:text-white transition"
               title="Instagram"
             >
-              <InstagramIcon style={{ color: "#E1306C" }} />
+              <InstagramIcon className="text-black group-hover:text-white transition" />
             </a>
             {/* WhatsApp */}
             <a
               href="https://wa.me/919329751342"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:opacity-80"
+              className="bg-white rounded-full w-10 h-10 flex items-center justify-center border border-gray-300 hover:bg-black hover:text-white transition"
               title="WhatsApp"
             >
-              <WhatsAppIcon style={{ color: "#25D366" }} />
+              <WhatsAppIcon className="text-black group-hover:text-white transition" />
             </a>
 
             {/* Facebook */}
@@ -94,21 +65,20 @@ export default function SimpleBottomNavigation() {
               href="https://www.facebook.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:opacity-80"
+              className="bg-white rounded-full w-10 h-10 flex items-center justify-center border border-gray-300 hover:bg-black hover:text-white transition"
               title="Facebook"
             >
-              <FacebookIcon style={{ color: "#1877F2" }} />
+              <FacebookIcon className="text-black group-hover:text-white transition" />
             </a>
 
             <a
               href="tel:+919329751342"
-              className="hover:text-yellow-600 transition"
+              className="bg-white rounded-full w-10 h-10 flex items-center justify-center border border-gray-300 hover:bg-black hover:text-white transition"
               title="Call"
             >
-              <PhoneIcon />
+              <PhoneIcon className="text-black group-hover:text-white transition" />
             </a>
           </div>
-         
         </div>
       </div>
     </footer>
