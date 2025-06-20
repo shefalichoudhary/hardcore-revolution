@@ -32,12 +32,12 @@ export default function DrawerAppBar() {
       ];
 
   return (
-    <header className="bg-white/90 backdrop-blur sticky top-0 z-50 shadow-sm border-b border-gray-100">
+    <header className="bg-stone-900 sticky top-0 z-50 shadow-md border-b border-stone-800">
       <nav className="max-w-7xl mx-auto flex items-center justify-between px-4 py-3">
         {/* Logo */}
         <Link
           to="/"
-          className="text-xl font-extrabold font-serif tracking-widest bg-gradient-to-r from-stone-900 to-yellow-700 bg-clip-text text-transparent select-none"
+          className="text-xl font-extrabold font-serif tracking-widest bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent select-none"
         >
           Hardcore Revolution
         </Link>
@@ -48,7 +48,7 @@ export default function DrawerAppBar() {
             <li key={title}>
               <Link
                 to={url}
-                className="text-gray-800 hover:text-yellow-700 transition font-medium px-2 py-1 rounded"
+                className="text-white hover:text-gray-300 transition font-medium px-2 py-1 rounded"
               >
                 {title}
               </Link>
@@ -58,7 +58,7 @@ export default function DrawerAppBar() {
             <li>
               <button
                 onClick={handleSignOut}
-                className="px-4 py-1.5 bg-stone-900 text-white rounded-md text-base font-semibold hover:bg-yellow-700 hover:text-stone-900 transition"
+                className="px-4 py-1.5 bg-gray-100 text-stone-900 rounded-md text-base font-semibold hover:bg-gray-300 hover:text-stone-900 transition"
               >
                 Logout
               </button>
@@ -69,7 +69,7 @@ export default function DrawerAppBar() {
         {/* Mobile Toggle */}
         <button
           onClick={() => setOpen(!open)}
-          className="md:hidden text-stone-900 focus:outline-none"
+          className="md:hidden text-white focus:outline-none"
           aria-label="Toggle menu"
         >
           {open ? <CloseIcon /> : <MenuIcon />}
@@ -82,14 +82,14 @@ export default function DrawerAppBar() {
           open ? "max-h-96 opacity-100 scale-100" : "max-h-0 opacity-0 scale-95"
         } overflow-hidden`}
       >
-        <div className="bg-white shadow-xl rounded-xl mt-2 mx-2 px-4 py-3 border border-gray-100">
+        <div className="bg-stone-900 shadow-xl rounded-xl mt-2 mx-2 px-4 py-3 border border-stone-800">
           <ul className="flex flex-col gap-3 text-base font-serif">
             {links.map(([title, url]) => (
               <li key={title}>
                 <Link
                   to={url}
                   onClick={() => setOpen(false)}
-                  className="block w-full px-2 py-2 rounded hover:bg-yellow-50 hover:text-yellow-700 transition"
+                  className="block w-full px-2 py-2 rounded text-white hover:bg-gray-800 hover:text-gray-300 transition"
                 >
                   {title}
                 </Link>
@@ -102,7 +102,7 @@ export default function DrawerAppBar() {
                     handleSignOut();
                     setOpen(false);
                   }}
-                  className="w-full flex items-center justify-center gap-2 px-4 py-2 bg-stone-900 text-white rounded-md text-base font-semibold hover:bg-yellow-700 hover:text-stone-900 transition"
+                  className="w-full flex items-center justify-center gap-2 px-4 py-2 bg-gray-100 text-stone-900 rounded-md text-base font-semibold hover:bg-gray-300 hover:text-stone-900 transition"
                 >
                   Logout
                 </button>

@@ -61,45 +61,45 @@ const SinglePage = () => {
           <h2 className="text-3xl md:text-4xl font-extrabold font-serif text-center mb-8 text-indigo-900 tracking-tight drop-shadow">
             Member Profile & QR Access
           </h2>
-          <div className="bg-gradient-to-br from-white via-indigo-50 to-blue-100 shadow-2xl rounded-2xl p-6 md:p-10 flex flex-col md:flex-row md:justify-between md:items-start gap-8">
+          {/* Profile & QR Section */}
+          <div className="bg-gradient-to-br from-white via-gray-100 to-gray-200 shadow-2xl rounded-2xl p-6 md:p-10 flex flex-col md:flex-row md:justify-between md:items-start gap-8">
             {/* Left: User details */}
-            <div className="flex-1 space-y-4 text-base md:text-lg font-medium tracking-wide text-slate-800">
+            <div className="flex-1 space-y-4 text-base md:text-lg font-medium tracking-wide text-stone-800">
               <div>
-                <span className="block text-xs uppercase text-indigo-400 font-bold tracking-widest mb-2">
+                <span className="block text-xs uppercase text-yellow-600 font-bold tracking-widest mb-2">
                   Name
                 </span>
-                <span className="font-serif text-xl text-indigo-900">
+                <span className="font-serif text-xl text-black">
                   {user.fullname}
                 </span>
               </div>
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <span className="block text-xs uppercase text-indigo-400 font-bold tracking-widest mb-1">
+                  <span className="block text-xs uppercase text-yellow-600 font-bold tracking-widest mb-1">
                     Age
                   </span>
                   <span>{user.age}</span>
                 </div>
-               
                 <div>
-                  <span className="block text-xs uppercase text-indigo-400 font-bold tracking-widest mb-1">
+                  <span className="block text-xs uppercase text-yellow-600 font-bold tracking-widest mb-1">
                     Phone
                   </span>
                   <span>{user.number}</span>
                 </div>
                 <div>
-                  <span className="block text-xs uppercase text-indigo-400 font-bold tracking-widest mb-1">
+                  <span className="block text-xs uppercase text-yellow-600 font-bold tracking-widest mb-1">
                     Joined
                   </span>
                   <span>{user.date}</span>
                 </div>
                 <div>
-                  <span className="block text-xs uppercase text-indigo-400 font-bold tracking-widest mb-1">
+                  <span className="block text-xs uppercase text-yellow-600 font-bold tracking-widest mb-1">
                     District
                   </span>
                   <span>{user.district}</span>
                 </div>
                 <div className="col-span-2">
-                  <span className="block text-xs uppercase text-indigo-400 font-bold tracking-widest mb-1">
+                  <span className="block text-xs uppercase text-yellow-600 font-bold tracking-widest mb-1">
                     Address
                   </span>
                   <span>{user.address}</span>
@@ -108,14 +108,14 @@ const SinglePage = () => {
             </div>
             {/* Right: QR code */}
             <div className="flex flex-col items-center md:items-end md:w-1/3 gap-4">
-              <div className="bg-white rounded-xl shadow-lg p-4 border border-indigo-100">
+              <div className="bg-white rounded-xl shadow-lg p-4 border border-gray-200">
                 <QRCode size={160} value={docId || ""} />
               </div>
-              <div className="text-xs text-slate-500 text-center md:text-right">
+              <div className="text-xs text-gray-500 text-center md:text-right">
                 Scan this QR code at the gym for quick check-in and profile access.
               </div>
               <button
-                className="text-sm font-semibold rounded tracking-widest px-6 py-2 bg-indigo-700 text-white hover:bg-indigo-800 transition"
+                className="text-sm font-semibold rounded tracking-widest px-6 py-2 bg-black text-white hover:bg-gray-900 transition"
                 onClick={() => setEditMode(true)}
               >
                 EDIT PROFILE
@@ -125,97 +125,98 @@ const SinglePage = () => {
         </>
       ) : (
         <>
-          <h2 className="text-2xl md:text-3xl font-bold font-serif text-center mb-8 text-indigo-900 tracking-tight">
+          <h2 className="text-2xl md:text-3xl font-bold font-serif text-center mb-8 text-black tracking-tight">
             Edit Member Details
           </h2>
+          {/* Edit Mode */}
           <form
             onSubmit={handleSubmit(onUpdateHandler)}
-            className="bg-white shadow-xl rounded-2xl p-6 md:p-10 space-y-6"
+            className="bg-white shadow-xl rounded-2xl p-6 md:p-10 space-y-6 border border-gray-200"
           >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <label className="flex flex-col">
-                <span className="text-indigo-700 font-semibold mb-1">
+                <span className="text-yellow-700 font-semibold mb-1">
                   Fullname
                 </span>
                 <input
                   defaultValue={user.fullname}
                   {...register("fullname")}
                   required
-                  className="border border-indigo-200 rounded px-3 py-2 focus:ring-2 focus:ring-indigo-200"
+                  className="border border-gray-300 rounded px-3 py-2 focus:ring-2 focus:ring-yellow-200"
                 />
               </label>
               <label className="flex flex-col">
-                <span className="text-indigo-700 font-semibold mb-1">Age</span>
+                <span className="text-yellow-700 font-semibold mb-1">Age</span>
                 <input
                   defaultValue={user.age}
                   {...register("age")}
                   type="number"
                   required
-                  className="border border-indigo-200 rounded px-3 py-2 focus:ring-2 focus:ring-indigo-200"
+                  className="border border-gray-300 rounded px-3 py-2 focus:ring-2 focus:ring-yellow-200"
                 />
               </label>
               <label className="flex flex-col">
-                <span className="text-indigo-700 font-semibold mb-1">Gender</span>
+                <span className="text-yellow-700 font-semibold mb-1">Gender</span>
                 <select
                   defaultValue={user.gender}
                   {...register("gender")}
-                  className="border border-indigo-200 rounded px-3 py-2 bg-white focus:ring-2 focus:ring-indigo-200"
+                  className="border border-gray-300 rounded px-3 py-2 bg-white focus:ring-2 focus:ring-yellow-200"
                 >
                   <option value="Female">Female</option>
                   <option value="Male">Male</option>
                 </select>
               </label>
               <label className="flex flex-col">
-                <span className="text-indigo-700 font-semibold mb-1">Phone</span>
+                <span className="text-yellow-700 font-semibold mb-1">Phone</span>
                 <input
                   defaultValue={user.number}
                   {...register("number")}
                   type="tel"
                   required
-                  className="border border-indigo-200 rounded px-3 py-2 focus:ring-2 focus:ring-indigo-200"
+                  className="border border-gray-300 rounded px-3 py-2 focus:ring-2 focus:ring-yellow-200"
                 />
               </label>
               <label className="flex flex-col">
-                <span className="text-indigo-700 font-semibold mb-1">
+                <span className="text-yellow-700 font-semibold mb-1">
                   Joining Date
                 </span>
                 <input
                   defaultValue={user.date}
                   {...register("date")}
                   type="text"
-                  className="border border-indigo-200 rounded px-3 py-2 focus:ring-2 focus:ring-indigo-200"
+                  className="border border-gray-300 rounded px-3 py-2 focus:ring-2 focus:ring-yellow-200"
                 />
               </label>
               <label className="flex flex-col">
-                <span className="text-indigo-700 font-semibold mb-1">District</span>
+                <span className="text-yellow-700 font-semibold mb-1">District</span>
                 <input
                   defaultValue={user.district}
                   {...register("district")}
                   type="text"
-                  className="border border-indigo-200 rounded px-3 py-2 focus:ring-2 focus:ring-indigo-200"
+                  className="border border-gray-300 rounded px-3 py-2 focus:ring-2 focus:ring-yellow-200"
                 />
               </label>
               <label className="md:col-span-2 flex flex-col">
-                <span className="text-indigo-700 font-semibold mb-1">Address</span>
+                <span className="text-yellow-700 font-semibold mb-1">Address</span>
                 <input
                   defaultValue={user.address}
                   {...register("address")}
                   type="text"
-                  className="border border-indigo-200 rounded px-3 py-2 focus:ring-2 focus:ring-indigo-200"
+                  className="border border-gray-300 rounded px-3 py-2 focus:ring-2 focus:ring-yellow-200"
                 />
               </label>
             </div>
             <div className="flex justify-center gap-6 pt-4">
               <button
                 type="submit"
-                className="bg-indigo-700 text-white px-6 py-3 rounded tracking-widest font-semibold hover:bg-indigo-800 transition"
+                className="bg-black text-white px-6 py-3 rounded tracking-widest font-semibold hover:bg-gray-900 transition"
               >
                 UPDATE
               </button>
               <button
                 type="button"
                 onClick={() => setEditMode(false)}
-                className="bg-gray-200 text-indigo-800 px-6 py-3 rounded tracking-widest font-semibold hover:bg-gray-300 transition"
+                className="bg-gray-100 text-black px-6 py-3 rounded tracking-widest font-semibold hover:bg-gray-200 transition"
               >
                 CANCEL
               </button>

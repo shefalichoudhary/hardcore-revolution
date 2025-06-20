@@ -37,9 +37,9 @@ function Home() {
       {/* Fitness Journey Section */}
       <section className="max-w-7xl mx-auto px-4 py-16 flex flex-col md:flex-row items-center gap-10">
         {/* Left: Advanced Overlapping Images with Shapes */}
-        <div className="relative w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-xl flex-shrink-0 min-h-[320px] sm:min-h-[400px] md:min-h-[520px] lg:min-h-[600px] flex items-center justify-center overflow-visible">
+        <div className="relative w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-xl flex-shrink-0 min-h-[320px] sm:min-h-[400px] md:min-h-[480px] lg:min-h-[600px] flex items-center justify-center overflow-visible">
           {/* Main Circle (Fitness) */}
-          <div className="absolute left-2 top-6 w-32 h-32 sm:w-40 sm:h-40 md:w-56 md:h-56 lg:w-72 lg:h-72 rounded-full overflow-hidden shadow-2xl border-4 border-white z-30 rotate-3 group">
+          <div className="absolute left-2 top-4 w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-72 lg:h-72 rounded-full overflow-hidden shadow-2xl border-4 border-white z-30 rotate-3 group">
             <img
               src="/fitness.jpg"
               alt="Fitness"
@@ -50,7 +50,7 @@ function Home() {
             </div>
           </div>
           {/* Rotated Rectangle (Wellness) */}
-          <div className="absolute right-0 top-0 w-24 h-20 sm:w-36 sm:h-28 md:w-52 md:h-36 lg:w-72 lg:h-44 rounded-2xl overflow-hidden shadow-xl border-4 border-white z-20 -rotate-6 group">
+          <div className="absolute right-0 top-0 w-24 h-20 sm:w-32 sm:h-28 md:w-40 md:h-32 lg:w-72 lg:h-44 rounded-2xl overflow-hidden shadow-xl border-4 border-white z-20 -rotate-6 group">
             <img
               src="/wellness.jpg"
               alt="Wellness"
@@ -61,7 +61,7 @@ function Home() {
             </div>
           </div>
           {/* Square (Yoga) */}
-          <div className="absolute left-16 bottom-2 w-20 h-20 sm:left-24 sm:bottom-4 sm:w-32 sm:h-32 md:w-40 md:h-40 lg:w-56 lg:h-56 rounded-xl overflow-hidden shadow-lg border-4 border-white z-10 group">
+          <div className="absolute left-12 bottom-2 w-20 h-20 sm:left-20 sm:bottom-4 sm:w-28 sm:h-28 md:w-32 md:h-32 lg:w-56 lg:h-56 rounded-xl overflow-hidden shadow-lg border-4 border-white z-10 group">
             <img
               src="/yoga.jpg"
               alt="Yoga"
@@ -72,7 +72,7 @@ function Home() {
             </div>
           </div>
           {/* Decorative ring for extra style */}
-          <div className="absolute left-8 top-20 w-32 h-32 sm:left-20 sm:top-32 sm:w-48 sm:h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 rounded-full border-2 border-gray-200 z-0 pointer-events-none"></div>
+          <div className="absolute left-8 top-16 w-28 h-28 sm:left-16 sm:top-24 sm:w-40 sm:h-40 md:w-52 md:h-52 lg:w-80 lg:h-80 rounded-full border-2 border-gray-200 z-0 pointer-events-none"></div>
         </div>
         {/* Right: Heading and content */}
         <div className="w-full flex-1 flex flex-col justify-center items-start px-2 md:px-8">
@@ -88,21 +88,21 @@ function Home() {
 
           <div className="space-y-6 w-full">
             <div>
-              <h3 className="font-bold text-gray-900 text-lg md:text-xl mb-2">Personalized Programs & Support</h3>
+              <h3 className="font-bold text-gray-900 text-lg md:text-xl mb-2">Personalized Support</h3>
               <p className="text-gray-600 text-base">
-                Our expert trainers design custom programs for every level and goal, ensuring you get the guidance and motivation you need. Join a supportive community where members and trainers encourage each other every step of the way.
+                Get custom programs for every level and goal, plus ongoing guidance and motivation from our expert trainers and community.
               </p>
             </div>
             <div>
-              <h3 className="font-bold text-gray-900 text-lg md:text-xl mb-2">Modern Facilities & Wellness</h3>
+              <h3 className="font-bold text-gray-900 text-lg md:text-xl mb-2">Modern Facilities</h3>
               <p className="text-gray-600 text-base">
-                Enjoy access to state-of-the-art equipment, yoga studios, swimming pools, and wellness amenities. We believe in a holistic approach—balancing physical fitness with mental well-being and relaxation.
+                Access state-of-the-art equipment, yoga studios, swimming pools, and wellness amenities for a balanced fitness experience.
               </p>
             </div>
             <div>
-              <h3 className="font-bold text-gray-900 text-lg md:text-xl mb-2">Progress Tracking & Growth</h3>
+              <h3 className="font-bold text-gray-900 text-lg md:text-xl mb-2">Track Your Progress</h3>
               <p className="text-gray-600 text-base">
-                Track your progress, celebrate milestones, and stay motivated with our integrated tools and regular workshops. Your journey is unique—let us help you achieve and surpass your goals.
+                Celebrate milestones and stay motivated with integrated tools and regular workshops to help you reach your goals.
               </p>
             </div>
           </div>

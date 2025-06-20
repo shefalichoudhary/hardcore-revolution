@@ -17,27 +17,27 @@ import type { Swiper as SwiperType } from "swiper";
 const services = [
 	{
 		title: "Personal Training",
-		icon: <FitnessCenterIcon fontSize="large" className="text-red-400" />,
-		desc: "Get 1-on-1 expert coaching tailored to your unique fitness goals. Our trainers provide custom workout plans, progress tracking, and ongoing motivation to help you achieve your best self.",
+		icon: <FitnessCenterIcon fontSize="large" className="text-black" />,
+		desc: "Get 1-on-1 expert coaching tailored to your unique fitness goals. Our trainers provide custom workout plans and ongoing motivation to help you achieve your best self.",
 	},
 	{
 		title: "Spa & Recovery",
-		icon: <SpaIcon fontSize="large" className="text-red-400" />,
+		icon: <SpaIcon fontSize="large" className="text-yellow-500" />,
 		desc: "Relax and rejuvenate with our modern spa, massage therapy, sauna, steam room, and cryotherapy. The perfect way to recover after intense workouts.",
 	},
 	{
 		title: "Group Classes",
-		icon: <GroupIcon fontSize="large" className="text-red-400" />,
+		icon: <GroupIcon fontSize="large" className="text-black" />,
 		desc: "Join energetic group classes like Zumba, HIIT, and CrossFit. All levels welcome! Enjoy a fun, social environment with certified instructors and daily new classes.",
 	},
 	{
 		title: "Nutrition & Diet",
-		icon: <RestaurantIcon fontSize="large" className="text-red-400" />,
+		icon: <RestaurantIcon fontSize="large" className="text-yellow-500" />,
 		desc: "Personalized meal plans, nutrition coaching, and healthy recipes for every lifestyle. Our dieticians support you with macro tracking and weekly meal guides.",
 	},
 	{
 		title: "Workout Programs",
-		icon: <AssignmentIcon fontSize="large" className="text-yellow-500" />,
+		icon: <AssignmentIcon fontSize="large" className="text-black" />,
 		desc: "Structured programs for muscle gain, fat loss, or endurance. Track your progress with our app and follow video tutorials from beginner to advanced.",
 	},
 	{
@@ -45,16 +45,17 @@ const services = [
 		icon: <SelfImprovementIcon fontSize="large" className="text-yellow-500" />,
 		desc: "Balance mind and body with guided yoga, meditation, and mindfulness sessions. Enjoy peaceful studios and certified yoga trainers.",
 	},
+	
 	{
-		title: "Hydration Bar",
-		icon: <LocalDrinkIcon fontSize="large" className="text-yellow-500" />,
-		desc: "Stay refreshed with our hydration bar: protein shakes, smoothies, and electrolyte drinks. Perfect for post-workout recovery.",
-	},
-	{
-		title: "Running Club",
-		icon: <DirectionsRunIcon fontSize="large" className="text-yellow-500" />,
-		desc: "Join our weekly running club for all levels, with coaching, pace groups, and monthly challenges. Enjoy both outdoor and treadmill runs.",
-	},
+        title: "Running & Cardio",
+        icon: <DirectionsRunIcon fontSize="large" className="text-white" />,
+        desc: "Join our running club, cardio classes, and outdoor bootcamps. Perfect for all levels, from beginners to marathon runners.",
+    },
+    {
+        title: "Hydration Stations",
+        icon: <LocalDrinkIcon fontSize="large" className="text-white" />,
+        desc: "Stay hydrated with our water stations, electrolyte drinks, and smoothie bars. Fuel your workouts with healthy hydration options.",
+    },
 ];
 
 function ServicesCarousel() {
@@ -62,9 +63,9 @@ function ServicesCarousel() {
 	const nextRef = useRef<HTMLButtonElement>(null);
 
 	return (
-		<section className="relative bg-black py-14 px-4 font-sans">
+		<section className="relative  py-14 px-4 font-sans">
 			<div className="max-w-7xl mx-auto">
-				<h2 className=" text-white text-4xl md:text-5xl font-extrabold text-center mb-4 tracking-tight drop-shadow-lg font-serif">
+				<h2 className=" text-black text-4xl md:text-5xl font-extrabold text-center mb-4 tracking-tight drop-shadow-lg font-serif">
 					Our Trending Services
 				</h2>
 				<p className="text-center text-lg md:text-xl text-gray-700 mb-12 max-w-2xl mx-auto font-light">
@@ -120,19 +121,19 @@ function ServicesCarousel() {
 						{/* Custom navigation arrows */}
 						<button
 							ref={prevRef}
-							className="absolute left-2 top-1/2 -translate-y-1/2 z-20  border-yellow-600 rounded-full p-2 sm:p-3 shadow hover:bg-yellow-300 transition hidden sm:flex items-center justify-center"
+							className="absolute left-2 top-1/2 -translate-y-1/2 z-20   rounded-full p-2 sm:p-3 shadow hover:bg-yellow-300 transition hidden sm:flex items-center justify-center"
 							aria-label="Previous"
 						>
-							<svg className="w-7 h-7 sm:w-8 sm:h-8 text-black" fill="none" stroke="currentColor" strokeWidth={3} viewBox="0 0 24 24">
+							<svg className="w-7 h-7 sm:w-8 sm:h-8 text-black hover:text-white" fill="none" stroke="currentColor" strokeWidth={3} viewBox="0 0 24 24">
 								<path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
 							</svg>
 						</button>
 						<button
 							ref={nextRef}
-							className="absolute right-2 top-1/2 -translate-y-1/2 z-20  border border-yellow-600 rounded-full p-2 sm:p-3 shadow hover:bg-yellow-300 transition hidden sm:flex items-center justify-center"
+							className="absolute right-2 top-1/2 -translate-y-1/2 z-20   rounded-full p-2 sm:p-3 shadow hover:bg-yellow-300 transition hidden sm:flex items-center justify-center"
 							aria-label="Next"
 						>
-							<svg className="w-7 h-7 sm:w-8 sm:h-8 text-black" fill="none" stroke="currentColor" strokeWidth={3} viewBox="0 0 24 24">
+							<svg className="w-7 h-7 sm:w-8 sm:h-8 text-black hover:text-white" fill="none" stroke="currentColor" strokeWidth={3} viewBox="0 0 24 24">
 								<path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
 							</svg>
 						</button>

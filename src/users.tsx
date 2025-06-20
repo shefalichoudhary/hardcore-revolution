@@ -18,6 +18,8 @@ export default function Users() {
   const [allDocs, setAllDocs] = useState<any[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const [search, setSearch] = useState<string>("");
+  const [confirmOpen, setConfirmOpen] = useState(false);
+  const [deleteKey, setDeleteKey] = useState<string | null>(null);
 
   const fetchUsers = async () => {
     setLoading(true);
@@ -30,9 +32,23 @@ export default function Users() {
     setLoading(false);
   };
 
-  const deleteUserData = async (key: string) => {
-    await deleteDoc(doc(colRef, key));
-    fetchUsers();
+  const handleDelete = (key: string) => {
+    setDeleteKey(key);
+    setConfirmOpen(true);
+  };
+
+  const confirmDelete = async () => {
+    if (deleteKey) {
+      await deleteDoc(doc(colRef, deleteKey));
+      fetchUsers();
+      setDeleteKey(null);
+      setConfirmOpen(false);
+    }
+  };
+
+  const cancelDelete = () => {
+    setDeleteKey(null);
+    setConfirmOpen(false);
   };
 
   useEffect(() => {
@@ -81,6 +97,30 @@ export default function Users() {
         </div>
       </div>
 
+      {/* Custom Delete Confirmation Modal */}
+      {confirmOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-blue-900/30">
+          <div className="bg-white rounded-2xl shadow-2xl p-7 w-full max-w-xs text-center border border-blue-100">
+            <h3 className="text-lg font-bold mb-3 text-indigo-800">Delete User?</h3>
+            <p className="mb-6 text-gray-600">Are you sure you want to delete this user? This action cannot be undone.</p>
+            <div className="flex justify-between gap-4">
+              <button
+                onClick={cancelDelete}
+                className="flex-1 py-2 rounded bg-gray-100 text-indigo-800 font-semibold hover:bg-blue-50 transition"
+              >
+                Cancel
+              </button>
+              <button
+                onClick={confirmDelete}
+                className="flex-1 py-2 rounded bg-indigo-600 text-white font-semibold hover:bg-indigo-700 transition"
+              >
+                Delete
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
       {loading ? (
         <div className="flex justify-center items-center py-10">
           <CircularProgress color="inherit" />
@@ -98,45 +138,41 @@ export default function Users() {
       ) : (
         <div
           className="
-            grid gap-5
+            grid gap-4
             grid-cols-1
-            sm:grid-cols-3
-            md:grid-cols-5
-            lg:grid-cols-6
+            sm:grid-cols-2
+            md:grid-cols-3
+            lg:grid-cols-4
+            xl:grid-cols-5
           "
         >
           {filteredDocs.map((item) => (
             <div
               key={item.key}
-              className="bg-gradient-to-br from-white via-indigo-50 to-blue-100 shadow-xl rounded-2xl px-4 py-6 flex flex-col items-center hover:shadow-indigo-300 transition-all duration-200 border border-indigo-100 group font-sans"
+              className="bg-white shadow-md rounded-2xl px-4 py-5 flex flex-col items-center hover:shadow-lg transition-all duration-200 border border-blue-100 group font-sans"
             >
-              <AccountCircleIcon sx={{ fontSize: 50 }} className="text-indigo-500 mb-2 group-hover:scale-110 transition" />
-              <div className="text-lg font-semibold capitalize text-indigo-900 text-center mb-1">
+              <AccountCircleIcon sx={{ fontSize: 38 }} className="text-indigo-500 mb-1 group-hover:scale-110 transition" />
+              <div className="text-base font-semibold capitalize text-indigo-900 text-center mb-1">
                 {item.fullname}
               </div>
-              <div className="text-sm text-slate-500 text-center mb-1">
+              <div className="text-xs text-slate-500 text-center mb-1">
                 {item.district || "No district"}
               </div>
-              {/* Add more user info here if needed */}
               <div className="flex-1" />
-              <div className="w-full border-t border-indigo-100 mt-4 pt-3 flex items-center justify-between">
+              <div className="w-full border-t border-blue-100 mt-3 pt-2 flex items-center justify-between">
                 <button
-                  onClick={() => {
-                    if (window.confirm("Are you sure you want to delete this user?")) {
-                      deleteUserData(item.key);
-                    }
-                  }}
-                  className="text-red-600 hover:text-red-800 transition-colors"
+                  onClick={() => handleDelete(item.key)}
+                  className="text-indigo-500 hover:text-indigo-700 transition-colors"
                   title="Delete User"
                 >
-                  <DeleteIcon />
+                  <DeleteIcon fontSize="small" />
                 </button>
                 <Link
                   to={`/user/${item.key}`}
-                  className="text-indigo-600 hover:text-indigo-800 transition-colors"
+                  className="text-blue-600 hover:text-blue-800 transition-colors"
                   title="View"
                 >
-                  <ArrowForwardIosIcon />
+                  <ArrowForwardIosIcon fontSize="small" />
                 </Link>
               </div>
             </div>
