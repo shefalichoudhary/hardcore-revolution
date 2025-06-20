@@ -73,7 +73,7 @@ function Home() {
       
 
       {/* Fitness Journey Section */}
-      <section className="max-w-7xl mx-auto px-2 py-6 sm:px-4 sm:py-4 flex flex-col md:flex-row items-center gap-10">
+      <section className="lg:max-w-7xl md:max-w-lg max-w-md mx-auto px-4 py-2 sm:px-4 sm:py-1 flex flex-col md:flex-row items-center gap-10">
         {/* Text first on mobile, images after */}
         <div className="order-1 w-full flex-1 flex flex-col justify-center items-start px-2 md:px-8">
           <span className="uppercase text-sm font-bold tracking-widest text-yellow-500 mb-2">
@@ -199,8 +199,8 @@ function Home() {
 
 
       {/* --- Pricing Section --- */}
-      <section className="py-10 sm:py-12 px-2">
-  <div className="max-w-6xl mx-auto text-center">
+      <section className="py-12 sm:py-14 px-2">
+  <div className="max-w-4xl mx-auto text-center">
     <h2 className="text-3xl md:text-4xl font-extrabold font-serif text-gray-950 mb-5">Membership Plans</h2>
     <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
       Choose the plan that fits your lifestyle. All memberships include unlimited access to our facilities and community events.
@@ -273,7 +273,7 @@ function Home() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.7, ease: "easeOut" }}
-        className="bg-white py-18 sm:py-12 px-4"
+        className="bg-white py-20 sm:py-12 px-4"
       >
         <div className="max-w-5xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-extrabold font-serif text-gray-900 mb-8">What Our Members Say</h2>
