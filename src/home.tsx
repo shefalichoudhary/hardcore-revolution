@@ -33,7 +33,7 @@ function Home() {
   return (
     <>
       {/* Hero Section */}
-      <div className=" relative bg-cover bg-center bg-no-repeat bg-[url('../public/Img.jpg')] mt-10">
+      <div className=" h-8/10  relative bg-cover bg-center bg-no-repeat bg-[url('../public/Img.jpg')] mt-10">
         {/* Overlay */}
         <div className="absolute inset-0 bg-black bg-opacity-60 z-0" />
 
