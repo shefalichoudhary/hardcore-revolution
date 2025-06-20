@@ -276,19 +276,19 @@ function Home() {
           <h2 className="text-3xl md:text-4xl font-extrabold font-serif text-gray-900 mb-8">What Our Members Say</h2>
           <div className="flex flex-col md:flex-row gap-8 justify-center items-stretch">
             <div className="bg-white rounded-xl shadow-lg p-6 flex-1">
-              <p className="text-lg text-gray-700 mb-4">“The trainers here are amazing and the community is so supportive. I’ve never felt more motivated!”</p>
+              <p className="text-md text-gray-700 mb-4">“The trainers here are amazing and the community is so supportive. I’ve never felt more motivated!”</p>
               <div className="flex items-center justify-center gap-3">
                 <span className="font-bold text-yellow-500">Priya S.</span>
               </div>
             </div>
             <div className="bg-white rounded-xl shadow-lg p-6 flex-1">
-              <p className="text-lg text-gray-700 mb-4">“The facilities are top-notch and I love the variety of classes. Highly recommend!”</p>
+              <p className="text-md text-gray-700 mb-4">“The facilities are top-notch and I love the variety of classes. Highly recommend!”</p>
               <div className="flex items-center justify-center gap-3">
                 <span className="font-bold text-yellow-500">Rahul M.</span>
               </div>
             </div>
             <div className="bg-white rounded-xl shadow-lg p-6 flex-1">
-              <p className="text-lg text-gray-700 mb-4">“Joining changed my life. I feel healthier, stronger, and happier every day!”</p>
+              <p className="text-md text-gray-700 mb-4">“Joining changed my life. I feel healthier, stronger, and happier every day!”</p>
               <div className="flex items-center justify-center gap-3">
                 <span className="font-bold text-yellow-500">Anjali K.</span>
               </div>

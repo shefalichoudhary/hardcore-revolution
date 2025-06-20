@@ -21,7 +21,7 @@ const SignIn = () => {
   };
 
   return (
-    <div className="pt-16 py-12 px-2 md:px-8">
+    <div className="pt-16 py-12 px-2 md:px-8 flex items-center justify-center  md:min-h-screen">
       <div className="bg-white rounded-xl shadow-2xl p-7 md:p-6 w-full max-w-md md:max-w-lg lg:max-w-xl text-center border border-gray-200">
         <h1 className="text-3xl md:text-4xl font-bold text-black mb-3 font-serif">
           Welcome Back!
