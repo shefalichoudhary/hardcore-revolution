@@ -57,7 +57,6 @@ function Home() {
             - On sm and below: order-2 (after content)
         */}
         <div className="order-2 md:order-1 relative w-full max-w-xs xs:max-w-sm sm:max-w-md md:max-w-md lg:max-w-xl flex-shrink-0 min-h-[340px] sm:min-h-[400px] md:min-h-[480px] lg:min-h-[600px] flex items-center justify-center overflow-visible">
-          {/* Mobile: Overlapping, stylish shapes with more modern style and less overlap */}
           <MobileImages />
 
           {/* Desktop: Overlapping advanced layout */}
