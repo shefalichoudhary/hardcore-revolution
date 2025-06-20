@@ -12,17 +12,15 @@ const MobileImages = () => {
     }
   }, [isInView, controls]);
 
-  // Animation: 3D effect, no overlap, shadow, and ring for each image
+  // Animation: slide in from left, one by one, no pop up
   const imageVariants = {
-    hidden: { opacity: 0, y: 40, scale: 0.92, rotateY: 30 },
+    hidden: { opacity: 0, x: -80 },
     visible: (i: number) => ({
       opacity: 1,
-      y: 0,
-      scale: 1.08,
-      rotateY: 0,
+      x: 0,
       transition: {
-        delay: i * 0.18,
-        duration: 0.5,
+        delay: i * 0.25,
+        duration: 0.6,
         ease: easeOut,
       },
     }),

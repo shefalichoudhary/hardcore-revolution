@@ -42,7 +42,7 @@ function Home() {
           </p>
 
           <button
-            className="bg-yellow-500 text-white  px-6 py-2 sm:px-8 sm:py-3 text-xs sm:text-sm font-semibold rounded shadow hover:bg-white hover:text-black transition"
+            className=" px-4 py-1.5 bg-yellow-500 text-white   sm:px-8 sm:py-3 text-xs sm:text-sm font-semibold rounded shadow hover:bg-white hover:text-black transition"
             onClick={() => navigate("/UserForm")}
           >
             JOIN NOW
@@ -52,11 +52,8 @@ function Home() {
 
       {/* Fitness Journey Section */}
       <section className="max-w-7xl mx-auto px-2 py-10 sm:px-4 sm:py-16 flex flex-col md:flex-row items-center gap-10">
-        {/* Images: 
-            - On md+ screens: order-1 (left side)
-            - On sm and below: order-2 (after content)
-        */}
-        <div className="order-2 md:order-1 relative w-full max-w-xs xs:max-w-sm sm:max-w-md md:max-w-md lg:max-w-xl flex-shrink-0 min-h-[340px] sm:min-h-[400px] md:min-h-[480px] lg:min-h-[600px] flex items-center justify-center overflow-visible">
+      
+        <div className="order-1 relative w-full max-w-xs xs:max-w-sm sm:max-w-md md:max-w-md lg:max-w-xl flex-shrink-0 min-h-[340px] sm:min-h-[400px] md:min-h-[480px] lg:min-h-[600px] flex items-center justify-center overflow-visible">
           <MobileImages />
 
           {/* Desktop: Overlapping advanced layout */}
@@ -100,11 +97,8 @@ function Home() {
             <div className="absolute inset-0 rounded-full bg-yellow-100 opacity-30 blur-2xl z-0"></div>
           </div>
         </div>
-        {/* Content: 
-            - On md+ screens: order-2 (right side)
-            - On sm and below: order-1 (before images)
-        */}
-        <div className="order-1 md:order-2 w-full flex-1 flex flex-col justify-center items-start px-2 md:px-8">
+        
+        <div className="order-2 w-full flex-1 flex flex-col justify-center items-start px-2 md:px-8">
           <span className="uppercase text-sm font-bold tracking-widest text-yellow-500 mb-2">
             Your Pathway to Wellness
           </span>
@@ -148,6 +142,122 @@ function Home() {
           <ServicesCarousel />
         </motion.div>
       </div>
+
+      {/* --- Testimonials Section --- */}
+      <motion.section
+        initial={{ opacity: 0, y: 80 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
+        className="bg-yellow-50 py-16 px-4"
+      >
+        <div className="max-w-5xl mx-auto text-center">
+          <h2 className="text-3xl md:text-4xl font-extrabold font-serif text-yellow-700 mb-8">What Our Members Say</h2>
+          <div className="flex flex-col md:flex-row gap-8 justify-center items-stretch">
+            <div className="bg-white rounded-xl shadow-lg p-6 flex-1">
+              <p className="text-lg text-gray-700 mb-4">“The trainers here are amazing and the community is so supportive. I’ve never felt more motivated!”</p>
+              <div className="flex items-center justify-center gap-3">
+                <img src="/user1.jpg" alt="User 1" className="w-12 h-12 rounded-full object-cover border-2 border-yellow-300" />
+                <span className="font-bold text-yellow-700">Priya S.</span>
+              </div>
+            </div>
+            <div className="bg-white rounded-xl shadow-lg p-6 flex-1">
+              <p className="text-lg text-gray-700 mb-4">“The facilities are top-notch and I love the variety of classes. Highly recommend!”</p>
+              <div className="flex items-center justify-center gap-3">
+                <img src="/user2.jpg" alt="User 2" className="w-12 h-12 rounded-full object-cover border-2 border-yellow-300" />
+                <span className="font-bold text-yellow-700">Rahul M.</span>
+              </div>
+            </div>
+            <div className="bg-white rounded-xl shadow-lg p-6 flex-1">
+              <p className="text-lg text-gray-700 mb-4">“Joining changed my life. I feel healthier, stronger, and happier every day!”</p>
+              <div className="flex items-center justify-center gap-3">
+                <img src="/user3.jpg" alt="User 3" className="w-12 h-12 rounded-full object-cover border-2 border-yellow-300" />
+                <span className="font-bold text-yellow-700">Anjali K.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </motion.section>
+
+      {/* --- Pricing Section --- */}
+      <section className="bg-white py-16 px-4">
+        <div className="max-w-5xl mx-auto text-center">
+          <h2 className="text-3xl md:text-4xl font-extrabold font-serif text-yellow-700 mb-8">Membership Plans</h2>
+          <div className="flex flex-col md:flex-row gap-8 justify-center items-stretch">
+            <div className="border-2 border-yellow-300 rounded-xl p-8 flex-1 bg-yellow-50">
+              <h3 className="text-xl font-bold mb-2 text-yellow-700">Basic</h3>
+              <p className="text-3xl font-extrabold mb-4 text-gray-900">₹999<span className="text-base font-medium">/mo</span></p>
+              <ul className="text-gray-700 mb-6 space-y-2 text-left">
+                <li>✔️ Gym Access</li>
+                <li>✔️ Group Classes</li>
+                <li>✔️ Locker Room</li>
+              </ul>
+              <button className="w-full py-2 bg-yellow-500 text-white rounded font-semibold hover:bg-yellow-600 transition">Join Basic</button>
+            </div>
+            <div className="border-4 border-yellow-500 rounded-xl p-8 flex-1 bg-yellow-100 scale-105 shadow-lg">
+              <h3 className="text-xl font-bold mb-2 text-yellow-800">Premium</h3>
+              <p className="text-3xl font-extrabold mb-4 text-gray-900">₹1,999<span className="text-base font-medium">/mo</span></p>
+              <ul className="text-gray-700 mb-6 space-y-2 text-left">
+                <li>✔️ All Basic Features</li>
+                <li>✔️ Personal Trainer</li>
+                <li>✔️ Spa & Recovery</li>
+                <li>✔️ Nutrition Plan</li>
+              </ul>
+              <button className="w-full py-2 bg-yellow-600 text-white rounded font-semibold hover:bg-yellow-700 transition">Join Premium</button>
+            </div>
+            <div className="border-2 border-yellow-300 rounded-xl p-8 flex-1 bg-yellow-50">
+              <h3 className="text-xl font-bold mb-2 text-yellow-700">Family</h3>
+              <p className="text-3xl font-extrabold mb-4 text-gray-900">₹2,999<span className="text-base font-medium">/mo</span></p>
+              <ul className="text-gray-700 mb-6 space-y-2 text-left">
+                <li>✔️ All Premium Features</li>
+                <li>✔️ 4 Family Members</li>
+                <li>✔️ Kids Zone</li>
+              </ul>
+              <button className="w-full py-2 bg-yellow-500 text-white rounded font-semibold hover:bg-yellow-600 transition">Join Family</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* --- Contact Section --- */}
+      <section className="bg-yellow-50 py-16 px-4">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-3xl md:text-4xl font-extrabold font-serif text-yellow-700 mb-8">Contact Us</h2>
+          <form className="space-y-6">
+            <div className="flex flex-col md:flex-row gap-4">
+              <input
+                type="text"
+                placeholder="Your Name"
+                className="flex-1 px-4 py-3 rounded border border-yellow-200 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+                required
+              />
+              <input
+                type="email"
+                placeholder="Your Email"
+                className="flex-1 px-4 py-3 rounded border border-yellow-200 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+                required
+              />
+            </div>
+            <textarea
+              placeholder="Your Message"
+              className="w-full px-4 py-3 rounded border border-yellow-200 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+              rows={5}
+              required
+            />
+            <button
+              type="submit"
+              className="w-full py-3 bg-yellow-600 text-white rounded font-semibold hover:bg-yellow-700 transition"
+            >
+              Send Message
+            </button>
+          </form>
+          <div className="mt-8 text-gray-700">
+            <div>📞 <span className="font-semibold">+91 98765 43210</span></div>
+            <div>📧 <span className="font-semibold">info@hardcorerevolution.com</span></div>
+            <div>🏢 123 Fitness Street, Mumbai, India</div>
+          </div>
+        </div>
+      </section>
     </>
   );
 }
