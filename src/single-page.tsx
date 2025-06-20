@@ -55,7 +55,7 @@ const SinglePage = () => {
   }
 
   return (
-    <div className=" md:min-h-screen pt-24 py-12 px-2 md:px-8">
+     <div className="flex max-w-md md:max-w-3xl sm:max-w-xl pb-8 pt-10 md:pt-14 px-2 md:px-8 items-center justify-center min-h-screen bg-gray-50">
       {!editMode ? (
         <>
           <h2 className="text-3xl md:text-4xl font-extrabold font-serif text-center mb-8 text-black tracking-tight drop-shadow">
