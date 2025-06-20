@@ -46,13 +46,13 @@ export default function DrawerAppBar() {
         </Link>
 
         {/* Desktop Links */}
-        <ul className="hidden md:flex items-center gap-8 font-serif text-base">
+        <ul className="hidden md:flex items-center gap-6 font-serif text-base">
           {links.map(([title, url]) =>
             title === "Login" ? (
               <li key={title}>
                 <button
                   onClick={() => navigate(url)}
-                  className="px-4 py-1.5 bg-yellow-500 text-white rounded-md text-base font-semibold hover:bg-white hover:text-black transition"
+                  className="px-3 py-1.5 bg-yellow-500 text-white rounded-md text-base font-semibold hover:bg-white hover:text-black transition"
                 >
                   Sign In
                 </button>
@@ -96,7 +96,7 @@ export default function DrawerAppBar() {
           open ? "max-h-96 opacity-100 scale-100" : "max-h-0 opacity-0 scale-95"
         } overflow-hidden`}
       >
-        <div className="bg-stone-900 shadow-xl rounded-xl mt-2 mx-2 px-4 py-3 border border-stone-800">
+        <div className="bg-stone-900 shadow-xl rounded-xl mt-2 mx-2 px-3 py-3 border border-stone-800">
           <ul className="flex flex-col gap-3 text-base font-serif">
             {links.map(([title, url]) =>
               title === "Login" ? (

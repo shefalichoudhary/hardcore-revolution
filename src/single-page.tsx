@@ -221,7 +221,7 @@ const SinglePage = () => {
               <button
                 type="button"
                 onClick={() => setEditMode(false)}
-                className=" px-4 py-1.5  bg-white text-black  rounded tracking-widest font-semibold hover:bg-yellow-500 hover:text-white transition"
+                className=" px-4 py-1.5  bg-gray-900 text-white  rounded tracking-widest font-semibold hover:bg-yellow-500 hover:text-white transition"
               >
                 CANCEL
               </button>
