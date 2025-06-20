@@ -61,7 +61,7 @@ function Home() {
       </div>
 
        {/* Services Carousel with animation */}
-      <div ref={ref} className="pt-12 sm:pt-4">
+      <div ref={ref} className="pt-1 sm:pt-5">
         <motion.div
           initial={{ opacity: 0, y: 80 }}
           animate={show ? { opacity: 1, y: 0 } : {}}
@@ -283,7 +283,7 @@ function Home() {
         transition={{ duration: 0.7, ease: "easeOut" }}
         className="bg-white py-10 sm:py-8 px-2"
       >
-        <div className="max-w-5xl mx-auto text-center pb-6">
+        <div className="max-w-5xl mx-auto text-center pb-10">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold font-serif text-gray-900 mb-6 sm:mb-8">
             What Our Members Say
           </h2>

@@ -34,10 +34,10 @@ export default function SimpleBottomNavigation() {
             {/* Email */}
             <a
               href="mailto:choudharyshefali@gmail.com"
-              className="bg-white rounded-full w-10 h-10 flex items-center justify-center border border-gray-300 hover:bg-black hover:text-white transition active:scale-90"
+              className="bg-white rounded-full w-10 h-10 flex items-center justify-center border border-gray-300 transition transform active:scale-110"
               title="Email"
             >
-              <EmailIcon className="text-black group-hover:text-white transition pointer-events-none" />
+              <EmailIcon className="text-black transition pointer-events-none" />
             </a>
 
             {/* Instagram */}
@@ -45,20 +45,20 @@ export default function SimpleBottomNavigation() {
               href="https://www.instagram.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-white rounded-full w-10 h-10 flex items-center justify-center border border-gray-300 hover:bg-black hover:text-white transition active:scale-90"
+              className="bg-white rounded-full w-10 h-10 flex items-center justify-center border border-gray-300 transition transform active:scale-110"
               title="Instagram"
             >
-              <InstagramIcon className="text-black group-hover:text-white transition pointer-events-none" />
+              <InstagramIcon className="text-black transition pointer-events-none" />
             </a>
             {/* WhatsApp */}
             <a
               href="https://wa.me/919329751342"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-white rounded-full w-10 h-10 flex items-center justify-center border border-gray-300 hover:bg-black hover:text-white transition active:scale-90"
+              className="bg-white rounded-full w-10 h-10 flex items-center justify-center border border-gray-300 transition transform active:scale-110"
               title="WhatsApp"
             >
-              <WhatsAppIcon className="text-black group-hover:text-white transition pointer-events-none" />
+              <WhatsAppIcon className="text-black transition pointer-events-none" />
             </a>
 
             {/* Facebook */}
@@ -66,18 +66,18 @@ export default function SimpleBottomNavigation() {
               href="https://www.facebook.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-white rounded-full w-10 h-10 flex items-center justify-center border border-gray-300 hover:bg-black hover:text-white transition active:scale-90"
+              className="bg-white rounded-full w-10 h-10 flex items-center justify-center border border-gray-300 transition transform active:scale-110"
               title="Facebook"
             >
-              <FacebookIcon className="text-black group-hover:text-white transition pointer-events-none" />
+              <FacebookIcon className="text-black transition pointer-events-none" />
             </a>
 
             <a
               href="tel:+919329751342"
-              className="bg-white rounded-full w-10 h-10 flex items-center justify-center border border-gray-300 hover:bg-black hover:text-white transition active:scale-90"
+              className="bg-white rounded-full w-10 h-10 flex items-center justify-center border border-gray-300 transition transform active:scale-110"
               title="Call"
             >
-              <PhoneIcon className="text-black group-hover:text-white transition pointer-events-none" />
+              <PhoneIcon className="text-black transition pointer-events-none" />
             </a>
           </div>
         </div>

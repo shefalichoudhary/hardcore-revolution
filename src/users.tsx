@@ -66,7 +66,7 @@ export default function Users() {
   });
 
   return (
-    <div className=" pt-10 h-screen flex-1 py-18 px-2 md:px-8 bg-gradient-to-br from-white via-gray-100 to-gray-200 font-sans">
+    <div className=" pt-14 h-screen flex-1 py-18 px-2 md:px-8 bg-gradient-to-br from-white via-gray-100 to-gray-200 font-sans">
       <h2 className="mt-8 text-4xl md:text-5xl font-extrabold text-center mb-10 font-serif tracking-tight text-black drop-shadow">
         Meet Our Community
       </h2>
