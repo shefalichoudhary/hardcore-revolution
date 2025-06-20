@@ -66,7 +66,7 @@ export default function Users() {
   });
 
   return (
-    <div className="min-h-screen flex-1 py-12 px-2 md:px-8 max-w-7xl mx-auto bg-gradient-to-br from-white via-gray-100 to-gray-200 font-sans">
+    <div className="min-h-screen flex-1 py-12 px-2 md:px-8  mx-auto bg-gradient-to-br from-white via-gray-100 to-gray-200 font-sans">
       <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-10 font-serif tracking-tight text-black drop-shadow">
         Meet Our Community
       </h2>
@@ -77,7 +77,7 @@ export default function Users() {
           <input
             type="text"
             className="w-full pl-12 pr-12 py-3 rounded-full border border-gray-300 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-100 bg-white shadow transition placeholder-gray-400 text-black text-base font-sans"
-            placeholder="Search by name, age, address, or gender..."
+            placeholder="Search by name, age oraddress..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
           />
@@ -151,29 +151,31 @@ export default function Users() {
               className="bg-white shadow-md rounded-2xl px-4 py-5 flex flex-col gap-2 hover:shadow-lg transition-all duration-200 border border-gray-200 group font-sans"
             >
               {/* Row 1: Icon + Name (left aligned) */}
-              <div className="flex items-center gap-2 mb-1">
-                <AccountCircleIcon sx={{ fontSize: 38 }} className="text-yellow-600 group-hover:scale-110 transition" />
+              <div className="flex items-center gap-1 ">
+                <AccountCircleIcon sx={{ fontSize: 38 }} className="text-gray-500 group-hover:scale-110 transition" />
                 <span className="text-base font-semibold capitalize text-black">
                   {item.fullname}
                 </span>
               </div>
-              {/* Row 2: District, Delete, Arrow (left aligned) */}
-              <div className="flex items-center gap-4 border-t border-gray-100 pt-2">
-                <span className="text-xs text-yellow-500">{item.district || "No district"}</span>
-                <button
-                  onClick={() => handleDelete(item.key)}
-                  className="text-black hover:text-yellow-600 transition-colors"
-                  title="Delete User"
-                >
-                  <DeleteIcon fontSize="small" />
-                </button>
-                <Link
-                  to={`/user/${item.key}`}
-                  className="text-yellow-800 hover:text-black transition-colors"
-                  title="View"
-                >
-                  <ArrowForwardSharpIcon fontSize="small" />
-                </Link>
+              {/* Row 2: District left, actions right */}
+              <div className="flex items-center justify-between border-t border-gray-100 pt-2">
+                <span className="text-xs text-gray-500">{item.district || "No district"}</span>
+                <div className="flex items-center gap-2">
+                  <button
+                    onClick={() => handleDelete(item.key)}
+                    className="text-black hover:text-yellow-600 transition-colors"
+                    title="Delete User"
+                  >
+                    <DeleteIcon fontSize="small" />
+                  </button>
+                  <Link
+                    to={`/user/${item.key}`}
+                    className="text-yellow-800 hover:text-black transition-colors"
+                    title="View"
+                  >
+                    <ArrowForwardSharpIcon fontSize="small" />
+                  </Link>
+                </div>
               </div>
             </div>
           ))}

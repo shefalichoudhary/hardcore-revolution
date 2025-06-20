@@ -49,7 +49,7 @@ export default function SimpleBottomNavigation() {
               Scan
             </a>
           </nav>
-          <div className="text-xs text-gray-700 text-center">
+          <div className="text-xs text-gray-700 md:text-center text-left">
             © {new Date().getFullYear()} Hardcore Revolution Gym.in
             <br />
             All Rights Reserved.

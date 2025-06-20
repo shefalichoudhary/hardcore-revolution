@@ -39,41 +39,41 @@ function Home() {
         {/* Left: Advanced Overlapping Images with Responsive Layout */}
         <div className="relative w-full max-w-xs xs:max-w-sm sm:max-w-md md:max-w-md lg:max-w-xl flex-shrink-0 min-h-[340px] sm:min-h-[400px] md:min-h-[480px] lg:min-h-[600px] flex items-center justify-center overflow-visible">
           {/* Mobile: Stack first two images, then last below */}
-          <div className="flex flex-col gap-4 w-full md:hidden">
-            <div className="flex gap-4 justify-center">
+          <div className="flex flex-col gap-6 w-full md:hidden">
+            <div className="flex gap-6 justify-center">
               {/* Fitness */}
-              <div className="relative w-32 h-32 xs:w-40 xs:h-40 rounded-full overflow-hidden shadow-2xl border-4 border-yellow-400 rotate-3 group transition-all duration-300">
+              <div className="relative w-40 h-40 xs:w-48 xs:h-48 rounded-full overflow-hidden shadow-2xl border-4 border-yellow-400 rotate-3 group transition-all duration-300">
                 <img
                   src="/fitness.jpg"
                   alt="Fitness"
                   className="w-full h-full object-cover group-hover:scale-105 transition-all duration-300"
                 />
                 <div className="absolute bottom-0 left-0 w-full bg-black/70 py-2 text-center">
-                  <span className="text-yellow-400 text-base xs:text-lg font-bold tracking-wide drop-shadow">Fitness</span>
+                  <span className="text-white text-lg xs:text-xl font-bold tracking-wide drop-shadow">Fitness</span>
                 </div>
               </div>
               {/* Wellness */}
-              <div className="relative w-28 h-24 xs:w-36 xs:h-28 rounded-2xl overflow-hidden shadow-xl border-4 border-yellow-400 -rotate-6 group transition-all duration-300">
+              <div className="relative w-36 h-32 xs:w-44 xs:h-36 rounded-2xl overflow-hidden shadow-xl border-4 border-yellow-400 -rotate-6 group transition-all duration-300">
                 <img
                   src="/wellness.jpg"
                   alt="Wellness"
                   className="w-full h-full object-cover group-hover:scale-105 transition-all duration-300"
                 />
                 <div className="absolute bottom-0 left-0 w-full bg-black/70 py-2 text-center">
-                  <span className="text-yellow-400 text-base xs:text-lg font-bold tracking-wide drop-shadow">Wellness</span>
+                  <span className="text-white text-lg xs:text-xl font-bold tracking-wide drop-shadow">Wellness</span>
                 </div>
               </div>
             </div>
             {/* Yoga below */}
             <div className="flex justify-center mt-2">
-              <div className="relative w-28 h-28 xs:w-36 xs:h-36 rounded-xl overflow-hidden shadow-lg border-4 border-yellow-400 group transition-all duration-300">
+              <div className="relative w-36 h-36 xs:w-44 xs:h-44 rounded-xl overflow-hidden shadow-lg border-4 border-yellow-400 group transition-all duration-300">
                 <img
                   src="/yoga.jpg"
                   alt="Yoga"
                   className="w-full h-full object-cover group-hover:scale-105 transition-all duration-300"
                 />
                 <div className="absolute bottom-0 left-0 w-full bg-black/70 py-2 text-center">
-                  <span className="text-yellow-400 text-base xs:text-lg font-bold tracking-wide drop-shadow">Yoga</span>
+                  <span className="text-white text-lg xs:text-xl font-bold tracking-wide drop-shadow">Yoga</span>
                 </div>
               </div>
             </div>
@@ -88,7 +88,7 @@ function Home() {
                 className="w-full h-full object-cover group-hover:scale-105 transition-all duration-300"
               />
               <div className="absolute bottom-0 left-0 w-full bg-black/70 py-2 text-center">
-                <span className="text-yellow-400 text-base xs:text-lg sm:text-xl font-bold tracking-wide drop-shadow">Fitness</span>
+                <span className="text-white text-base xs:text-lg sm:text-xl font-bold tracking-wide drop-shadow">Fitness</span>
               </div>
             </div>
             {/* Rotated Rectangle (Wellness) */}
@@ -99,7 +99,7 @@ function Home() {
                 className="w-full h-full object-cover group-hover:scale-105 transition-all duration-300"
               />
               <div className="absolute bottom-0 left-0 w-full bg-black/70 py-2 text-center">
-                <span className="text-yellow-400 text-base xs:text-lg sm:text-xl font-bold tracking-wide drop-shadow">Wellness</span>
+                <span className="text-white text-base xs:text-lg sm:text-xl font-bold tracking-wide drop-shadow">Wellness</span>
               </div>
             </div>
             {/* Square (Yoga) */}
@@ -110,7 +110,7 @@ function Home() {
                 className="w-full h-full object-cover group-hover:scale-105 transition-all duration-300"
               />
               <div className="absolute bottom-0 left-0 w-full bg-black/70 py-2 text-center">
-                <span className="text-yellow-400 text-base xs:text-lg sm:text-xl font-bold tracking-wide drop-shadow">Yoga</span>
+                <span className="text-white text-base xs:text-lg sm:text-xl font-bold tracking-wide drop-shadow">Yoga</span>
               </div>
             </div>
             {/* Decorative ring for extra style */}

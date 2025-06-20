@@ -27,17 +27,17 @@ const services = [
 	},
 	{
 		title: "Group Classes",
-		icon: <GroupIcon fontSize="large" className="text-white" />,
+		icon: <GroupIcon fontSize="large" className="text-yellow-500" />,
 		desc: "Join energetic group classes like Zumba, HIIT, and CrossFit. All levels welcome! Enjoy a fun, social environment with certified instructors and daily new classes.",
 	},
 	{
 		title: "Nutrition & Diet",
-		icon: <RestaurantIcon fontSize="large" className="text-yellow-500" />,
+		icon: <RestaurantIcon fontSize="large" className="text-white" />,
 		desc: "Personalized meal plans, nutrition coaching, and healthy recipes for every lifestyle. Our dieticians support you with macro tracking and weekly meal guides.",
 	},
 	{
 		title: "Workout Programs",
-		icon: <AssignmentIcon fontSize="large" className="text-white" />,
+		icon: <AssignmentIcon fontSize="large" className="text-yellow-500" />,
 		desc: "Structured programs for muscle gain, fat loss, or endurance. Track your progress with our app and follow video tutorials from beginner to advanced.",
 	},
 	{
