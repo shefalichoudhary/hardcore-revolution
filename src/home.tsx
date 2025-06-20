@@ -70,6 +70,7 @@ function Home() {
           <ServicesCarousel />
         </motion.div>
       </div>
+      
 
       {/* Fitness Journey Section */}
       <section className="max-w-7xl mx-auto px-2 py-6 sm:px-4 sm:py-4 flex flex-col md:flex-row items-center gap-10">
@@ -195,6 +196,8 @@ function Home() {
           </div>
         </div>
       </section>
+
+
       {/* --- Pricing Section --- */}
       <section className="py-10 sm:py-12 px-2">
   <div className="max-w-6xl mx-auto text-center">
@@ -203,27 +206,27 @@ function Home() {
       Choose the plan that fits your lifestyle. All memberships include unlimited access to our facilities and community events.
     </p>
     <div className="relative flex justify-center">
-      {/* Outer rectangle at the bottom, overlapped by cards */}
-      <div className="hidden md:block absolute left-1/2 -translate-x-1/2 bottom-0 w-[92%] h-12 bg-yellow-100 rounded-3xl shadow-lg z-0" />
       <div className="relative z-10 flex flex-col md:flex-row gap-6 justify-center items-stretch w-full">
         {/* Basic */}
-        <div className="flex-1 max-w-sm bg-gray-900 rounded-2xl shadow-xl border-2 border-yellow-500 p-6 flex flex-col items-center hover:scale-105 transition-transform duration-300 mx-auto">
+        <div className="flex-1 max-w-sm bg-white rounded-2xl shadow-xl border-2 border-yellow-500 p-6 flex flex-col items-center hover:scale-105 transition-transform duration-300 mx-auto">
           <div className="mb-2">
             <span className="inline-block text-yellow-500 text-lg font-bold mb-1">Basic</span>
           </div>
           <div className="mb-4">
-            <span className="text-3xl font-extrabold text-white">₹999</span>
-            <span className="text-base text-gray-300 font-medium">/mo</span>
+            <span className="text-3xl font-extrabold text-black">₹999</span>
+            <span className="text-base text-gray-500 font-medium">/mo</span>
           </div>
-          <ul className="text-white mb-5 space-y-2 text-left w-full max-w-xs mx-auto text-base">
+          <ul className="text-gray-800 mb-5 space-y-2 text-left w-full max-w-xs mx-auto text-base">
             <li className="flex items-center gap-2"><CheckIcon className="text-yellow-500" fontSize="small" /> Gym Access</li>
             <li className="flex items-center gap-2"><CheckIcon className="text-yellow-500" fontSize="small" /> Group Classes</li>
             <li className="flex items-center gap-2"><CheckIcon className="text-yellow-500" fontSize="small" /> Locker Room</li>
           </ul>
-          <button className="w-full py-2 bg-yellow-500 text-black rounded-xl font-semibold hover:bg-white hover:text-yellow-500 transition text-base">Join Basic</button>
+          <button className="w-full py-2 bg-yellow-500 text-black rounded-xl font-semibold hover:bg-black hover:text-yellow-500 transition text-base">Join Basic</button>
         </div>
         {/* Premium - Highlighted */}
-        <div className="flex-1 max-w-sm bg-black border-4 border-yellow-500 rounded-2xl shadow-2xl p-7 flex flex-col items-center scale-105 z-10 relative hover:scale-110 transition-transform duration-300 mx-auto">
+        <div className="flex-1 max-w-sm bg-gray-900 border-4 border-yellow-500 rounded-2xl shadow-2xl p-7 flex flex-col items-center scale-105 z-10 relative hover:scale-110 transition-transform duration-300 mx-auto
+          md:max-w-md md:p-10 md:scale-110
+        ">
           <div className="absolute -top-4 left-1/2 -translate-x-1/2">
             <span className="inline-block bg-yellow-500 text-black px-4 py-1 rounded-full font-bold text-xs shadow-lg">Most Popular</span>
           </div>
@@ -243,20 +246,20 @@ function Home() {
           <button className="w-full py-2 bg-yellow-500 text-black rounded-xl font-semibold hover:bg-white hover:text-yellow-500 transition text-base shadow-lg">Join Premium</button>
         </div>
         {/* Family */}
-        <div className="flex-1 max-w-sm bg-gray-900 rounded-2xl shadow-xl border-2 border-yellow-500 p-6 flex flex-col items-center hover:scale-105 transition-transform duration-300 mx-auto">
+        <div className="flex-1 max-w-sm bg-white rounded-2xl shadow-xl border-2 border-yellow-500 p-6 flex flex-col items-center hover:scale-105 transition-transform duration-300 mx-auto">
           <div className="mb-2">
             <span className="inline-block text-yellow-500 text-lg font-bold mb-1">Family</span>
           </div>
           <div className="mb-4">
-            <span className="text-3xl font-extrabold text-white">₹2,999</span>
-            <span className="text-base text-gray-300 font-medium">/mo</span>
+            <span className="text-3xl font-extrabold text-black">₹2,999</span>
+            <span className="text-base text-gray-500 font-medium">/mo</span>
           </div>
-          <ul className="text-white mb-5 space-y-2 text-left w-full max-w-xs mx-auto text-base">
+          <ul className="text-gray-800 mb-5 space-y-2 text-left w-full max-w-xs mx-auto text-base">
             <li className="flex items-center gap-2"><CheckIcon className="text-yellow-500" fontSize="small" /> All Premium Features</li>
             <li className="flex items-center gap-2"><CheckIcon className="text-yellow-500" fontSize="small" /> 4 Family Members</li>
             <li className="flex items-center gap-2"><CheckIcon className="text-yellow-500" fontSize="small" /> Kids Zone</li>
           </ul>
-          <button className="w-full py-2 bg-yellow-500 text-black rounded-xl font-semibold hover:bg-white hover:text-yellow-500 transition text-base">Join Family</button>
+          <button className="w-full py-2 bg-yellow-500 text-black rounded-xl font-semibold hover:bg-black hover:text-yellow-500 transition text-base">Join Family</button>
         </div>
       </div>
     </div>
@@ -297,9 +300,6 @@ function Home() {
         </div>
       </motion.section>
 
-     
-
-     
     </>
   );
 }

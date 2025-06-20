@@ -140,7 +140,7 @@ const SinglePage = () => {
           >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <label className="flex flex-col">
-                <span className="text-gray-800 font-semibold mb-1">
+                <span className="text-gray-500 font-semibold mb-1">
                   Fullname
                 </span>
                 <input
@@ -151,7 +151,7 @@ const SinglePage = () => {
                 />
               </label>
               <label className="flex flex-col">
-                <span className="text-gray-800 font-semibold mb-1">Age</span>
+                <span className="text-gray-500 font-semibold mb-1">Age</span>
                 <input
                   defaultValue={user.age}
                   {...register("age")}
@@ -161,7 +161,7 @@ const SinglePage = () => {
                 />
               </label>
               <label className="flex flex-col">
-                <span className="text-gray-800 font-semibold mb-1">Gender</span>
+                <span className="text-gray-500 font-semibold mb-1">Gender</span>
                 <select
                   defaultValue={user.gender}
                   {...register("gender")}
@@ -182,7 +182,7 @@ const SinglePage = () => {
                 />
               </label>
               <label className="flex flex-col">
-                <span className="text-gray-800 font-semibold mb-1">
+                <span className="text-gray-500 font-semibold mb-1">
                   Joining Date
                 </span>
                 <input
@@ -193,7 +193,7 @@ const SinglePage = () => {
                 />
               </label>
               <label className="flex flex-col">
-                <span className="text-gray-800 font-semibold mb-1">District</span>
+                <span className="text-gray-500 font-semibold mb-1">District</span>
                 <input
                   defaultValue={user.district}
                   {...register("district")}
@@ -202,7 +202,7 @@ const SinglePage = () => {
                 />
               </label>
               <label className="md:col-span-2 flex flex-col">
-                <span className="text-gray-800 font-semibold mb-1">Address</span>
+                <span className="text-gray-500 font-semibold mb-1">Address</span>
                 <input
                   defaultValue={user.address}
                   {...register("address")}
