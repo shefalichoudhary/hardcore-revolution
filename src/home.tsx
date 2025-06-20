@@ -218,27 +218,27 @@ function Home() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.7, ease: "easeOut" }}
-        className="bg-yellow-50 py-16 px-4"
+        className="bg-white py-14 px-4"
       >
         <div className="max-w-5xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-extrabold font-serif text-yellow-700 mb-8">What Our Members Say</h2>
+          <h2 className="text-3xl md:text-4xl font-extrabold font-serif text-gray-900 mb-8">What Our Members Say</h2>
           <div className="flex flex-col md:flex-row gap-8 justify-center items-stretch">
             <div className="bg-white rounded-xl shadow-lg p-6 flex-1">
               <p className="text-lg text-gray-700 mb-4">“The trainers here are amazing and the community is so supportive. I’ve never felt more motivated!”</p>
               <div className="flex items-center justify-center gap-3">
-                <span className="font-bold text-yellow-700">Priya S.</span>
+                <span className="font-bold text-yellow-500">Priya S.</span>
               </div>
             </div>
             <div className="bg-white rounded-xl shadow-lg p-6 flex-1">
               <p className="text-lg text-gray-700 mb-4">“The facilities are top-notch and I love the variety of classes. Highly recommend!”</p>
               <div className="flex items-center justify-center gap-3">
-                <span className="font-bold text-yellow-700">Rahul M.</span>
+                <span className="font-bold text-yellow-500">Rahul M.</span>
               </div>
             </div>
             <div className="bg-white rounded-xl shadow-lg p-6 flex-1">
               <p className="text-lg text-gray-700 mb-4">“Joining changed my life. I feel healthier, stronger, and happier every day!”</p>
               <div className="flex items-center justify-center gap-3">
-                <span className="font-bold text-yellow-700">Anjali K.</span>
+                <span className="font-bold text-yellow-500">Anjali K.</span>
               </div>
             </div>
           </div>
