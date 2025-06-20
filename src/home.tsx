@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import ServicesCarousel from "./servicesCarousel";
-import MobileImages from "../fitness-img-section"; // Adjust the import path as needed
+import MobileImages from "./fitness-img-section"; // Adjust the import path as needed
 function Home() {
 
   const navigate = useNavigate();
