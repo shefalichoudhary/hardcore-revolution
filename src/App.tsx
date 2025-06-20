@@ -32,7 +32,7 @@ function AppContent() {
   }
 
   return (
-    <div className="pt-16">
+    <main>
       <MenuBar />
       <Routes>
         <Route path="/" element={<Home />}></Route>
@@ -43,7 +43,7 @@ function AppContent() {
         <Route path="/user-scanner" element={<UserScanner />}></Route>
       </Routes>
       <Footer />
-    </div>
+    </main>
   );
 }
 
