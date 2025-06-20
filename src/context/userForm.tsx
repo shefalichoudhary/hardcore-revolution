@@ -26,7 +26,7 @@ export default function UserForm(user: FormData) {
   const currentDate = new Date().toLocaleDateString();
 
   return (
-    <div className="container max-w-4xl mx-auto py-6 px-4">
+    <div className="container max-w-4xl mx-auto py-10 px-4">
       <form
         onSubmit={handleSubmit(onSubmit)}
         autoComplete="off"
