@@ -26,7 +26,7 @@ export default function UserForm(user: FormData) {
 
   return (
   <div className="flex items-center justify-center min-h-screen bg-gray-50">
-    <div className="w-full max-w-md md:max-w-xl sm:max-w-lg pb-4 pt-6 md:pt-14 px-2 md:px-8">
+    <div className="w-full max-w-md md:max-w-xl sm:max-w-lg pb-8 pt-10 md:pt-14 px-2 md:px-8">
       <form
         onSubmit={handleSubmit(onSubmit)}
         autoComplete="off"

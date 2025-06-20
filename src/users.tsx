@@ -66,8 +66,8 @@ export default function Users() {
   });
 
   return (
-    <div className="min-h-screen flex-1 py-18 px-2 md:px-8   bg-gradient-to-br from-white via-gray-100 to-gray-200 font-sans">
-      <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-10 font-serif tracking-tight text-black drop-shadow">
+    <div className="min-h-screen flex-1 py-18 px-2 md:px-8 bg-gradient-to-br from-white via-gray-100 to-gray-200 font-sans">
+      <h2 className="mt-8 text-4xl md:text-5xl font-extrabold text-center mb-10 font-serif tracking-tight text-black drop-shadow">
         Meet Our Community
       </h2>
 
@@ -148,7 +148,7 @@ export default function Users() {
           {filteredDocs.map((item) => (
             <div
               key={item.key}
-              className="bg-white shadow-md rounded-2xl px-4 py-5 flex flex-col gap-2 hover:shadow-lg transition-all duration-200 border border-gray-200 group font-sans"
+              className="bg-white shadow-md rounded-2xl px-3 py-4 flex flex-col gap-2 hover:shadow-lg transition-all duration-200 border border-gray-200 group font-sans"
             >
               {/* Row 1: Icon + Name (left aligned) */}
               <div className="flex items-center gap-1 ">
@@ -158,7 +158,7 @@ export default function Users() {
                 </span>
               </div>
               {/* Row 2: District left, actions right */}
-              <div className="flex items-center justify-between border-t border-gray-100 pt-2">
+              <div className="flex items-center justify-between border-t border-gray-100 pt-1">
                 <span className="text-xs text-gray-500">{item.district || "No district"}</span>
                 <div className="flex items-center gap-2">
                   <button
