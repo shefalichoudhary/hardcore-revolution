@@ -55,7 +55,7 @@ const SinglePage = () => {
   }
 
   return (
-     <div className="flex max-w-md md:max-w-3xl sm:max-w-xl pb-8 pt-10 md:pt-14 px-2 md:px-8 items-center justify-center min-h-screen bg-gray-50">
+    <div className=" md:min-h-screen pt-24 py-12 px-2 md:px-8">
       {!editMode ? (
         <>
           <h2 className="text-3xl md:text-4xl font-extrabold font-serif text-center mb-8 text-black tracking-tight drop-shadow">
@@ -221,7 +221,7 @@ const SinglePage = () => {
               <button
                 type="button"
                 onClick={() => setEditMode(false)}
-                className=" px-4 py-1.5  bg-gray-900 text-white rounded tracking-widest font-semibold hover:bg-yellow-500 hover:text-white transition"
+                className=" px-4 py-1.5  bg-white text-black  rounded tracking-widest font-semibold hover:bg-yellow-500 hover:text-white transition"
               >
                 CANCEL
               </button>
