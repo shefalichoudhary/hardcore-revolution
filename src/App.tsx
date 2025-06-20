@@ -32,7 +32,7 @@ function AppContent() {
   }
 
   return (
-    <main className="font-sans bg-gradient-to-br from-white via-gray-100 to-gray-200 flex-1 mx-auto"> 
+    <main className="font-sans bg-gradient-to-br from-white via-gray-100 to-gray-200"> 
       <MenuBar />
       <Routes>
         <Route path="/" element={<Home />}></Route>

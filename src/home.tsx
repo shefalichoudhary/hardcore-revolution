@@ -33,7 +33,7 @@ function Home() {
   return (
     <>
       {/* Hero Section */}
-      <div className="md:min-h-screen relative bg-cover bg-center bg-no-repeat bg-[url('../public/Img.jpg')]">
+      <div className="md:min-h-screen relative bg-cover bg-center bg-no-repeat bg-[url('../public/Img.jpg')] mt-8">
         {/* Overlay */}
         <div className="absolute inset-0 bg-black bg-opacity-60 z-0" />
 
@@ -72,7 +72,7 @@ function Home() {
       </div>
 
       {/* Fitness Journey Section */}
-      <section className="max-w-7xl mx-auto px-2 py-8 sm:px-4 sm:py-12 flex flex-col md:flex-row items-center gap-10">
+      <section className="max-w-7xl mx-auto px-2 py-6 sm:px-4 sm:py-4 flex flex-col md:flex-row items-center gap-10">
         {/* Text first on mobile, images after */}
         <div className="order-1 w-full flex-1 flex flex-col justify-center items-start px-2 md:px-8">
           <span className="uppercase text-sm font-bold tracking-widest text-yellow-500 mb-2">
@@ -205,58 +205,58 @@ function Home() {
     <div className="relative flex justify-center">
       {/* Outer rectangle at the bottom, overlapped by cards */}
       <div className="hidden md:block absolute left-1/2 -translate-x-1/2 bottom-0 w-[92%] h-12 bg-yellow-100 rounded-3xl shadow-lg z-0" />
-      <div className="relative z-10 flex flex-col md:flex-row gap-4 md:gap-6 justify-center items-stretch w-full">
+      <div className="relative z-10 flex flex-col md:flex-row gap-6 justify-center items-stretch w-full">
         {/* Basic */}
-        <div className="flex-1 max-w-xs bg-white rounded-2xl shadow-xl border-2 border-yellow-500 p-4 sm:p-5 flex flex-col items-center hover:scale-105 transition-transform duration-300 mx-auto">
+        <div className="flex-1 max-w-sm bg-gray-900 rounded-2xl shadow-xl border-2 border-yellow-500 p-6 flex flex-col items-center hover:scale-105 transition-transform duration-300 mx-auto">
           <div className="mb-2">
-            <span className="inline-block text-yellow-500 text-base font-bold mb-1">Basic</span>
+            <span className="inline-block text-yellow-500 text-lg font-bold mb-1">Basic</span>
           </div>
           <div className="mb-4">
-            <span className="text-2xl font-extrabold text-black">₹999</span>
-            <span className="text-sm text-gray-500 font-medium">/mo</span>
+            <span className="text-3xl font-extrabold text-white">₹999</span>
+            <span className="text-base text-gray-300 font-medium">/mo</span>
           </div>
-          <ul className="text-gray-700 mb-5 space-y-2 text-left w-full max-w-xs mx-auto text-sm">
+          <ul className="text-white mb-5 space-y-2 text-left w-full max-w-xs mx-auto text-base">
             <li className="flex items-center gap-2"><CheckIcon className="text-yellow-500" fontSize="small" /> Gym Access</li>
             <li className="flex items-center gap-2"><CheckIcon className="text-yellow-500" fontSize="small" /> Group Classes</li>
             <li className="flex items-center gap-2"><CheckIcon className="text-yellow-500" fontSize="small" /> Locker Room</li>
           </ul>
-          <button className="w-full py-2 bg-black text-yellow-500 rounded-xl font-semibold hover:bg-yellow-500 hover:text-black transition text-sm">Join Basic</button>
+          <button className="w-full py-2 bg-yellow-500 text-black rounded-xl font-semibold hover:bg-white hover:text-yellow-500 transition text-base">Join Basic</button>
         </div>
         {/* Premium - Highlighted */}
-        <div className="flex-1 max-w-xs bg-yellow-500 border-4 border-black rounded-2xl shadow-2xl p-5 sm:p-6 flex flex-col items-center scale-105 z-10 relative hover:scale-110 transition-transform duration-300 mx-auto">
+        <div className="flex-1 max-w-sm bg-black border-4 border-yellow-500 rounded-2xl shadow-2xl p-7 flex flex-col items-center scale-105 z-10 relative hover:scale-110 transition-transform duration-300 mx-auto">
           <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-            <span className="inline-block bg-black text-yellow-500 px-4 py-1 rounded-full font-bold text-xs shadow-lg">Most Popular</span>
+            <span className="inline-block bg-yellow-500 text-black px-4 py-1 rounded-full font-bold text-xs shadow-lg">Most Popular</span>
           </div>
           <div className="mb-3 mt-3">
-            <span className="inline-block text-black text-base font-bold mb-1">Premium</span>
+            <span className="inline-block text-yellow-500 text-lg font-bold mb-1">Premium</span>
           </div>
           <div className="mb-4">
-            <span className="text-2xl font-extrabold text-white">₹1,999</span>
-            <span className="text-sm text-black font-medium">/mo</span>
+            <span className="text-3xl font-extrabold text-white">₹1,999</span>
+            <span className="text-base text-gray-300 font-medium">/mo</span>
           </div>
-          <ul className="text-white mb-5 space-y-2 text-left w-full max-w-xs mx-auto text-sm">
-            <li className="flex items-center gap-2"><CheckIcon className="text-white" fontSize="small" /> All Basic Features</li>
-            <li className="flex items-center gap-2"><CheckIcon className="text-white" fontSize="small" /> Personal Trainer</li>
-            <li className="flex items-center gap-2"><CheckIcon className="text-white" fontSize="small" /> Spa & Recovery</li>
-            <li className="flex items-center gap-2"><CheckIcon className="text-white" fontSize="small" /> Nutrition Plan</li>
+          <ul className="text-white mb-5 space-y-2 text-left w-full max-w-xs mx-auto text-base">
+            <li className="flex items-center gap-2"><CheckIcon className="text-yellow-500" fontSize="small" /> All Basic Features</li>
+            <li className="flex items-center gap-2"><CheckIcon className="text-yellow-500" fontSize="small" /> Personal Trainer</li>
+            <li className="flex items-center gap-2"><CheckIcon className="text-yellow-500" fontSize="small" /> Spa & Recovery</li>
+            <li className="flex items-center gap-2"><CheckIcon className="text-yellow-500" fontSize="small" /> Nutrition Plan</li>
           </ul>
-          <button className="w-full py-2 bg-black text-yellow-500 rounded-xl font-semibold hover:bg-white hover:text-black transition text-sm shadow-lg">Join Premium</button>
+          <button className="w-full py-2 bg-yellow-500 text-black rounded-xl font-semibold hover:bg-white hover:text-yellow-500 transition text-base shadow-lg">Join Premium</button>
         </div>
         {/* Family */}
-        <div className="flex-1 max-w-xs bg-gray-900 rounded-2xl shadow-xl border-2 border-yellow-500 p-4 sm:p-5 flex flex-col items-center hover:scale-105 transition-transform duration-300 mx-auto">
+        <div className="flex-1 max-w-sm bg-gray-900 rounded-2xl shadow-xl border-2 border-yellow-500 p-6 flex flex-col items-center hover:scale-105 transition-transform duration-300 mx-auto">
           <div className="mb-2">
-            <span className="inline-block text-yellow-500 text-base font-bold mb-1">Family</span>
+            <span className="inline-block text-yellow-500 text-lg font-bold mb-1">Family</span>
           </div>
           <div className="mb-4">
-            <span className="text-2xl font-extrabold text-white">₹2,999</span>
-            <span className="text-sm text-gray-300 font-medium">/mo</span>
+            <span className="text-3xl font-extrabold text-white">₹2,999</span>
+            <span className="text-base text-gray-300 font-medium">/mo</span>
           </div>
-          <ul className="text-white mb-5 space-y-2 text-left w-full max-w-xs mx-auto text-sm">
+          <ul className="text-white mb-5 space-y-2 text-left w-full max-w-xs mx-auto text-base">
             <li className="flex items-center gap-2"><CheckIcon className="text-yellow-500" fontSize="small" /> All Premium Features</li>
             <li className="flex items-center gap-2"><CheckIcon className="text-yellow-500" fontSize="small" /> 4 Family Members</li>
             <li className="flex items-center gap-2"><CheckIcon className="text-yellow-500" fontSize="small" /> Kids Zone</li>
           </ul>
-          <button className="w-full py-2 bg-yellow-500 text-black rounded-xl font-semibold hover:bg-white hover:text-yellow-500 transition text-sm">Join Family</button>
+          <button className="w-full py-2 bg-yellow-500 text-black rounded-xl font-semibold hover:bg-white hover:text-yellow-500 transition text-base">Join Family</button>
         </div>
       </div>
     </div>
@@ -270,7 +270,7 @@ function Home() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.7, ease: "easeOut" }}
-        className="bg-white py-10 sm:py-14 px-4"
+        className="bg-white py-18 sm:py-12 px-4"
       >
         <div className="max-w-5xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-extrabold font-serif text-gray-900 mb-8">What Our Members Say</h2>
