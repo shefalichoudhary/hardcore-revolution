@@ -110,7 +110,7 @@ const UserScanner = () => {
 
         {!scanning && (
           <button
-            className="px-8 py-3 text-base font-semibold rounded-full tracking-widest bg-black text-white shadow hover:bg-gray-900 transition-all duration-200"
+            className="px-4 py-1.5 text-base font-semibold rounded-full tracking-widest bg-yellow-500 text-white shadow hover:bg-white hover:text-black transition-all duration-200"
             type="button"
             onClick={onHandleClick}
           >

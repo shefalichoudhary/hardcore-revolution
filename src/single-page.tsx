@@ -66,7 +66,7 @@ const SinglePage = () => {
             {/* Left: User details */}
             <div className="flex-1 space-y-4 text-base md:text-lg font-medium tracking-wide text-stone-800">
               <div>
-                <span className="block text-xs uppercase text-yellow-600 font-bold tracking-widest mb-2">
+                <span className="block text-xs uppercase text-gray-600 font-bold tracking-widest mb-2">
                   Name
                 </span>
                 <span className="font-serif text-xl text-black">
@@ -75,31 +75,31 @@ const SinglePage = () => {
               </div>
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <span className="block text-xs uppercase text-yellow-600 font-bold tracking-widest mb-1">
+                  <span className="block text-xs uppercase  text-gray-600 font-bold tracking-widest mb-1">
                     Age
                   </span>
                   <span>{user.age}</span>
                 </div>
                 <div>
-                  <span className="block text-xs uppercase text-yellow-600 font-bold tracking-widest mb-1">
+                  <span className="block text-xs uppercase  text-gray-600 font-bold tracking-widest mb-1">
                     Phone
                   </span>
                   <span>{user.number}</span>
                 </div>
                 <div>
-                  <span className="block text-xs uppercase text-yellow-600 font-bold tracking-widest mb-1">
+                  <span className="block text-xs uppercase  text-gray-600-bold tracking-widest mb-1">
                     Joined
                   </span>
                   <span>{user.date}</span>
                 </div>
                 <div>
-                  <span className="block text-xs uppercase text-yellow-600 font-bold tracking-widest mb-1">
+                  <span className="block text-xs uppercase  text-gray-600 font-bold tracking-widest mb-1">
                     District
                   </span>
                   <span>{user.district}</span>
                 </div>
                 <div className="col-span-2">
-                  <span className="block text-xs uppercase text-yellow-600 font-bold tracking-widest mb-1">
+                  <span className="block text-xs uppercase  text-gray-600 font-bold tracking-widest mb-1">
                     Address
                   </span>
                   <span>{user.address}</span>
@@ -120,7 +120,7 @@ const SinglePage = () => {
                 Scan this QR code at the gym for quick check-in and profile access.
               </div>
               <button
-                className="text-sm font-semibold rounded tracking-widest px-6 py-2 bg-black text-white hover:bg-gray-900 transition"
+                className=" px-4 py-1.5 text-sm font-semibold rounded tracking-widest  bg-yellow-500 text-white hover:bg-white hover:text-black transition"
                 onClick={() => setEditMode(true)}
               >
                 EDIT PROFILE
@@ -214,14 +214,14 @@ const SinglePage = () => {
             <div className="flex justify-center gap-6 pt-4">
               <button
                 type="submit"
-                className="bg-black text-white px-6 py-3 rounded tracking-widest font-semibold hover:bg-gray-900 transition"
+                className="px-4 py-1.5bg-yellow-500 text-white rounded tracking-widest font-semibold hover:bg-white hover:text-black  transition"
               >
                 UPDATE
               </button>
               <button
                 type="button"
                 onClick={() => setEditMode(false)}
-                className="bg-gray-100 text-black px-6 py-3 rounded tracking-widest font-semibold hover:bg-gray-200 transition"
+                className=" px-4 py-1.5  bg-white text-black  rounded tracking-widest font-semibold hover:bg-yellow-500 hover:text-white transition"
               >
                 CANCEL
               </button>
