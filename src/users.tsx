@@ -4,6 +4,7 @@ import { deleteDoc, doc, getDocs } from "firebase/firestore";
 import { Link } from "react-router-dom";
 import { isAdmin, useRequireAuth, UserAuth } from "./context/AuthContext";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import ArrowForwardSharpIcon from "@mui/icons-material/ArrowForwardSharp";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import DeleteIcon from "@mui/icons-material/Delete";
 import CircularProgress from "@mui/material/CircularProgress";
@@ -149,31 +150,34 @@ export default function Users() {
           {filteredDocs.map((item) => (
             <div
               key={item.key}
-              className="bg-white shadow-md rounded-2xl px-4 py-5 flex flex-col items-center hover:shadow-lg transition-all duration-200 border border-gray-200 group font-sans"
+              className="bg-white shadow-md rounded-2xl px-4 py-5 flex flex-col gap-2 hover:shadow-lg transition-all duration-200 border border-gray-200 group font-sans"
             >
-              <AccountCircleIcon sx={{ fontSize: 38 }} className="text-yellow-600 mb-1 group-hover:scale-110 transition" />
-              <div className="text-base font-semibold capitalize text-black text-center mb-1">
-                {item.fullname}
+              {/* Row 1: Icon + Name */}
+              <div className="flex items-center justify-center gap-2 mb-1">
+                <AccountCircleIcon sx={{ fontSize: 38 }} className="text-yellow-600 group-hover:scale-110 transition" />
+                <span className="text-base font-semibold capitalize text-black text-center">
+                  {item.fullname}
+                </span>
               </div>
-              <div className="text-xs text-gray-500 text-center mb-1">
-                {item.district || "No district"}
-              </div>
-              <div className="flex-1" />
-              <div className="w-full border-t border-gray-100 mt-3 pt-2 flex items-center justify-between">
-                <button
-                  onClick={() => handleDelete(item.key)}
-                  className="text-black hover:text-yellow-600 transition-colors"
-                  title="Delete User"
-                >
-                  <DeleteIcon fontSize="small" />
-                </button>
-                <Link
-                  to={`/user/${item.key}`}
-                  className="text-yellow-600 hover:text-black transition-colors"
-                  title="View"
-                >
-                  <ArrowForwardIosIcon fontSize="small" />
-                </Link>
+              {/* Row 2: District, Delete, Arrow */}
+              <div className="flex items-center justify-between w-full border-t border-gray-100 pt-2">
+                <span className="text-xs text-gray-500">{item.district || "No district"}</span>
+                <div className="flex items-center gap-2">
+                  <button
+                    onClick={() => handleDelete(item.key)}
+                    className="text-black hover:text-yellow-600 transition-colors"
+                    title="Delete User"
+                  >
+                    <DeleteIcon fontSize="small" />
+                  </button>
+                  <Link
+                    to={`/user/${item.key}`}
+                    className="text-yellow-600 hover:text-black transition-colors"
+                    title="View"
+                  >
+                    <ArrowForwardSharpIcon fontSize="small" />
+                  </Link>
+                </div>
               </div>
             </div>
           ))}

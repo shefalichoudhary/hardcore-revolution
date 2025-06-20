@@ -113,7 +113,7 @@ const SinglePage = () => {
                   size={160}
                   value={docId || ""}
                   bgColor="#fff"         // White background
-                  fgColor="#facc15"      // Tailwind yellow-400 for QR code color
+                  fgColor="#000"         // Black QR code color
                 />
               </div>
               <div className="text-xs text-gray-700 text-center md:text-right font-semibold">

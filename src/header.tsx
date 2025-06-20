@@ -22,8 +22,8 @@ export default function DrawerAppBar() {
   const links = user?.displayName
     ? [
         ["Home", "/"],
-        ["Form", "/userForm"],
-        ["Archive", "/users"],
+        ["Join", "/userForm"],
+        ["Members", "/users"],
         ["Scan", "/user-scanner"],
       ]
     : [
