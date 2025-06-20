@@ -28,8 +28,10 @@ export default function DrawerAppBar() {
       ]
     : [
         ["Home", "/"],
-        ["Login", "/signIn"],
+    
         ["Join", "/userForm"],
+        ["Login", "/signIn"],
+
       ];
 
   return (

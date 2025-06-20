@@ -55,7 +55,7 @@ function ServicesCarousel() {
 	const nextRef = useRef<HTMLButtonElement>(null);
 
 	return (
-		<section className=" min-h-screen relative  pt-12 pb-2  px-4 font-sans">
+		<section className=" min-h-screen relative  pt-12   px-4 font-sans">
 			<div className=" mx-auto">
 				<h2 className=" text-black text-4xl md:text-5xl font-extrabold text-center mb-4 tracking-tight drop-shadow-lg font-serif">
 					Our Trending Services
@@ -90,7 +90,7 @@ function ServicesCarousel() {
 							swiper.navigation.init();
 							swiper.navigation.update();
 						}}
-						className="pb-16"
+						className="pb-6"
 					>
 						{services.map((service, index) => (
 							<SwiperSlide key={index}>

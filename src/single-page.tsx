@@ -55,14 +55,14 @@ const SinglePage = () => {
   }
 
   return (
-    <div className=" md:min-h-screen pt-16 py-12 px-2 md:px-8">
+    <div className=" md:min-h-screen pt-24 py-12 px-2 md:px-8">
       {!editMode ? (
         <>
           <h2 className="text-3xl md:text-4xl font-extrabold font-serif text-center mb-8 text-black tracking-tight drop-shadow">
             Member Profile & QR Access
           </h2>
           {/* Profile & QR Section */}
-          <div className=" max-w-md md:max-w-2xl lg:max-w-4xl  bg-gradient-to-br from-white via-gray-100 to-gray-200 shadow-2xl rounded-2xl p-6 md:p-10 flex flex-col md:flex-row md:justify-between md:items-start gap-8">
+          <div className="max-w-md md:max-w-2xl lg:max-w-4xl mx-auto bg-gradient-to-br from-white via-gray-100 to-gray-200 shadow-2xl rounded-2xl p-6 md:p-10 flex flex-col md:flex-row md:justify-between md:items-start gap-8">
             {/* Left: User details */}
             <div className="flex-1 space-y-4 text-base md:text-lg font-medium tracking-wide text-stone-800">
               <div>
