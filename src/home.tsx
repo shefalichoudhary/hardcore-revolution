@@ -150,58 +150,62 @@ function Home() {
     <p className="text-gray-600 mb-12 max-w-2xl mx-auto">
       Choose the plan that fits your lifestyle. All memberships include unlimited access to our facilities and community events.
     </p>
-    <div className="flex flex-col md:flex-row gap-8 justify-center items-stretch">
-      {/* Basic */}
-      <div className="flex-1 bg-white rounded-3xl shadow-xl border border-yellow-200 p-8 flex flex-col items-center hover:scale-105 transition-transform duration-300">
-        <div className="mb-4">
-          <span className="inline-block bg-yellow-100 text-yellow-700 px-4 py-1 rounded-full font-semibold text-sm mb-2">Basic</span>
+    <div className="relative flex justify-center">
+      {/* Outer rectangle at the bottom, overlapped by cards */}
+      <div className="hidden md:block absolute left-1/2 -translate-x-1/2 bottom-0 w-[90%] h-16 bg-yellow-100 rounded-3xl shadow-lg z-0" />
+      <div className="relative z-10 flex flex-col md:flex-row gap-8 justify-center items-stretch w-full">
+        {/* Basic */}
+        <div className="flex-1 bg-white rounded-3xl shadow-xl border-2 border-yellow-400 p-8 flex flex-col items-center hover:scale-105 transition-transform duration-300 relative">
+          <div className="mb-4">
+            <span className="inline-block text-yellow-700 text-xl font-bold mb-2">Basic</span>
+          </div>
+          <div className="mb-6">
+            <span className="text-4xl font-extrabold text-gray-900">₹999</span>
+            <span className="text-base text-gray-500 font-medium">/mo</span>
+          </div>
+          <ul className="text-gray-700 mb-8 space-y-3 text-left w-full max-w-xs mx-auto">
+            <li className="flex items-center gap-2"><span className="text-green-500 font-bold">✔</span> Gym Access</li>
+            <li className="flex items-center gap-2"><span className="text-green-500 font-bold">✔</span> Group Classes</li>
+            <li className="flex items-center gap-2"><span className="text-green-500 font-bold">✔</span> Locker Room</li>
+          </ul>
+          <button className="w-full py-3 bg-yellow-500 text-white rounded-xl font-semibold hover:bg-yellow-600 transition">Join Basic</button>
         </div>
-        <div className="mb-6">
-          <span className="text-4xl font-extrabold text-gray-900">₹999</span>
-          <span className="text-base text-gray-500 font-medium">/mo</span>
+        {/* Premium - Highlighted */}
+        <div className="flex-1 bg-yellow-50 border-4 border-yellow-500 rounded-3xl shadow-2xl p-10 flex flex-col items-center scale-105 z-10 relative hover:scale-110 transition-transform duration-300">
+          <div className="absolute -top-5 left-1/2 -translate-x-1/2">
+            <span className="inline-block bg-yellow-500 text-white px-6 py-1 rounded-full font-bold text-sm shadow-lg">Most Popular</span>
+          </div>
+          <div className="mb-4 mt-4">
+            <span className="inline-block text-yellow-800 text-xl font-bold mb-2">Premium</span>
+          </div>
+          <div className="mb-6">
+            <span className="text-4xl font-extrabold text-gray-900">₹1,999</span>
+            <span className="text-base text-gray-600 font-medium">/mo</span>
+          </div>
+          <ul className="text-gray-800 mb-8 space-y-3 text-left w-full max-w-xs mx-auto">
+            <li className="flex items-center gap-2"><span className="text-green-500 font-bold">✔</span> All Basic Features</li>
+            <li className="flex items-center gap-2"><span className="text-green-500 font-bold">✔</span> Personal Trainer</li>
+            <li className="flex items-center gap-2"><span className="text-green-500 font-bold">✔</span> Spa & Recovery</li>
+            <li className="flex items-center gap-2"><span className="text-green-500 font-bold">✔</span> Nutrition Plan</li>
+          </ul>
+          <button className="w-full py-3 bg-yellow-600 text-white rounded-xl font-semibold hover:bg-yellow-700 transition shadow-lg">Join Premium</button>
         </div>
-        <ul className="text-gray-700 mb-8 space-y-3 text-left w-full max-w-xs mx-auto">
-          <li className="flex items-center gap-2"><span>🏋️</span> Gym Access</li>
-          <li className="flex items-center gap-2"><span>👥</span> Group Classes</li>
-          <li className="flex items-center gap-2"><span>🔒</span> Locker Room</li>
-        </ul>
-        <button className="w-full py-3 bg-yellow-500 text-white rounded-xl font-semibold hover:bg-yellow-600 transition">Join Basic</button>
-      </div>
-      {/* Premium - Highlighted */}
-      <div className="flex-1 bg-yellow-100 border-4 border-yellow-500 rounded-3xl shadow-2xl p-10 flex flex-col items-center scale-105 z-10 relative hover:scale-110 transition-transform duration-300">
-        <div className="absolute -top-5 left-1/2 -translate-x-1/2">
-          <span className="inline-block bg-yellow-500 text-white px-6 py-1 rounded-full font-bold text-sm shadow-lg">Most Popular</span>
+        {/* Family */}
+        <div className="flex-1 bg-white rounded-3xl shadow-xl border-2 border-yellow-400 p-8 flex flex-col items-center hover:scale-105 transition-transform duration-300 relative">
+          <div className="mb-4">
+            <span className="inline-block text-yellow-700 text-xl font-bold mb-2">Family</span>
+          </div>
+          <div className="mb-6">
+            <span className="text-4xl font-extrabold text-gray-900">₹2,999</span>
+            <span className="text-base text-gray-500 font-medium">/mo</span>
+          </div>
+          <ul className="text-gray-700 mb-8 space-y-3 text-left w-full max-w-xs mx-auto">
+            <li className="flex items-center gap-2"><span className="text-green-500 font-bold">✔</span> All Premium Features</li>
+            <li className="flex items-center gap-2"><span className="text-green-500 font-bold">✔</span> 4 Family Members</li>
+            <li className="flex items-center gap-2"><span className="text-green-500 font-bold">✔</span> Kids Zone</li>
+          </ul>
+          <button className="w-full py-3 bg-yellow-500 text-white rounded-xl font-semibold hover:bg-yellow-600 transition">Join Family</button>
         </div>
-        <div className="mb-4 mt-4">
-          <span className="inline-block bg-yellow-200 text-yellow-800 px-4 py-1 rounded-full font-semibold text-sm mb-2">Premium</span>
-        </div>
-        <div className="mb-6">
-          <span className="text-4xl font-extrabold text-gray-900">₹1,999</span>
-          <span className="text-base text-gray-600 font-medium">/mo</span>
-        </div>
-        <ul className="text-gray-800 mb-8 space-y-3 text-left w-full max-w-xs mx-auto">
-          <li className="flex items-center gap-2"><span>🏋️‍♂️</span> All Basic Features</li>
-          <li className="flex items-center gap-2"><span>🤝</span> Personal Trainer</li>
-          <li className="flex items-center gap-2"><span>💆</span> Spa & Recovery</li>
-          <li className="flex items-center gap-2"><span>🥗</span> Nutrition Plan</li>
-        </ul>
-        <button className="w-full py-3 bg-yellow-600 text-white rounded-xl font-semibold hover:bg-yellow-700 transition shadow-lg">Join Premium</button>
-      </div>
-      {/* Family */}
-      <div className="flex-1 bg-white rounded-3xl shadow-xl border border-yellow-200 p-8 flex flex-col items-center hover:scale-105 transition-transform duration-300">
-        <div className="mb-4">
-          <span className="inline-block bg-yellow-100 text-yellow-700 px-4 py-1 rounded-full font-semibold text-sm mb-2">Family</span>
-        </div>
-        <div className="mb-6">
-          <span className="text-4xl font-extrabold text-gray-900">₹2,999</span>
-          <span className="text-base text-gray-500 font-medium">/mo</span>
-        </div>
-        <ul className="text-gray-700 mb-8 space-y-3 text-left w-full max-w-xs mx-auto">
-          <li className="flex items-center gap-2"><span>👨‍👩‍👧‍👦</span> All Premium Features</li>
-          <li className="flex items-center gap-2"><span>🧒</span> 4 Family Members</li>
-          <li className="flex items-center gap-2"><span>🎈</span> Kids Zone</li>
-        </ul>
-        <button className="w-full py-3 bg-yellow-500 text-white rounded-xl font-semibold hover:bg-yellow-600 transition">Join Family</button>
       </div>
     </div>
   </div>
