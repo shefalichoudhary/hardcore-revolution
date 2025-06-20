@@ -3,14 +3,12 @@ import { colRef } from "./firebase";
 import { deleteDoc, doc, getDocs } from "firebase/firestore";
 import { Link } from "react-router-dom";
 import { isAdmin, useRequireAuth, UserAuth } from "./context/AuthContext";
-import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import ArrowForwardSharpIcon from "@mui/icons-material/ArrowForwardSharp";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import DeleteIcon from "@mui/icons-material/Delete";
 import CircularProgress from "@mui/material/CircularProgress";
 import SearchIcon from "@mui/icons-material/Search";
 import ClearIcon from "@mui/icons-material/Clear";
-import PhoneIphoneIcon from "@mui/icons-material/PhoneIphone";
 
 export default function Users() {
   useRequireAuth();
@@ -153,15 +151,15 @@ export default function Users() {
               className="bg-white shadow-md rounded-2xl px-4 py-5 flex flex-col gap-2 hover:shadow-lg transition-all duration-200 border border-gray-200 group font-sans"
             >
               {/* Row 1: Icon + Name */}
-              <div className="flex items-center justify-center gap-2 mb-1">
-                <AccountCircleIcon sx={{ fontSize: 38 }} className="text-yellow-600 group-hover:scale-110 transition" />
+              <div className="flex items-left justify-center gap-2 mb-1">
+                <AccountCircleIcon sx={{ fontSize: 38 }} className="text-gray-500 group-hover:scale-110 transition" />
                 <span className="text-base font-semibold capitalize text-black text-center">
                   {item.fullname}
                 </span>
               </div>
               {/* Row 2: District, Delete, Arrow */}
-              <div className="flex items-center justify-between w-full border-t border-gray-100 pt-2">
-                <span className="text-xs text-gray-500">{item.district || "No district"}</span>
+              <div className="flex items-center justify-between w-full border-t border-gray-100 pt-1">
+                <span className="text-xs text-yellow-500">{item.district || "No district"}</span>
                 <div className="flex items-center gap-2">
                   <button
                     onClick={() => handleDelete(item.key)}
@@ -172,7 +170,7 @@ export default function Users() {
                   </button>
                   <Link
                     to={`/user/${item.key}`}
-                    className="text-yellow-600 hover:text-black transition-colors"
+                    className="text-black hover:text-black transition-colors"
                     title="View"
                   >
                     <ArrowForwardSharpIcon fontSize="small" />
