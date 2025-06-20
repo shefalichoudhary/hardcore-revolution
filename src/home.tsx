@@ -33,12 +33,12 @@ function Home() {
   return (
     <>
       {/* Hero Section */}
-      <div className=" h-9/10  lg:h-14 relative bg-cover bg-center bg-no-repeat bg-[url('../public/Img.jpg')] mt-10">
+      <div className="relative bg-cover bg-center bg-no-repeat bg-[url('../public/Img.jpg')] mt-10 min-h-[60vh] lg:min-h-screen">
         {/* Overlay */}
         <div className="absolute inset-0 bg-black bg-opacity-60 z-0" />
 
         {/* Hero Content */}
-        <div className="relative z-10 flex flex-col justify-center items-center text-white text-center font-serif px-4 py-8 sm:py-18 md:py-16 lg:py-0 lg:h-full lg:items-center lg:justify-center">
+        <div className="relative z-10 flex flex-col justify-center items-center text-white text-center font-serif px-4 py-8 sm:py-18 md:py-16 lg:py-0 h-full min-h-[60vh] lg:min-h-screen">
           <h3 className="text-xs sm:text-sm md:text-xl mb-1 sm:mb-2">FUEL YOUR</h3>
 
           <h1 className="text-2xl sm:text-4xl md:text-6xl font-bold tracking-widest mb-3 sm:mb-6">
@@ -61,7 +61,7 @@ function Home() {
       </div>
 
        {/* Services Carousel with animation */}
-      <div ref={ref} className="pt-10 sm:pt-4">
+      <div ref={ref} className="pt-12 sm:pt-4">
         <motion.div
           initial={{ opacity: 0, y: 80 }}
           animate={show ? { opacity: 1, y: 0 } : {}}
@@ -73,7 +73,7 @@ function Home() {
       
 
       {/* Fitness Journey Section */}
-      <section className="lg:max-w-7xl md:max-w-xl max-w-md mx-auto px-4 py-2 sm:px-4 sm:py-1 flex flex-col md:flex-row items-center gap-10">
+      <section className="lg:max-w-7xl md:max-w-xl max-w-md mx-auto px-4 pb-5 sm:px-4 sm:py-1 flex flex-col md:flex-row items-center gap-10">
         {/* Text first on mobile, images after */}
         <div className="order-1 w-full flex-1 flex flex-col justify-center items-start px-2 md:px-8">
           <span className="uppercase text-sm font-bold tracking-widest text-yellow-500 mb-2">
@@ -277,7 +277,7 @@ function Home() {
         transition={{ duration: 0.7, ease: "easeOut" }}
         className="bg-white py-20 sm:py-12 px-4"
       >
-        <div className="max-w-5xl mx-auto text-center">
+        <div className="max-w-5xl mx-auto text-center pb-3">
           <h2 className="text-3xl md:text-4xl font-extrabold font-serif text-gray-900 mb-8">What Our Members Say</h2>
           <div className="flex flex-col md:flex-row gap-8 justify-center items-stretch">
             <div className="bg-white rounded-xl shadow-lg p-6 flex-1">

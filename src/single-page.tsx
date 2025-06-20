@@ -62,7 +62,7 @@ const SinglePage = () => {
             Member Profile & QR Access
           </h2>
           {/* Profile & QR Section */}
-          <div className="bg-gradient-to-br from-white via-gray-100 to-gray-200 shadow-2xl rounded-2xl p-6 md:p-10 flex flex-col md:flex-row md:justify-between md:items-start gap-8">
+          <div className=" max-w-md md:max-w-2xl lg:max-w-4xl  bg-gradient-to-br from-white via-gray-100 to-gray-200 shadow-2xl rounded-2xl p-6 md:p-10 flex flex-col md:flex-row md:justify-between md:items-start gap-8">
             {/* Left: User details */}
             <div className="flex-1 space-y-4 text-base md:text-lg font-medium tracking-wide text-stone-800">
               <div>
