@@ -37,44 +37,87 @@ function Home() {
       {/* Fitness Journey Section */}
       <section className="max-w-7xl mx-auto px-2 py-10 sm:px-4 sm:py-16 flex flex-col md:flex-row items-center gap-10">
         {/* Left: Advanced Overlapping Images with Responsive Layout */}
-        <div className="relative w-full max-w-xs xs:max-w-sm sm:max-w-md md:max-w-md lg:max-w-xl flex-shrink-0 min-h-[220px] xs:min-h-[320px] sm:min-h-[400px] md:min-h-[480px] lg:min-h-[600px] flex items-center justify-center overflow-visible">
-          {/* Main Circle (Fitness) */}
-          <div className="absolute left-1 top-2 w-32 h-32 xs:w-40 xs:h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 lg:w-72 lg:h-72 rounded-full overflow-hidden shadow-2xl border-4 border-yellow-400 z-30 rotate-3 group transition-all duration-300">
-            <img
-              src="/fitness.jpg"
-              alt="Fitness"
-              className="w-full h-full object-cover group-hover:scale-105 transition-all duration-300"
-            />
-            <div className="absolute bottom-0 left-0 w-full bg-black/70 py-2 text-center">
-              <span className="text-yellow-400 text-base xs:text-lg sm:text-xl font-bold tracking-wide drop-shadow">Fitness</span>
+        <div className="relative w-full max-w-xs xs:max-w-sm sm:max-w-md md:max-w-md lg:max-w-xl flex-shrink-0 min-h-[340px] sm:min-h-[400px] md:min-h-[480px] lg:min-h-[600px] flex items-center justify-center overflow-visible">
+          {/* Mobile: Stack first two images, then last below */}
+          <div className="flex flex-col gap-4 w-full md:hidden">
+            <div className="flex gap-4 justify-center">
+              {/* Fitness */}
+              <div className="relative w-32 h-32 xs:w-40 xs:h-40 rounded-full overflow-hidden shadow-2xl border-4 border-yellow-400 rotate-3 group transition-all duration-300">
+                <img
+                  src="/fitness.jpg"
+                  alt="Fitness"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-all duration-300"
+                />
+                <div className="absolute bottom-0 left-0 w-full bg-black/70 py-2 text-center">
+                  <span className="text-yellow-400 text-base xs:text-lg font-bold tracking-wide drop-shadow">Fitness</span>
+                </div>
+              </div>
+              {/* Wellness */}
+              <div className="relative w-28 h-24 xs:w-36 xs:h-28 rounded-2xl overflow-hidden shadow-xl border-4 border-yellow-400 -rotate-6 group transition-all duration-300">
+                <img
+                  src="/wellness.jpg"
+                  alt="Wellness"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-all duration-300"
+                />
+                <div className="absolute bottom-0 left-0 w-full bg-black/70 py-2 text-center">
+                  <span className="text-yellow-400 text-base xs:text-lg font-bold tracking-wide drop-shadow">Wellness</span>
+                </div>
+              </div>
+            </div>
+            {/* Yoga below */}
+            <div className="flex justify-center mt-2">
+              <div className="relative w-28 h-28 xs:w-36 xs:h-36 rounded-xl overflow-hidden shadow-lg border-4 border-yellow-400 group transition-all duration-300">
+                <img
+                  src="/yoga.jpg"
+                  alt="Yoga"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-all duration-300"
+                />
+                <div className="absolute bottom-0 left-0 w-full bg-black/70 py-2 text-center">
+                  <span className="text-yellow-400 text-base xs:text-lg font-bold tracking-wide drop-shadow">Yoga</span>
+                </div>
+              </div>
             </div>
           </div>
-          {/* Rotated Rectangle (Wellness) */}
-          <div className="absolute right-0 top-0 w-24 h-20 xs:w-32 xs:h-28 sm:w-36 sm:h-32 md:w-44 md:h-36 lg:w-72 lg:h-44 rounded-2xl overflow-hidden shadow-xl border-4 border-yellow-400 z-20 -rotate-6 group transition-all duration-300">
-            <img
-              src="/wellness.jpg"
-              alt="Wellness"
-              className="w-full h-full object-cover group-hover:scale-105 transition-all duration-300"
-            />
-            <div className="absolute bottom-0 left-0 w-full bg-black/70 py-2 text-center">
-              <span className="text-yellow-400 text-base xs:text-lg sm:text-xl font-bold tracking-wide drop-shadow">Wellness</span>
+          {/* Desktop: Overlapping advanced layout */}
+          <div className="hidden md:block w-full h-full">
+            {/* Main Circle (Fitness) */}
+            <div className="absolute left-1 top-2 w-32 h-32 xs:w-40 xs:h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 lg:w-72 lg:h-72 rounded-full overflow-hidden shadow-2xl border-4 border-yellow-400 z-30 rotate-3 group transition-all duration-300">
+              <img
+                src="/fitness.jpg"
+                alt="Fitness"
+                className="w-full h-full object-cover group-hover:scale-105 transition-all duration-300"
+              />
+              <div className="absolute bottom-0 left-0 w-full bg-black/70 py-2 text-center">
+                <span className="text-yellow-400 text-base xs:text-lg sm:text-xl font-bold tracking-wide drop-shadow">Fitness</span>
+              </div>
             </div>
-          </div>
-          {/* Square (Yoga) */}
-          <div className="absolute left-8 bottom-2 w-20 h-20 xs:left-16 xs:bottom-4 xs:w-28 xs:h-28 sm:left-24 sm:w-32 sm:h-32 md:w-40 md:h-40 lg:w-56 lg:h-56 rounded-xl overflow-hidden shadow-lg border-4 border-yellow-400 z-10 group transition-all duration-300">
-            <img
-              src="/yoga.jpg"
-              alt="Yoga"
-              className="w-full h-full object-cover group-hover:scale-105 transition-all duration-300"
-            />
-            <div className="absolute bottom-0 left-0 w-full bg-black/70 py-2 text-center">
-              <span className="text-yellow-400 text-base xs:text-lg sm:text-xl font-bold tracking-wide drop-shadow">Yoga</span>
+            {/* Rotated Rectangle (Wellness) */}
+            <div className="absolute right-0 top-0 w-24 h-20 xs:w-32 xs:h-28 sm:w-36 sm:h-32 md:w-44 md:h-36 lg:w-72 lg:h-44 rounded-2xl overflow-hidden shadow-xl border-4 border-yellow-400 z-20 -rotate-6 group transition-all duration-300">
+              <img
+                src="/wellness.jpg"
+                alt="Wellness"
+                className="w-full h-full object-cover group-hover:scale-105 transition-all duration-300"
+              />
+              <div className="absolute bottom-0 left-0 w-full bg-black/70 py-2 text-center">
+                <span className="text-yellow-400 text-base xs:text-lg sm:text-xl font-bold tracking-wide drop-shadow">Wellness</span>
+              </div>
             </div>
+            {/* Square (Yoga) */}
+            <div className="absolute left-8 bottom-2 w-20 h-20 xs:left-16 xs:bottom-4 xs:w-28 xs:h-28 sm:left-24 sm:w-32 sm:h-32 md:w-40 md:h-40 lg:w-56 lg:h-56 rounded-xl overflow-hidden shadow-lg border-4 border-yellow-400 z-10 group transition-all duration-300">
+              <img
+                src="/yoga.jpg"
+                alt="Yoga"
+                className="w-full h-full object-cover group-hover:scale-105 transition-all duration-300"
+              />
+              <div className="absolute bottom-0 left-0 w-full bg-black/70 py-2 text-center">
+                <span className="text-yellow-400 text-base xs:text-lg sm:text-xl font-bold tracking-wide drop-shadow">Yoga</span>
+              </div>
+            </div>
+            {/* Decorative ring for extra style */}
+            <div className="absolute left-4 top-10 w-24 h-24 xs:left-10 xs:top-16 xs:w-32 xs:h-32 sm:left-16 sm:top-24 sm:w-40 sm:h-40 md:w-52 md:h-52 lg:w-80 lg:h-80 rounded-full border-2 border-yellow-200 z-0 pointer-events-none animate-pulse"></div>
+            {/* Subtle background glow */}
+            <div className="absolute inset-0 rounded-full bg-yellow-100 opacity-30 blur-2xl z-0"></div>
           </div>
-          {/* Decorative ring for extra style */}
-          <div className="absolute left-4 top-10 w-24 h-24 xs:left-10 xs:top-16 xs:w-32 xs:h-32 sm:left-16 sm:top-24 sm:w-40 sm:h-40 md:w-52 md:h-52 lg:w-80 lg:h-80 rounded-full border-2 border-yellow-200 z-0 pointer-events-none animate-pulse"></div>
-          {/* Mobile-only: subtle background glow */}
-          <div className="absolute inset-0 rounded-full bg-yellow-100 opacity-30 blur-2xl z-0 xs:block md:hidden"></div>
         </div>
         {/* Right: Heading and content */}
         <div className="w-full flex-1 flex flex-col justify-center items-start px-2 md:px-8">
@@ -98,7 +141,7 @@ function Home() {
             <div>
               <h3 className="font-bold text-gray-900 text-lg md:text-xl mb-2">Modern Facilities</h3>
               <p className="text-gray-600 text-base">
-                Access state-of-the-art equipment, yoga studios, swimming pools, and wellness amenities for a balanced fitness experience.
+                Access state-of-the-art equipment, yoga studios and wellness amenities for a balanced fitness experience.
               </p>
             </div>
             <div>
