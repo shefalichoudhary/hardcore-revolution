@@ -29,6 +29,7 @@ export default function DrawerAppBar() {
     : [
         ["Home", "/"],
         ["Login", "/signIn"],
+        ["Join", "/userForm"],
       ];
 
   return (
@@ -44,16 +45,27 @@ export default function DrawerAppBar() {
 
         {/* Desktop Links */}
         <ul className="hidden md:flex items-center gap-8 font-serif text-base">
-          {links.map(([title, url]) => (
-            <li key={title}>
-              <Link
-                to={url}
-                className="text-white hover:text-gray-300 transition font-medium px-2 py-1 rounded"
-              >
-                {title}
-              </Link>
-            </li>
-          ))}
+          {links.map(([title, url]) =>
+            title === "Login" ? (
+              <li key={title}>
+                <button
+                  onClick={() => navigate(url)}
+                  className="px-4 py-1.5 bg-yellow-500 text-white rounded-md text-base font-semibold hover:bg-white hover:text-black transition"
+                >
+                  Sign In
+                </button>
+              </li>
+            ) : (
+              <li key={title}>
+                <Link
+                  to={url}
+                  className="text-white hover:text-gray-300 transition font-medium px-2 py-1 rounded"
+                >
+                  {title}
+                </Link>
+              </li>
+            )
+          )}
           {user?.displayName && (
             <li>
               <button
@@ -84,17 +96,31 @@ export default function DrawerAppBar() {
       >
         <div className="bg-stone-900 shadow-xl rounded-xl mt-2 mx-2 px-4 py-3 border border-stone-800">
           <ul className="flex flex-col gap-3 text-base font-serif">
-            {links.map(([title, url]) => (
-              <li key={title}>
-                <Link
-                  to={url}
-                  onClick={() => setOpen(false)}
-                  className="block w-full px-2 py-2 rounded text-white hover:bg-gray-800 hover:text-gray-300 transition"
-                >
-                  {title}
-                </Link>
-              </li>
-            ))}
+            {links.map(([title, url]) =>
+              title === "Login" ? (
+                <li key={title}>
+                  <button
+                    onClick={() => {
+                      navigate(url);
+                      setOpen(false);
+                    }}
+                    className="w-full flex items-center justify-center gap-2 px-4 py-2 bg-yellow-500 text-white rounded-md text-base font-semibold hover:bg-white hover:text-black transition"
+                  >
+                    Sign In
+                  </button>
+                </li>
+              ) : (
+                <li key={title}>
+                  <Link
+                    to={url}
+                    onClick={() => setOpen(false)}
+                    className="block w-full px-2 py-2 rounded text-white hover:bg-gray-800 hover:text-gray-300 transition"
+                  >
+                    {title}
+                  </Link>
+                </li>
+              )
+            )}
             {user?.displayName && (
               <li className="pt-2">
                 <button
