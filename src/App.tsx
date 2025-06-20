@@ -32,7 +32,7 @@ function AppContent() {
   }
 
   return (
-    <div>
+    <div className="pt-16">
       <MenuBar />
       <Routes>
         <Route path="/" element={<Home />}></Route>
