@@ -51,8 +51,41 @@ function Home() {
 
       {/* Fitness Journey Section */}
       <section className="max-w-7xl mx-auto px-2 py-10 sm:px-4 sm:py-16 flex flex-col md:flex-row items-center gap-10">
-        {/* Left: Overlapping Images - Mobile */}
-        <div className="relative w-full max-w-xs xs:max-w-sm sm:max-w-md md:max-w-md lg:max-w-xl flex-shrink-0 min-h-[340px] sm:min-h-[400px] md:min-h-[480px] lg:min-h-[600px] flex items-center justify-center overflow-visible">
+        {/* Right: Heading and content (show first on mobile) */}
+        <div className="order-2 md:order-1 w-full flex-1 flex flex-col justify-center items-start px-2 md:px-8">
+s          <span className="uppercase text-sm font-bold tracking-widest text-yellow-500 mb-2">
+            Your Pathway to Wellness
+          </span>
+          <h2 className="text-4xl md:text-5xl font-extrabold font-serif text-black mb-4 tracking-tight leading-tight">
+            Fitness Journey
+          </h2>
+          <p className="text-lg text-gray-700 mb-6 font-sans">
+            Unlock your potential with a holistic approach to health and fitness. Our journey blends <span className="text-yellow-600 font-semibold">strength</span>, <span className="text-yellow-600 font-semibold">mindfulness</span>, and <span className="text-yellow-600 font-semibold">community</span>—empowering you to become your best self.
+          </p>
+
+          <div className="space-y-6 w-full">
+            <div>
+              <h3 className="font-bold text-gray-900 text-lg md:text-xl mb-2">Personalized Support</h3>
+              <p className="text-gray-600 text-base">
+                Get custom programs for every level and goal, plus ongoing guidance and motivation from our expert trainers and community.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-bold text-gray-900 text-lg md:text-xl mb-2">Modern Facilities</h3>
+              <p className="text-gray-600 text-base">
+                Access state-of-the-art equipment, yoga studios and wellness amenities for a balanced fitness experience.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-bold text-gray-900 text-lg md:text-xl mb-2">Track Your Progress</h3>
+              <p className="text-gray-600 text-base">
+                Celebrate milestones and stay motivated with integrated tools and regular workshops to help you reach your goals.
+              </p>
+            </div>
+          </div>
+        </div>
+        {/* Left: Overlapping Images - Mobile (show after content on mobile) */}
+        <div className="order-1 md:order-2 relative w-full max-w-xs xs:max-w-sm sm:max-w-md md:max-w-md lg:max-w-xl flex-shrink-0 min-h-[340px] sm:min-h-[400px] md:min-h-[480px] lg:min-h-[600px] flex items-center justify-center overflow-visible">
           {/* Mobile: Overlapping, stylish shapes with touching edges but less overlap */}
           <div className="flex flex-col gap-0 w-full md:hidden relative">
             {/* Top Row: Fitness (circle, left) and Wellness (rounded-rect, right, slightly overlapping) */}
@@ -138,39 +171,6 @@ function Home() {
             h-24 xs:left-10 xs:top-16 xs:w-32 xs:h-32 sm:left-16 sm:top-24 sm:w-40 sm:h-40 md:w-52 md:h-52 lg:w-80 lg:h-80 rounded-full border-2 border-yellow-300 z-0 pointer-events-none animate-pulse"></div>
             {/* Subtle background glow */}
             <div className="absolute inset-0 rounded-full bg-yellow-100 opacity-30 blur-2xl z-0"></div>
-          </div>
-        </div>
-        {/* Right: Heading and content */}
-        <div className="w-full flex-1 flex flex-col justify-center items-start px-2 md:px-8">
-          <span className="uppercase text-sm font-bold tracking-widest text-yellow-500 mb-2">
-            Your Pathway to Wellness
-          </span>
-          <h2 className="text-4xl md:text-5xl font-extrabold font-serif text-black mb-4 tracking-tight leading-tight">
-            Fitness Journey
-          </h2>
-          <p className="text-lg text-gray-700 mb-6 font-sans">
-            Unlock your potential with a holistic approach to health and fitness. Our journey blends <span className="text-yellow-600 font-semibold">strength</span>, <span className="text-yellow-600 font-semibold">mindfulness</span>, and <span className="text-yellow-600 font-semibold">community</span>—empowering you to become your best self.
-          </p>
-
-          <div className="space-y-6 w-full">
-            <div>
-              <h3 className="font-bold text-gray-900 text-lg md:text-xl mb-2">Personalized Support</h3>
-              <p className="text-gray-600 text-base">
-                Get custom programs for every level and goal, plus ongoing guidance and motivation from our expert trainers and community.
-              </p>
-            </div>
-            <div>
-              <h3 className="font-bold text-gray-900 text-lg md:text-xl mb-2">Modern Facilities</h3>
-              <p className="text-gray-600 text-base">
-                Access state-of-the-art equipment, yoga studios and wellness amenities for a balanced fitness experience.
-              </p>
-            </div>
-            <div>
-              <h3 className="font-bold text-gray-900 text-lg md:text-xl mb-2">Track Your Progress</h3>
-              <p className="text-gray-600 text-base">
-                Celebrate milestones and stay motivated with integrated tools and regular workshops to help you reach your goals.
-              </p>
-            </div>
           </div>
         </div>
       </section>

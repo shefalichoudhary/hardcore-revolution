@@ -55,7 +55,7 @@ function ServicesCarousel() {
 	const nextRef = useRef<HTMLButtonElement>(null);
 
 	return (
-		<section className=" min-h-full relative  py-14 px-4 font-sans">
+		<section className=" min-h-screen relative  py-14 px-4 font-sans">
 			<div className="max-w-7xl mx-auto">
 				<h2 className=" text-black text-4xl md:text-5xl font-extrabold text-center mb-4 tracking-tight drop-shadow-lg font-serif">
 					Our Trending Services
