@@ -41,7 +41,7 @@ function Home() {
           </p>
 
           <button
-            className="bg-white text-black px-6 py-2 sm:px-8 sm:py-3 text-xs sm:text-sm font-semibold rounded shadow hover:bg-gray-200 transition"
+            className="bg-yellow-500 text-white  px-6 py-2 sm:px-8 sm:py-3 text-xs sm:text-sm font-semibold rounded shadow hover:bg-gray-200 transition"
             onClick={() => navigate("/UserForm")}
           >
             JOIN NOW
@@ -53,25 +53,25 @@ function Home() {
       <section className="max-w-7xl mx-auto px-2 py-10 sm:px-4 sm:py-16 flex flex-col md:flex-row items-center gap-10">
         {/* Left: Overlapping Images - Mobile */}
         <div className="relative w-full max-w-xs xs:max-w-sm sm:max-w-md md:max-w-md lg:max-w-xl flex-shrink-0 min-h-[340px] sm:min-h-[400px] md:min-h-[480px] lg:min-h-[600px] flex items-center justify-center overflow-visible">
-          {/* Mobile: Overlapping, stylish shapes with touching edges */}
+          {/* Mobile: Overlapping, stylish shapes with touching edges but less overlap */}
           <div className="flex flex-col gap-0 w-full md:hidden relative">
-            {/* Top Row: Fitness (circle, left) and Wellness (rounded-rect, right, overlapping, edges touching) */}
+            {/* Top Row: Fitness (circle, left) and Wellness (rounded-rect, right, slightly overlapping) */}
             <div className="flex justify-center items-end relative h-56">
               {/* Fitness */}
-              <div className="absolute left-[18%] z-20 w-48 h-48 rounded-full overflow-hidden shadow-2xl bg-gradient-to-br from-yellow-300 via-yellow-100 to-white rotate-3 group transition-all duration-300">
+              <div className="absolute left-[10%] z-20 w-40 h-40 rounded-full overflow-hidden shadow-2xl bg-gradient-to-br from-yellow-300 via-yellow-100 to-white rotate-3 group transition-all duration-300">
                 <img
                   src="/fitness.jpg"
                   alt="Fitness"
                   className="w-full h-full object-cover group-hover:scale-105 transition-all duration-300"
                 />
                 <div className="absolute bottom-0 left-0 w-full bg-black/70 py-3 text-center">
-                  <span className="text-yellow-300 text-xl font-bold tracking-wide drop-shadow">Fitness</span>
+                  <span className="text-white text-xl font-bold tracking-wide drop-shadow">Fitness</span>
                 </div>
               </div>
               {/* Wellness */}
               <div
-                className="absolute left-[54%] z-30 w-44 h-40 rounded-3xl overflow-hidden shadow-xl bg-gradient-to-tr from-yellow-200 via-white to-yellow-100 -rotate-6 group transition-all duration-300"
-                style={{ transform: "translateY(36px)" }}
+                className="absolute left-[48%] z-30 w-36 h-32 rounded-3xl overflow-hidden shadow-xl bg-gradient-to-tr from-yellow-200 via-white to-yellow-100 -rotate-6 group transition-all duration-300"
+                style={{ transform: "translateY(24px)" }}
               >
                 <img
                   src="/wellness.jpg"
@@ -79,20 +79,20 @@ function Home() {
                   className="w-full h-full object-cover group-hover:scale-105 transition-all duration-300"
                 />
                 <div className="absolute bottom-0 left-0 w-full bg-black/70 py-3 text-center">
-                  <span className="text-yellow-300 text-xl font-bold tracking-wide drop-shadow">Wellness</span>
+                  <span className="text-white text-xl font-bold tracking-wide drop-shadow">Wellness</span>
                 </div>
               </div>
             </div>
-            {/* Yoga below, overlapping both, edges touching */}
-            <div className="flex justify-center relative -mt-16 z-40">
-              <div className="w-52 h-52 rounded-[2.5rem] overflow-hidden shadow-2xl bg-gradient-to-tl from-yellow-100 via-white to-yellow-200 group transition-all duration-300">
+            {/* Yoga below, slightly overlapping both */}
+            <div className="flex justify-center relative -mt-10 z-40">
+              <div className="w-40 h-40 rounded-[2rem] overflow-hidden shadow-2xl bg-gradient-to-tl from-yellow-100 via-white to-yellow-200 group transition-all duration-300">
                 <img
                   src="/yoga.jpg"
                   alt="Yoga"
                   className="w-full h-full object-cover group-hover:scale-105 transition-all duration-300"
                 />
                 <div className="absolute bottom-0 left-0 w-full bg-black/70 py-3 text-center">
-                  <span className="text-yellow-300 text-xl font-bold tracking-wide drop-shadow">Yoga</span>
+                  <span className="text-white text-xl font-bold tracking-wide drop-shadow">Yoga</span>
                 </div>
               </div>
             </div>
@@ -100,7 +100,7 @@ function Home() {
           {/* Desktop: Overlapping advanced layout */}
           <div className="hidden md:block w-full h-full">
             {/* Main Circle (Fitness) */}
-            <div className="absolute left-1 top-2 w-32 h-32 xs:w-40 xs:h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 lg:w-72 lg:h-72 rounded-full overflow-hidden shadow-2xl border-4 border-yellow-400 z-30 rotate-3 group transition-all duration-300">
+            <div className="absolute left-0 top-2 w-32 h-32 xs:w-40 xs:h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 lg:w-72 lg:h-72 rounded-full overflow-hidden shadow-2xl border-4 border-yellow-400 z-30 rotate-3 group transition-all duration-300">
               <img
                 src="/fitness.jpg"
                 alt="Fitness"
@@ -133,7 +133,9 @@ function Home() {
               </div>
             </div>
             {/* Decorative ring for extra style */}
-            <div className="absolute left-4 top-10 w-24 h-24 xs:left-10 xs:top-16 xs:w-32 xs:h-32 sm:left-16 sm:top-24 sm:w-40 sm:h-40 md:w-52 md:h-52 lg:w-80 lg:h-80 rounded-full border-2 border-yellow-200 z-0 pointer-events-none animate-pulse"></div>
+            <div className="absolute left-4 top-10 w-26
+            
+            h-24 xs:left-10 xs:top-16 xs:w-32 xs:h-32 sm:left-16 sm:top-24 sm:w-40 sm:h-40 md:w-52 md:h-52 lg:w-80 lg:h-80 rounded-full border-2 border-yellow-300 z-0 pointer-events-none animate-pulse"></div>
             {/* Subtle background glow */}
             <div className="absolute inset-0 rounded-full bg-yellow-100 opacity-30 blur-2xl z-0"></div>
           </div>
