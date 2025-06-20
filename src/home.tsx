@@ -287,8 +287,8 @@ function Home() {
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold font-serif text-gray-900 mb-6 sm:mb-8">
             What Our Members Say
           </h2>
-          <div className="flex flex-col md:flex-row gap-4 sm:gap-6 md:gap-8 justify-center items-stretch">
-            <div className="bg-white rounded-xl shadow-lg p-4 sm:p-5 flex-1">
+          <div className="flex flex-col max-w-xs md:max-w-2xl lg:max-w-4xl  md:flex-row gap-4 sm:gap-6 md:gap-8 justify-center mx-auto">
+            <div className=" bg-white rounded-xl shadow-lg p-4 sm:p-5 flex-1">
               <p className="text-sm sm:text-base text-gray-700 mb-3 sm:mb-4">
                 “The trainers here are amazing and the community is so supportive. I’ve never felt more motivated!”
               </p>
@@ -296,7 +296,7 @@ function Home() {
                 <span className="font-bold text-yellow-500">Priya S.</span>
               </div>
             </div>
-            <div className="bg-white rounded-xl shadow-lg p-4 sm:p-5 flex-1">
+            <div className=" bg-white rounded-xl shadow-lg p-4 sm:p-5 flex-1">
               <p className="text-sm sm:text-base text-gray-700 mb-3 sm:mb-4">
                 “The facilities are top-notch and I love the variety of classes. Highly recommend!”
               </p>

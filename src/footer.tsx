@@ -19,12 +19,13 @@ export default function SimpleBottomNavigation() {
           <div className="text-xs text-gray-950 mt-1">
             Your Fitness, Our Passion
           </div>
+        </div>
 
-          <div className="text-xs text-gray-700 md:text-center text-left">
-            © {new Date().getFullYear()} Hardcore Revolution Gym.in
-            <br />
-            All Rights Reserved.
-          </div>
+        {/* Center: Copyright (centered on md+) */}
+        <div className=" md:block text-xs text-gray-700 md:text-center w-full">
+          © {new Date().getFullYear()} Hardcore Revolution Gym.in
+          <br />
+          All Rights Reserved.
         </div>
 
         {/* Right: Contact and Social */}
@@ -80,6 +81,12 @@ export default function SimpleBottomNavigation() {
             </a>
           </div>
         </div>
+      </div>
+      {/* Copyright for small screens */}
+      <div className="block md:hidden text-xs text-gray-700 text-center w-full pb-4">
+        © {new Date().getFullYear()} Hardcore Revolution Gym.in
+        <br />
+        All Rights Reserved.
       </div>
     </footer>
   );
