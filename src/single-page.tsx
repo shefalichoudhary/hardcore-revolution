@@ -55,7 +55,7 @@ const SinglePage = () => {
   }
 
   return (
-    <div className="max-w-3xl mx-auto px-2 md:px-6 py-10 md:py-16 font-sans">
+    <div className="pt-16 py-12 px-2 md:px-8">
       {!editMode ? (
         <>
           <h2 className="text-3xl md:text-4xl font-extrabold font-serif text-center mb-8 text-black tracking-tight drop-shadow">
@@ -214,7 +214,7 @@ const SinglePage = () => {
             <div className="flex justify-center gap-6 pt-4">
               <button
                 type="submit"
-                className="px-4 py-1.5bg-yellow-500 text-white rounded tracking-widest font-semibold hover:bg-white hover:text-black  transition"
+                className="px-4 py-1.5 bg-yellow-500 text-white rounded tracking-widest font-semibold hover:bg-white hover:text-black  transition"
               >
                 UPDATE
               </button>

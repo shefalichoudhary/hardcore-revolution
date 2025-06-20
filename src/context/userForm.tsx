@@ -13,7 +13,6 @@ type FormData = {
 };
 
 export default function UserForm(user: FormData) {
-
   const { register, handleSubmit, reset } = useForm<FormData>({
     defaultValues: user,
   });
@@ -26,7 +25,7 @@ export default function UserForm(user: FormData) {
   const currentDate = new Date().toLocaleDateString();
 
   return (
-    <div className="container max-w-4xl mx-auto py-10 px-4">
+    <div className="pt-16 py-12 px-2 md:px-8">
       <form
         onSubmit={handleSubmit(onSubmit)}
         autoComplete="off"
