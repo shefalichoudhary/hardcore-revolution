@@ -67,8 +67,8 @@ export default function Users() {
   });
 
   return (
-    <div className="min-h-screen flex-1 py-12 px-2 md:px-8 max-w-7xl mx-auto bg-gradient-to-br from-indigo-100 via-blue-50 to-slate-200 font-sans">
-      <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-10 font-serif tracking-tight text-indigo-800 drop-shadow">
+    <div className="min-h-screen flex-1 py-12 px-2 md:px-8 max-w-7xl mx-auto bg-gradient-to-br from-white via-gray-100 to-gray-200 font-sans">
+      <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-10 font-serif tracking-tight text-black drop-shadow">
         Meet Our Community
       </h2>
 
@@ -77,17 +77,17 @@ export default function Users() {
         <div className="relative w-full max-w-md">
           <input
             type="text"
-            className="w-full pl-12 pr-12 py-3 rounded-full border border-indigo-200 focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100 bg-white shadow transition placeholder-slate-400 text-slate-800 text-base font-sans"
+            className="w-full pl-12 pr-12 py-3 rounded-full border border-gray-300 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-100 bg-white shadow transition placeholder-gray-400 text-black text-base font-sans"
             placeholder="Search by name, age, address, or gender..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
           />
-          <span className="absolute left-4 top-1/2 -translate-y-1/2 text-indigo-500">
+          <span className="absolute left-4 top-1/2 -translate-y-1/2 text-yellow-600">
             <SearchIcon />
           </span>
           {search && (
             <button
-              className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-indigo-500 transition"
+              className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-yellow-600 transition"
               onClick={() => setSearch("")}
               aria-label="Clear search"
             >
@@ -99,20 +99,20 @@ export default function Users() {
 
       {/* Custom Delete Confirmation Modal */}
       {confirmOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-blue-900/30">
-          <div className="bg-white rounded-2xl shadow-2xl p-7 w-full max-w-xs text-center border border-blue-100">
-            <h3 className="text-lg font-bold mb-3 text-indigo-800">Delete User?</h3>
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/30">
+          <div className="bg-white rounded-2xl shadow-2xl p-7 w-full max-w-xs text-center border border-gray-200">
+            <h3 className="text-lg font-bold mb-3 text-black">Delete User?</h3>
             <p className="mb-6 text-gray-600">Are you sure you want to delete this user? This action cannot be undone.</p>
             <div className="flex justify-between gap-4">
               <button
                 onClick={cancelDelete}
-                className="flex-1 py-2 rounded bg-gray-100 text-indigo-800 font-semibold hover:bg-blue-50 transition"
+                className="flex-1 py-2 rounded bg-gray-100 text-black font-semibold hover:bg-gray-200 transition"
               >
                 Cancel
               </button>
               <button
                 onClick={confirmDelete}
-                className="flex-1 py-2 rounded bg-indigo-600 text-white font-semibold hover:bg-indigo-700 transition"
+                className="flex-1 py-2 rounded bg-black text-white font-semibold hover:bg-yellow-600 hover:text-black transition"
               >
                 Delete
               </button>
@@ -126,11 +126,11 @@ export default function Users() {
           <CircularProgress color="inherit" />
         </div>
       ) : filteredDocs.length === 0 ? (
-        <div className="text-center text-slate-600 text-lg space-y-3 font-sans">
+        <div className="text-center text-gray-600 text-lg space-y-3 font-sans">
           <p>No users found.</p>
           <Link
             to="/userForm"
-            className="inline-block bg-indigo-500 text-white px-5 py-2 rounded-full shadow-md hover:bg-indigo-400 transition-all font-semibold"
+            className="inline-block bg-black text-white px-5 py-2 rounded-full shadow-md hover:bg-yellow-500 hover:text-black transition-all font-semibold"
           >
             + Add User
           </Link>
@@ -149,27 +149,27 @@ export default function Users() {
           {filteredDocs.map((item) => (
             <div
               key={item.key}
-              className="bg-white shadow-md rounded-2xl px-4 py-5 flex flex-col items-center hover:shadow-lg transition-all duration-200 border border-blue-100 group font-sans"
+              className="bg-white shadow-md rounded-2xl px-4 py-5 flex flex-col items-center hover:shadow-lg transition-all duration-200 border border-gray-200 group font-sans"
             >
-              <AccountCircleIcon sx={{ fontSize: 38 }} className="text-indigo-500 mb-1 group-hover:scale-110 transition" />
-              <div className="text-base font-semibold capitalize text-indigo-900 text-center mb-1">
+              <AccountCircleIcon sx={{ fontSize: 38 }} className="text-yellow-600 mb-1 group-hover:scale-110 transition" />
+              <div className="text-base font-semibold capitalize text-black text-center mb-1">
                 {item.fullname}
               </div>
-              <div className="text-xs text-slate-500 text-center mb-1">
+              <div className="text-xs text-gray-500 text-center mb-1">
                 {item.district || "No district"}
               </div>
               <div className="flex-1" />
-              <div className="w-full border-t border-blue-100 mt-3 pt-2 flex items-center justify-between">
+              <div className="w-full border-t border-gray-100 mt-3 pt-2 flex items-center justify-between">
                 <button
                   onClick={() => handleDelete(item.key)}
-                  className="text-indigo-500 hover:text-indigo-700 transition-colors"
+                  className="text-black hover:text-yellow-600 transition-colors"
                   title="Delete User"
                 >
                   <DeleteIcon fontSize="small" />
                 </button>
                 <Link
                   to={`/user/${item.key}`}
-                  className="text-blue-600 hover:text-blue-800 transition-colors"
+                  className="text-yellow-600 hover:text-black transition-colors"
                   title="View"
                 >
                   <ArrowForwardIosIcon fontSize="small" />

@@ -21,16 +21,16 @@ const SignIn = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-white via-gray-100 to-gray-300 py-3 md:py-12 px-2">
-      <div className="bg-white rounded-xl shadow-2xl p-8 md:p-10 w-full max-w-md text-center border border-gray-200">
-        <h1 className="text-3xl md:text-4xl font-bold text-black mb-4 font-serif">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-white via-gray-100 to-gray-300 py-1 md:py-6 px-2">
+      <div className="bg-white rounded-xl shadow-2xl p-5 md:p-6 w-full max-w-md text-center border border-gray-200">
+        <h1 className="text-3xl md:text-4xl font-bold text-black mb-3 font-serif">
           Welcome Back!
         </h1>
         <InsertEmoticonSharpIcon
           sx={{ fontSize: "54px", color: "#000" }}
-          className="mb-4"
+          className="mb-3"
         />
-        <p className="text-gray-700 mb-6 tracking-wide">
+        <p className="text-gray-700 mb-4 tracking-wide">
           Sign in to access your dashboard and connect with our fitness community.
         </p>
         <button
@@ -39,7 +39,7 @@ const SignIn = () => {
         >
           Login with Google
         </button>
-        <p className="text-xs text-gray-400 mt-6">
+        <p className="text-xs text-gray-400 mt-4">
           100% secure sign-in. We never share your data.
         </p>
       </div>

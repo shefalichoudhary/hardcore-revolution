@@ -22,7 +22,7 @@ export default function SimpleBottomNavigation() {
         </div>
 
         {/* Center: Navigation & Copyright */}
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-left md:items-center">
           <nav className="mb-2 flex gap-4 text-sm font-medium">
             <a
               href="/"
@@ -108,11 +108,7 @@ export default function SimpleBottomNavigation() {
               <PhoneIcon />
             </a>
           </div>
-          <div className="text-xs text-gray-500">
-            choudharyshefali@gmail.com
-            <br />
-            +91 93297 51342
-          </div>
+         
         </div>
       </div>
     </footer>

@@ -37,42 +37,42 @@ function Home() {
       {/* Fitness Journey Section */}
       <section className="max-w-7xl mx-auto px-4 py-16 flex flex-col md:flex-row items-center gap-10">
         {/* Left: Advanced Overlapping Images with Shapes */}
-        <div className="relative w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-xl flex-shrink-0 min-h-[320px] sm:min-h-[400px] md:min-h-[480px] lg:min-h-[600px] flex items-center justify-center overflow-visible">
+        <div className="relative w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-xl flex-shrink-0 min-h-[260px] sm:min-h-[400px] md:min-h-[480px] lg:min-h-[600px] flex items-center justify-center overflow-visible">
           {/* Main Circle (Fitness) */}
-          <div className="absolute left-2 top-4 w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-72 lg:h-72 rounded-full overflow-hidden shadow-2xl border-4 border-white z-30 rotate-3 group">
+          <div className="absolute left-1 top-2 w-28 h-28 xs:w-36 xs:h-36 sm:w-44 sm:h-44 md:w-56 md:h-56 lg:w-72 lg:h-72 rounded-full overflow-hidden shadow-2xl border-4 border-white z-30 rotate-3 group">
             <img
               src="/fitness.jpg"
               alt="Fitness"
               className="w-full h-full object-cover group-hover:scale-110 transition"
             />
             <div className="absolute bottom-0 left-0 w-full bg-black/70 py-2 text-center">
-              <span className="text-white text-base sm:text-lg font-bold tracking-wide">Fitness</span>
+              <span className="text-white text-sm xs:text-base sm:text-lg font-bold tracking-wide">Fitness</span>
             </div>
           </div>
           {/* Rotated Rectangle (Wellness) */}
-          <div className="absolute right-0 top-0 w-24 h-20 sm:w-32 sm:h-28 md:w-40 md:h-32 lg:w-72 lg:h-44 rounded-2xl overflow-hidden shadow-xl border-4 border-white z-20 -rotate-6 group">
+          <div className="absolute right-0 top-0 w-24 h-20 xs:w-28 xs:h-24 sm:w-32 sm:h-28 md:w-40 md:h-32 lg:w-72 lg:h-44 rounded-2xl overflow-hidden shadow-xl border-4 border-white z-20 -rotate-6 group">
             <img
               src="/wellness.jpg"
               alt="Wellness"
               className="w-full h-full object-cover group-hover:scale-110 transition"
             />
             <div className="absolute bottom-0 left-0 w-full bg-black/70 py-2 text-center">
-              <span className="text-white text-base sm:text-lg font-bold tracking-wide">Wellness</span>
+              <span className="text-white text-sm xs:text-base sm:text-lg font-bold tracking-wide">Wellness</span>
             </div>
           </div>
           {/* Square (Yoga) */}
-          <div className="absolute left-12 bottom-2 w-20 h-20 sm:left-20 sm:bottom-4 sm:w-28 sm:h-28 md:w-32 md:h-32 lg:w-56 lg:h-56 rounded-xl overflow-hidden shadow-lg border-4 border-white z-10 group">
+          <div className="absolute left-8 bottom-2 w-20 h-20 xs:left-14 xs:bottom-4 xs:w-24 xs:h-24 sm:left-20 sm:w-28 sm:h-28 md:w-32 md:h-32 lg:w-56 lg:h-56 rounded-xl overflow-hidden shadow-lg border-4 border-white z-10 group">
             <img
               src="/yoga.jpg"
               alt="Yoga"
               className="w-full h-full object-cover group-hover:scale-110 transition"
             />
             <div className="absolute bottom-0 left-0 w-full bg-black/70 py-2 text-center">
-              <span className="text-white text-base sm:text-lg font-bold tracking-wide">Yoga</span>
+              <span className="text-white text-sm xs:text-base sm:text-lg font-bold tracking-wide">Yoga</span>
             </div>
           </div>
           {/* Decorative ring for extra style */}
-          <div className="absolute left-8 top-16 w-28 h-28 sm:left-16 sm:top-24 sm:w-40 sm:h-40 md:w-52 md:h-52 lg:w-80 lg:h-80 rounded-full border-2 border-gray-200 z-0 pointer-events-none"></div>
+          <div className="absolute left-4 top-10 w-24 h-24 xs:left-10 xs:top-16 xs:w-32 xs:h-32 sm:left-16 sm:top-24 sm:w-40 sm:h-40 md:w-52 md:h-52 lg:w-80 lg:h-80 rounded-full border-2 border-gray-200 z-0 pointer-events-none"></div>
         </div>
         {/* Right: Heading and content */}
         <div className="w-full flex-1 flex flex-col justify-center items-start px-2 md:px-8">

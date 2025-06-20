@@ -58,7 +58,7 @@ const SinglePage = () => {
     <div className="max-w-3xl mx-auto px-2 md:px-6 py-10 md:py-16 font-sans">
       {!editMode ? (
         <>
-          <h2 className="text-3xl md:text-4xl font-extrabold font-serif text-center mb-8 text-indigo-900 tracking-tight drop-shadow">
+          <h2 className="text-3xl md:text-4xl font-extrabold font-serif text-center mb-8 text-black tracking-tight drop-shadow">
             Member Profile & QR Access
           </h2>
           {/* Profile & QR Section */}
@@ -108,10 +108,15 @@ const SinglePage = () => {
             </div>
             {/* Right: QR code */}
             <div className="flex flex-col items-center md:items-end md:w-1/3 gap-4">
-              <div className="bg-white rounded-xl shadow-lg p-4 border border-gray-200">
-                <QRCode size={160} value={docId || ""} />
+              <div className="bg-yellow-400 rounded-xl shadow-lg p-4 border border-yellow-500">
+                <QRCode
+                  size={160}
+                  value={docId || ""}
+                  bgColor="#facc15" // Tailwind yellow-400
+                  fgColor="#000"
+                />
               </div>
-              <div className="text-xs text-gray-500 text-center md:text-right">
+              <div className="text-xs text-gray-700 text-center md:text-right font-semibold">
                 Scan this QR code at the gym for quick check-in and profile access.
               </div>
               <button

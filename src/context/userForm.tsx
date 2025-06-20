@@ -134,7 +134,7 @@ export default function UserForm(user: FormData) {
         <div className="text-center pt-4">
           <button
             type="submit"
-            className="px-8 py-3 bg-indigo-600 text-white font-medium rounded shadow-md hover:bg-blue-700 transition duration-300 tracking-widest"
+            className="px-8 py-3 bg-black text-white font-medium rounded shadow-md hover:bg-blue-700 transition duration-300 tracking-widest"
           >
             REGISTER
           </button>

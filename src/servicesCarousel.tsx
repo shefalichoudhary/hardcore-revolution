@@ -17,7 +17,7 @@ import type { Swiper as SwiperType } from "swiper";
 const services = [
 	{
 		title: "Personal Training",
-		icon: <FitnessCenterIcon fontSize="large" className="text-black" />,
+		icon: <FitnessCenterIcon fontSize="large" className="text-white" />,
 		desc: "Get 1-on-1 expert coaching tailored to your unique fitness goals. Our trainers provide custom workout plans and ongoing motivation to help you achieve your best self.",
 	},
 	{
@@ -27,7 +27,7 @@ const services = [
 	},
 	{
 		title: "Group Classes",
-		icon: <GroupIcon fontSize="large" className="text-black" />,
+		icon: <GroupIcon fontSize="large" className="text-white" />,
 		desc: "Join energetic group classes like Zumba, HIIT, and CrossFit. All levels welcome! Enjoy a fun, social environment with certified instructors and daily new classes.",
 	},
 	{
@@ -37,7 +37,7 @@ const services = [
 	},
 	{
 		title: "Workout Programs",
-		icon: <AssignmentIcon fontSize="large" className="text-black" />,
+		icon: <AssignmentIcon fontSize="large" className="text-white" />,
 		desc: "Structured programs for muscle gain, fat loss, or endurance. Track your progress with our app and follow video tutorials from beginner to advanced.",
 	},
 	{
@@ -53,7 +53,7 @@ const services = [
     },
     {
         title: "Hydration Stations",
-        icon: <LocalDrinkIcon fontSize="large" className="text-white" />,
+        icon: <LocalDrinkIcon fontSize="large" className="text-yellow-500" />,
         desc: "Stay hydrated with our water stations, electrolyte drinks, and smoothie bars. Fuel your workouts with healthy hydration options.",
     },
 ];
