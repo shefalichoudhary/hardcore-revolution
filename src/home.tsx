@@ -1,8 +1,23 @@
+import { useEffect, useRef, useState } from "react";
+import { motion, useInView } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import ServicesCarousel from "./servicesCarousel";
 function Home() {
 
   const navigate = useNavigate();
+
+  // Animation for ServicesCarousel
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, margin: "-100px" });
+  const [show, setShow] = useState(false);
+
+  useEffect(() => {
+    if (inView) {
+      // Delay for 400ms before showing
+      const timer = setTimeout(() => setShow(true), 400);
+      return () => clearTimeout(timer);
+    }
+  }, [inView]);
 
   return (
     <>
@@ -36,44 +51,48 @@ function Home() {
 
       {/* Fitness Journey Section */}
       <section className="max-w-7xl mx-auto px-2 py-10 sm:px-4 sm:py-16 flex flex-col md:flex-row items-center gap-10">
-        {/* Left: Advanced Overlapping Images with Responsive Layout */}
+        {/* Left: Overlapping Images - Mobile */}
         <div className="relative w-full max-w-xs xs:max-w-sm sm:max-w-md md:max-w-md lg:max-w-xl flex-shrink-0 min-h-[340px] sm:min-h-[400px] md:min-h-[480px] lg:min-h-[600px] flex items-center justify-center overflow-visible">
-          {/* Mobile: Stack first two images, then last below */}
-          <div className="flex flex-col gap-6 w-full md:hidden">
-            <div className="flex gap-6 justify-center">
+          {/* Mobile: Overlapping, stylish shapes with touching edges */}
+          <div className="flex flex-col gap-0 w-full md:hidden relative">
+            {/* Top Row: Fitness (circle, left) and Wellness (rounded-rect, right, overlapping, edges touching) */}
+            <div className="flex justify-center items-end relative h-56">
               {/* Fitness */}
-              <div className="relative w-40 h-40 xs:w-48 xs:h-48 rounded-full overflow-hidden shadow-2xl border-4 border-yellow-400 rotate-3 group transition-all duration-300">
+              <div className="absolute left-[18%] z-20 w-48 h-48 rounded-full overflow-hidden shadow-2xl bg-gradient-to-br from-yellow-300 via-yellow-100 to-white rotate-3 group transition-all duration-300">
                 <img
                   src="/fitness.jpg"
                   alt="Fitness"
                   className="w-full h-full object-cover group-hover:scale-105 transition-all duration-300"
                 />
-                <div className="absolute bottom-0 left-0 w-full bg-black/70 py-2 text-center">
-                  <span className="text-white text-lg xs:text-xl font-bold tracking-wide drop-shadow">Fitness</span>
+                <div className="absolute bottom-0 left-0 w-full bg-black/70 py-3 text-center">
+                  <span className="text-yellow-300 text-xl font-bold tracking-wide drop-shadow">Fitness</span>
                 </div>
               </div>
               {/* Wellness */}
-              <div className="relative w-36 h-32 xs:w-44 xs:h-36 rounded-2xl overflow-hidden shadow-xl border-4 border-yellow-400 -rotate-6 group transition-all duration-300">
+              <div
+                className="absolute left-[54%] z-30 w-44 h-40 rounded-3xl overflow-hidden shadow-xl bg-gradient-to-tr from-yellow-200 via-white to-yellow-100 -rotate-6 group transition-all duration-300"
+                style={{ transform: "translateY(36px)" }}
+              >
                 <img
                   src="/wellness.jpg"
                   alt="Wellness"
                   className="w-full h-full object-cover group-hover:scale-105 transition-all duration-300"
                 />
-                <div className="absolute bottom-0 left-0 w-full bg-black/70 py-2 text-center">
-                  <span className="text-white text-lg xs:text-xl font-bold tracking-wide drop-shadow">Wellness</span>
+                <div className="absolute bottom-0 left-0 w-full bg-black/70 py-3 text-center">
+                  <span className="text-yellow-300 text-xl font-bold tracking-wide drop-shadow">Wellness</span>
                 </div>
               </div>
             </div>
-            {/* Yoga below */}
-            <div className="flex justify-center mt-2">
-              <div className="relative w-36 h-36 xs:w-44 xs:h-44 rounded-xl overflow-hidden shadow-lg border-4 border-yellow-400 group transition-all duration-300">
+            {/* Yoga below, overlapping both, edges touching */}
+            <div className="flex justify-center relative -mt-16 z-40">
+              <div className="w-52 h-52 rounded-[2.5rem] overflow-hidden shadow-2xl bg-gradient-to-tl from-yellow-100 via-white to-yellow-200 group transition-all duration-300">
                 <img
                   src="/yoga.jpg"
                   alt="Yoga"
                   className="w-full h-full object-cover group-hover:scale-105 transition-all duration-300"
                 />
-                <div className="absolute bottom-0 left-0 w-full bg-black/70 py-2 text-center">
-                  <span className="text-white text-lg xs:text-xl font-bold tracking-wide drop-shadow">Yoga</span>
+                <div className="absolute bottom-0 left-0 w-full bg-black/70 py-3 text-center">
+                  <span className="text-yellow-300 text-xl font-bold tracking-wide drop-shadow">Yoga</span>
                 </div>
               </div>
             </div>
@@ -154,7 +173,16 @@ function Home() {
         </div>
       </section>
 
-      <ServicesCarousel />
+      {/* Services Carousel with animation */}
+      <div ref={ref}>
+        <motion.div
+          initial={{ opacity: 0, y: 80 }}
+          animate={show ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+        >
+          <ServicesCarousel />
+        </motion.div>
+      </div>
     </>
   );
 }

@@ -16,7 +16,7 @@ export default function SimpleBottomNavigation() {
           >
             Hardcore Revolution
           </a>
-          <div className="text-xs text-gray-500 mt-1">
+          <div className="text-xs text-gray-950 mt-1">
             Your Fitness, Our Passion
           </div>
         </div>

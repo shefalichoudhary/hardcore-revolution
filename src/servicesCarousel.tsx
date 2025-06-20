@@ -17,22 +17,18 @@ import type { Swiper as SwiperType } from "swiper";
 const services = [
 	{
 		title: "Personal Training",
-		icon: <FitnessCenterIcon fontSize="large" className="text-white" />,
+		icon: <FitnessCenterIcon fontSize="large" className="text-yellow-500" />,
 		desc: "Get 1-on-1 expert coaching tailored to your unique fitness goals. Our trainers provide custom workout plans and ongoing motivation to help you achieve your best self.",
 	},
 	{
 		title: "Spa & Recovery",
-		icon: <SpaIcon fontSize="large" className="text-yellow-500" />,
+		icon: <SpaIcon fontSize="large" className="text-white" />,
 		desc: "Relax and rejuvenate with our modern spa, massage therapy, sauna, steam room, and cryotherapy. The perfect way to recover after intense workouts.",
 	},
-	{
-		title: "Group Classes",
-		icon: <GroupIcon fontSize="large" className="text-yellow-500" />,
-		desc: "Join energetic group classes like Zumba, HIIT, and CrossFit. All levels welcome! Enjoy a fun, social environment with certified instructors and daily new classes.",
-	},
+	
 	{
 		title: "Nutrition & Diet",
-		icon: <RestaurantIcon fontSize="large" className="text-white" />,
+		icon: <RestaurantIcon fontSize="large" className="text-yellow-500" />,
 		desc: "Personalized meal plans, nutrition coaching, and healthy recipes for every lifestyle. Our dieticians support you with macro tracking and weekly meal guides.",
 	},
 	{
@@ -51,11 +47,7 @@ const services = [
         icon: <DirectionsRunIcon fontSize="large" className="text-white" />,
         desc: "Join our running club, cardio classes, and outdoor bootcamps. Perfect for all levels, from beginners to marathon runners.",
     },
-    {
-        title: "Hydration Stations",
-        icon: <LocalDrinkIcon fontSize="large" className="text-yellow-500" />,
-        desc: "Stay hydrated with our water stations, electrolyte drinks, and smoothie bars. Fuel your workouts with healthy hydration options.",
-    },
+   
 ];
 
 function ServicesCarousel() {
@@ -63,7 +55,7 @@ function ServicesCarousel() {
 	const nextRef = useRef<HTMLButtonElement>(null);
 
 	return (
-		<section className="relative  py-14 px-4 font-sans">
+		<section className=" min-h-full relative  py-14 px-4 font-sans">
 			<div className="max-w-7xl mx-auto">
 				<h2 className=" text-black text-4xl md:text-5xl font-extrabold text-center mb-4 tracking-tight drop-shadow-lg font-serif">
 					Our Trending Services

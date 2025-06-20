@@ -77,7 +77,7 @@ export default function Users() {
           <input
             type="text"
             className="w-full pl-12 pr-12 py-3 rounded-full border border-gray-300 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-100 bg-white shadow transition placeholder-gray-400 text-black text-base font-sans"
-            placeholder="Search by name, age oraddress..."
+            placeholder="Search by name, age or address..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
           />
