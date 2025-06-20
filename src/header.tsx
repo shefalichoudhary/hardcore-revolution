@@ -130,7 +130,7 @@ export default function DrawerAppBar() {
                     handleSignOut();
                     setOpen(false);
                   }}
-                  className="w-full flex items-center justify-center gap-2 px-4 py-2 bg-gray-100 text-stone-900 rounded-md text-base font-semibold hover:bg-gray-300 hover:text-stone-900 transition"
+                  className="w-full flex items-center justify-center gap-2 px-4 py-2 bg-yellow-500 text-white rounded-md text-base font-semibold hover:bg-white hover:text-black transition"
                 >
                   Logout
                 </button>

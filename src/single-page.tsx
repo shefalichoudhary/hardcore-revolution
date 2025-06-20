@@ -136,7 +136,7 @@ const SinglePage = () => {
           {/* Edit Mode */}
           <form
             onSubmit={handleSubmit(onUpdateHandler)}
-            className="bg-white shadow-xl rounded-2xl p-6 md:p-10 space-y-6 border border-gray-200"
+            className="max-w-md md:max-w-2xl lg:max-w-3xl mx-auto bg-white shadow-xl rounded-2xl p-6 md:p-10 space-y-6 border border-gray-200"
           >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <label className="flex flex-col">
@@ -221,7 +221,7 @@ const SinglePage = () => {
               <button
                 type="button"
                 onClick={() => setEditMode(false)}
-                className=" px-4 py-1.5  bg-white text-black  rounded tracking-widest font-semibold hover:bg-yellow-500 hover:text-white transition"
+                className=" px-4 py-1.5  bg-gray-900 text-white rounded tracking-widest font-semibold hover:bg-yellow-500 hover:text-white transition"
               >
                 CANCEL
               </button>
