@@ -33,7 +33,7 @@ function Home() {
   return (
     <>
       {/* Hero Section */}
-      <div className="lg:min-h-screen relative bg-cover bg-center bg-no-repeat bg-[url('../public/Img.jpg')] mt-10">
+      <div className=" relative bg-cover bg-center bg-no-repeat bg-[url('../public/Img.jpg')] mt-10">
         {/* Overlay */}
         <div className="absolute inset-0 bg-black bg-opacity-60 z-0" />
 
@@ -61,7 +61,7 @@ function Home() {
       </div>
 
        {/* Services Carousel with animation */}
-      <div ref={ref} className="py-8 sm:py-2">
+      <div ref={ref} className="pt-10 sm:pt-4">
         <motion.div
           initial={{ opacity: 0, y: 80 }}
           animate={show ? { opacity: 1, y: 0 } : {}}
