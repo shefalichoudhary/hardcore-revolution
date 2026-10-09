@@ -6,7 +6,6 @@
     "node": "24.x"
   },
   "dependencies": {
-    "-": "0.0.1",
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
     "@ionic/react": "^7.1.3",
